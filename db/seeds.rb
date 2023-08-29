@@ -9,13 +9,11 @@
 Farm.destroy_all
 Product.destroy_all
 
-
 Ail_Sherbrooke = Farm.create!(name: "Ail Sherbrooke", address: "3336 chemin Bibeau
   Sherbrooke, QC", open: true, rating: 4.5)
 Ferme_d_ORee = Farm.create!(name: "Ferme d'ORée", address: "273, chemin Beaver ridge
   Newport, QC", open: true, rating: 3.5)
 Sanders_Farm = Farm.create!(name: "Sanders Farm", address: "475 Hyatt’s Mills, Compton, QC", open: true, rating: 4.5)
-
 
 tomato = Product.new(name: "tomato", category: "vegetable", unit: "kg", stock: 20, farm: Ail_Sherbrooke)
 tomato.save!
