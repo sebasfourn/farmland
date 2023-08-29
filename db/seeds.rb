@@ -25,36 +25,36 @@ users << nicole
 
 farms = []
 
-Ail_Sherbrooke = Farm.create!(name: "Ail Sherbrooke", address: "3336 Chemin Bibeau
-  Sherbrooke, QC", open: true, rating: 4.5)
-Ferme_d_ORee = Farm.create!(name: "Ferme d'ORée", address: "273, Chemin Beaver ridge
-  Newport, QC", open: true, rating: 3.5)
-Sanders_Farm = Farm.create!(name: "Sanders Farm", address: "475 Hyatt’s Mills, Compton, QC", open: true, rating: 4.5)
+ferme_bibeau = Farm.create!(name: "Ail Sherbrooke", address: "3336 Chemin Bibeau
+  Sherbrooke, QC", open: true, rating: 4.5, description: "Ferme Bibeau covers 95 hectares, of which 65 are cultivated and 30 are wooded. There is also an elderberry orchard with an area of one hectare. Within the 65 cultivated hectares, measures to protect biodiversity have been put in place, particularly with regard to the protection of rural birds. The 30 hectares of forest are intended for the integral conservation of the natural environment.")
+ferme_d_oree = Farm.create!(name: "Ferme d'ORée", address: "273, Chemin Beaver ridge
+  Newport, QC", open: true, rating: 3.5, description: "We produce grass-fed beef, pastured pork, lamb, eggs, and unpasteurized honey and sell directly to the consumer and through specialized butchers.")
+sanders_farm = Farm.create!(name: "Sanders Farm", address: "475 Hyatt’s Mills, Compton, QC", open: true, rating: 4.5, description: "Sanders farm is a family-run, organic fruit and vegetable farm, nestled in the beautiful rolling hills of Compton, in Quebec’s Eastern Townships since 1974.")
 
-farms << Ail_Sherbrooke
-farms << Ferme_d_ORee
-farms << Sanders_Farm
+farms << ferme_bibeau
+farms << ferme_d_oree
+farms << sanders_farm
 
 tomato_photo = URI.open("https://th.bing.com/th/id/OIG._o3h2oVb035wj82ZFwSr?pid=ImgGn")
-tomato = Product.new(name: "tomato", category: "vegetable", unit: "kg", stock: 20, farm: Ail_Sherbrooke)
+tomato = Product.new(name: "tomato", category: "vegetable", unit: "kg", stock: 20, farm: ferme_bibeau)
 tomato.photo.attach(io: tomato_photo, filename: 'tomato.jpg', content_type: 'image/jpeg')
 tomato.save!
 
 onion_photo = URI.open("https://th.bing.com/th/id/OIG.7hsSKMRE04pZ273BG4mI?pid=ImgGn")
-onion = Product.new(name: "onion", category: "vegetable", unit: "kg", stock: 40, farm: Ferme_d_ORee)
+onion = Product.new(name: "onion", category: "vegetable", unit: "kg", stock: 40, farm: ferme_d_oree)
 onion.photo.attach(io: onion_photo, filename: 'onion.jpg', content_type: 'image/jpeg')
 onion.save!
 
-turkey = Product.new(name: "turkey", category: "meat", unit: "kg", stock: 90, farm: Sanders_Farm)
+turkey = Product.new(name: "turkey", category: "meat", unit: "kg", stock: 90, farm: sanders_farm)
 turkey.save!
 
-carrot = Product.new(name: "carrot", category: "vegetable", unit: "kg", stock: 40, farm: Ail_Sherbrooke)
+carrot = Product.new(name: "carrot", category: "vegetable", unit: "kg", stock: 40, farm: ferme_bibeau)
 carrot.save!
 
-pepper = Product.new(name: "pepper", category: "vegetable", unit: "kg", stock: 70, farm: Ferme_d_ORee)
+pepper = Product.new(name: "pepper", category: "vegetable", unit: "kg", stock: 70, farm: ferme_d_oree)
 pepper.save!
 
-poultry = Product.new(name: "poultry", category: "meat", unit: "kg", stock: 50, farm: Sanders_Farm)
+poultry = Product.new(name: "poultry", category: "meat", unit: "kg", stock: 50, farm: sanders_farm)
 poultry.save!
 
 trips = []
