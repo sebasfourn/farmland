@@ -77,3 +77,7 @@ group :test do
   gem "selenium-webdriver"
   gem "webdrivers"
 end
+
+# PU added gem to store cloudinary
+gem "dotenv-rails"
+gem "cloudinary"
