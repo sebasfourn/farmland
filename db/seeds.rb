@@ -10,6 +10,7 @@ Farm.destroy_all
 Product.destroy_all
 User.destroy_all
 
+
 users = []
 users << User.create!(first_name: "sebastien", last_name: "fournier", email: "seb@email.com", password: "secret", address: "2810 Rue Beaudry, Sherbrooke, QC J1L 2N6", driver: true )
 users << User.create!(first_name: "therese", last_name: "trudeau", email: "therese@email.com", password: "secret", address: "495 Rue Longpre, Sherbrooke, QC J1G 4C4", driver: false)
@@ -17,11 +18,13 @@ users << User.create!(first_name: "jane", last_name: "johnson", email: "jane@ema
 users << User.create!(first_name: "nicole", last_name: "naudin", email: "nicole@email.com", password: "secret", address: "814 Rue Fabien, Sherbrooke, QC J1N 2J8", driver: false)
 
 farms = []
+
 Ail_Sherbrooke = Farm.create!(name: "Ail Sherbrooke", address: "3336 chemin Bibeau
   Sherbrooke, QC", open: true, rating: 4.5)
 Ferme_d_ORee = Farm.create!(name: "Ferme d'ORée", address: "273, chemin Beaver ridge
   Newport, QC", open: true, rating: 3.5)
 Sanders_Farm = Farm.create!(name: "Sanders Farm", address: "475 Hyatt’s Mills, Compton, QC", open: true, rating: 4.5)
+
 farms << Ail_Sherbrooke
 farms << Ferme_d_ORee
 farms << Sanders_Farm
