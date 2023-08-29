@@ -3,7 +3,7 @@ Rails.application.routes.draw do
 
   root to: "farms#index"
 
-  resources :farms, only: [:index, :show]
+  resources :farms, only: %i[index show]
   resources :orders, only: %i[index show]
-
+  resources :trips, only: %i[index show update]
 end
