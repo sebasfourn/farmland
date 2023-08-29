@@ -13,7 +13,6 @@ Farm.destroy_all
 Product.destroy_all
 User.destroy_all
 
-
 users = []
 users << User.create!(first_name: "sebastien", last_name: "fournier", email: "seb@email.com", password: "secret", address: "2810 Rue Beaudry, Sherbrooke, QC J1L 2N6", driver: true )
 users << User.create!(first_name: "therese", last_name: "trudeau", email: "therese@email.com", password: "secret", address: "495 Rue Longpre, Sherbrooke, QC J1G 4C4", driver: false)
@@ -53,7 +52,6 @@ pepper.save!
 
 poultry = Product.new(name: "poultry", category: "meat", unit: "kg", stock: 50, farm: Sanders_Farm)
 poultry.save!
-
 
 trip_one = Trip.new(date: DateTime.new(2023,9,12,17,0,0), seat: 3, user: users[0], farm: farms[0], address: "Université De Sherbrooke, Quai D, Sherbrooke, QC J1K 2R1")
 trip_one.save!
