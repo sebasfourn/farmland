@@ -1,0 +1,12 @@
+<h1><%= @farm.name %></h1>
+<p><%= @farm.description %></p>
+
+<h2>Products</h2>
+<ul>
+  <% @farm.products.each do |product| %>
+    <li>Product name: <%= product.name %> </li>
+    <li>Product category: <%= product.category %>
+    <li><%= product.unit %></li>
+    <li>In stock: <%= product.stock %></li>
+  <% end %>
+</ul>
