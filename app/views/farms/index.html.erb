@@ -1,0 +1,17 @@
+<h1>Hello Jo!</h1>
+
+<% @farms.each do |farm| %>
+
+  <%= link_to root_path do %>
+    <div class="card">
+      <img src="https://res.cloudinary.com/dpfoq3knh/image/upload/v1692648557/production/v8q0d0r2z3jr5sq5szjj1xvju8wf.jpg" class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title"><%= farm.name %></h5>
+        <p class="card-text"><%= farm.address %></p>
+        <p class="card-text"><%= farm.rating %></p>
+        <p class="card-text"><%= farm.open ? "Open" : "Close" %></p>
+      </div>
+    </div>
+  <% end %>
+
+<% end %>
