@@ -14,10 +14,14 @@ Product.destroy_all
 User.destroy_all
 
 users = []
-users << User.create!(first_name: "sebastien", last_name: "fournier", email: "seb@email.com", password: "secret", address: "2810 Rue Beaudry, Sherbrooke, QC J1L 2N6", driver: true )
-users << User.create!(first_name: "therese", last_name: "trudeau", email: "therese@email.com", password: "secret", address: "495 Rue Longpre, Sherbrooke, QC J1G 4C4", driver: false)
-users << User.create!(first_name: "jane", last_name: "johnson", email: "jane@email.com", password: "secret", address: "2080 Rue Andre, Sherbrooke, QC J1H 6G8", driver: true)
-users << User.create!(first_name: "nicole", last_name: "naudin", email: "nicole@email.com", password: "secret", address: "814 Rue Fabien, Sherbrooke, QC J1N 2J8", driver: false)
+sebastien = User.create!(first_name: "sebastien", last_name: "fournier", email: "seb@email.com", password: "secret", address: "2810 Rue Beaudry, Sherbrooke, QC J1L 2N6", driver: true )
+therese = User.create!(first_name: "therese", last_name: "trudeau", email: "therese@email.com", password: "secret", address: "495 Rue Longpre, Sherbrooke, QC J1G 4C4", driver: false)
+jane = User.create!(first_name: "jane", last_name: "johnson", email: "jane@email.com", password: "secret", address: "2080 Rue Andre, Sherbrooke, QC J1H 6G8", driver: true)
+nicole = User.create!(first_name: "nicole", last_name: "naudin", email: "nicole@email.com", password: "secret", address: "814 Rue Fabien, Sherbrooke, QC J1N 2J8", driver: false)
+users << sebastien
+users << therese
+users << jane
+users << nicole
 
 farms = []
 
@@ -53,11 +57,30 @@ pepper.save!
 poultry = Product.new(name: "poultry", category: "meat", unit: "kg", stock: 50, farm: Sanders_Farm)
 poultry.save!
 
+trips = []
+
 trip_one = Trip.new(date: DateTime.new(2023,9,12,17,0,0), seat: 3, user: users[0], farm: farms[0], address: "Université De Sherbrooke, Quai D, Sherbrooke, QC J1K 2R1")
 trip_one.save!
+trips << trip_one
 
 trip_two = Trip.new(date: DateTime.new(2023,9,14,10,0,0), seat: 3, user: users[2], farm: farms[1], address: "Université De Sherbrooke, Quai D, Sherbrooke, QC J1K 2R1")
 trip_two.save!
+trips << trip_two
 
 trip_three = Trip.new(date: DateTime.new(2023,9,15,12,0,0), seat: 5, user: users[0],  farm: farms[2], address: "3050 Boulevard De Portland, Sherbrooke, Quebec J1L 1K1")
 trip_three.save!
+trips << trip_three
+
+seb_order = Order.new(trip: trip_one, user: sebastien)
+seb_order.save!
+therese_order = Order.new(trip: trip_two, user: therese)
+therese_order.save!
+
+seb_poultry = OrderProduct.new(quantity: 10, order: seb_order, product: poultry)
+seb_poultry.save!
+seb_pepper = OrderProduct.new(quantity: 4, order: seb_order, product: pepper)
+seb_pepper.save!
+therese_turkey = OrderProduct.new(quantity: 12, order: therese_order, product: turkey)
+therese_turkey.save!
+therese_carrot = OrderProduct.new(quantity: 3, order: therese_order, product: carrot)
+therese_carrot.save!
