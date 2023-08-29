@@ -80,3 +80,4 @@ end
 
 # PU added gem to store cloudinary
 gem "dotenv-rails"
+gem "cloudinary"
