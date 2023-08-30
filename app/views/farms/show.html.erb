@@ -9,18 +9,12 @@
 </ul>
 
 <h2>Products</h2>
-<h2>TODO: INSERT NEW ORDER FORM</h2>
 <ul>
   <% @farm.products.each do |product| %>
     <li><%= product.name.capitalize.pluralize%>: <%= product.stock %> <%= product.unit %> in stock </li>
   <% end %>
-<h1>New order</h1>
-<%= simple_form_for [@order, @farm.products] do |f| %>
-  <%= f.input :product %>
-  <%= f.submit "Submit review", class: "btn btn-primary" %>
-<% end %>
 </ul>
-
+<h2>Place an order</h2>
 <%= simple_form_for ([@order]) do |f|%>
   <%= f.association :trip, collection: @farm.trips, as: :radio_buttons, label_method: :date%>
   <% @products.where.not(stock: 0).each do |product| %>

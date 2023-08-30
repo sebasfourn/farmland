@@ -1,5 +1,23 @@
 <h1>My orders</h1>
 
 <% @orders.each do |order| %>
-  <%= order %>
+  <%= link_to order_path(order) do %>
+
+    <div>
+      <%= order.trip.farm.name %>
+      <h4>Products</h4>
+      <% order.order_products.each do |order_product| %>
+        <div>
+          <%= order_product.quantity %>
+          <%= order_product.product.name %>
+        </div>
+      <% end %>
+      <h4>Carpool</h4>
+      <%= order.trip.date %>
+      <%= "Electric car" if order.trip.user.electric_car %>
+      <%= "#{order.trip.seat} seats available" %>
+      <%= "Driver: #{order.trip.user.first_name.capitalize}" %>
+    </div>
+
+  <% end %>
 <% end %>
