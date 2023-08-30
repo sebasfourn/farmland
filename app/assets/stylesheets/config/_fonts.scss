@@ -1,16 +1,47 @@
 // Import Google fonts
-@import url('https://fonts.googleapis.com/css?family=Nunito:400,700|Work+Sans:400,700&display=swap');
+// @import url('https://fonts.googleapis.com/css?family=Nunito:400,700|Work+Sans:400,700&display=swap');
 
 // Define fonts for body and headers
-$body-font: "Work Sans", "Helvetica", "sans-serif";
-$headers-font: "Nunito", "Helvetica", "sans-serif";
 
-// To use a font file (.woff) uncomment following lines
-// @font-face {
-//   font-family: "Font Name";
-//   src: font-url('FontFile.eot');
-//   src: font-url('FontFile.eot?#iefix') format('embedded-opentype'),
-//        font-url('FontFile.woff') format('woff'),
-//        font-url('FontFile.ttf') format('truetype')
+// body paragraphs etc. font
+$body-font: "OS-Regular", "Helvetica", "sans-serif";
+
+// h2 font
+$headers-font: "OS-Heavy", "Helvetica", "sans-serif";
+// h3 font
+$subtitles-font: "OS-Bold", "Helvetica", "sans-serif";
+$emph-font: "OS-Bold", "Helvetica", "sans-serif";
+// FONTFACES
+// LOGO
+@font-face {
+  font-family: "Eiko";
+  src: font-url("PPEiko-Heavy") format("woff"),
+    font-url("PPEiko-Heavy") format("woff2");
+}
+
+// Title -> H2
+@font-face {
+  font-family: "OS-Heavy";
+  src: font-url("PPObjectSans-Heavy") format("woff"),
+    font-url("PPObjectSans-Heavy") format("woff2");
+}
+
+// Subtitles -> H3 && Emphasizing words
+// example for emph use in html / css :
+// HTML >>> <p>something <span class="emphasize-paragraph">cool</span></p>
+// CSS  >>> .emphasize {
+// font-family: "OS-Bold";
 // }
-// $my-font: "Font Name";
+@font-face {
+  font-family: "OS-Bold";
+  src: font-url("PPObjectSans-Bold") format("woff"),
+    font-url("PPObjectSans-Bold") format("woff2");
+}
+
+// Paragraphs -> p, ... font size can change depending on case. Check figma.
+
+@font-face {
+  font-family: "OS-Regular";
+  src: font-url("PPObjectSans-Regular") format("woff"),
+    font-url("PPObjectSans-Regular") format("woff2");
+}
