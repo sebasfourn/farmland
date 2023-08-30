@@ -14,4 +14,20 @@ class OrdersController < ApplicationController
   def order_params
     params.require(:trip).permit(:quantity, :order, :address, :date)
   end
+
+  def create
+    @order = Order.new(order_params)
+    @order.user = current_user
+    if @order.save
+      redirect_to orders_path
+    else
+      render "farms/show", status: :unprocessable_entity
+    end
+  end
+
+  private
+
+  def order_params
+    params.require(:order).permit(:trip_id)
+  end
 end

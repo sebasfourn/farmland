@@ -5,6 +5,7 @@ class FarmsController < ApplicationController
 
   def show
     @farm = Farm.find(params[:id])
+    @products = @farm.products
     @order = Order.new
   end
 

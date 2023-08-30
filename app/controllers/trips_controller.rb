@@ -1,4 +1,5 @@
 class TripsController < ApplicationController
+
 # TODO: PU to continue implementing empty chat pages
   def index
     @trips = Trip.all
