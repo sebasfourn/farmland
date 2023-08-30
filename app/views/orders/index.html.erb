@@ -3,17 +3,16 @@
 <% @orders.each do |order| %>
   <%= link_to order_path(order) do %>
 
-    <div>
+    <div class="card mb-4">
       <%= order.trip.farm.name %>
-      <h4>Products</h4>
+      <p>Products:<p>
       <% order.order_products.each do |order_product| %>
         <div>
           <%= order_product.quantity %>
           <%= order_product.product.name %>
         </div>
       <% end %>
-      <h4>Carpool</h4>
-      <%= order.trip.date %>
+      <p> On <%= order.trip.date %> </p>
       <%= "Electric car" if order.trip.user.electric_car %>
       <%= "#{order.trip.seat} seats available" %>
       <%= "Driver: #{order.trip.user.first_name.capitalize}" %>
