@@ -11,10 +11,6 @@ class OrdersController < ApplicationController
 
   private
 
-  def order_params
-    params.require(:trip).permit(:quantity, :order, :address, :date)
-  end
-
   def create
     @order = Order.new(order_params)
     @order.user = current_user

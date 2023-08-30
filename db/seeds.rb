@@ -59,11 +59,11 @@ poultry.save!
 
 trips = []
 
-trip_one = Trip.new(date: DateTime.new(2023,9,12,17,0,0), seat: 3, user: users[0], farm: farms[0], address: "Université De Sherbrooke, Quai D, Sherbrooke, QC J1K 2R1")
+trip_one = Trip.new(date: DateTime.new(2023,9,15,17,0,0), seat: 3, user: users[0], farm: farms[0], address: "Université De Sherbrooke, Quai D, Sherbrooke, QC J1K 2R1")
 trip_one.save!
 trips << trip_one
 
-trip_two = Trip.new(date: DateTime.new(2023,9,14,10,0,0), seat: 3, user: users[2], farm: farms[1], address: "Université De Sherbrooke, Quai D, Sherbrooke, QC J1K 2R1")
+trip_two = Trip.new(date: DateTime.new(2023,8,30,16,0,0), seat: 3, user: users[2], farm: farms[1], address: "Université De Sherbrooke, Quai D, Sherbrooke, QC J1K 2R1")
 trip_two.save!
 trips << trip_two
 
@@ -74,7 +74,7 @@ trips << trip_three
 seb_order = Order.new(trip: trip_one, user: seb)
 seb_order.save!
 
-therese_order = Order.new(trip: trip_two, user: therese)
+therese_order = Order.new(trip: trip_one, user: therese)
 therese_order.save!
 
 seb_poultry = OrderProduct.new(quantity: 10, order: seb_order, product: poultry)
