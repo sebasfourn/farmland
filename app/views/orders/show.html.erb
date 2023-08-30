@@ -1,13 +1,17 @@
-<h1>Order Details</h1>
+<h1><%=@farm.name %> Order</h1>
 
 <% @order.id %></p>
 <% @order.trip_id %></p>
 <% @order.user_id %></p>
 
-<ul>
+<h3>Ordered Products</h3>
+<div class="ordered-products">
   <% @order_products.each do |order_product| %>
-    <li>
-      <%= order_product.product.name %>, Quantity: <%= order_product.quantity %>
-    </li>
+    <div class="ordered-product">
+      <p><strong>Product:</strong><%= order_product.product.name %></p>
+      <p><strong>Quantity:</strong><%= order_product.quantity %></p>
+    </div>
   <% end %>
-</ul>
+</div>
+
+<%# TODO: finish styling, PU created divs for future styling %>
