@@ -10,8 +10,9 @@
     <%= javascript_importmap_tags %>
   </head>
 
-  <body>
-    <%= render "shared/navbar" %>
+  <body class="background">
+    <%= render "shared/topbanner" %>
     <%= yield %>
+    <%= render "shared/navbar" %>
   </body>
 </html>
