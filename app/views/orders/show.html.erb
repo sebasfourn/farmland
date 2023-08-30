@@ -4,7 +4,7 @@
 <% @order.trip_id %></p>
 <% @order.user_id %></p>
 
-<h3>Ordered Products</h3>
+<h3>Basket Recap</h3>
 <div class="ordered-products">
   <% @order_products.each do |order_product| %>
     <div class="ordered-product">
@@ -14,4 +14,11 @@
   <% end %>
 </div>
 
-<%# TODO: finish styling, PU created divs for future styling %>
+<%# TODO: finish carpool recap, basket recap and total price %>
+<h3>Carpool Recap</h3>
+  <p><strong>Date:</strong> <%= @order.trip.date %></p>
+  <p><strong>Driver:</strong> <%= @order.trip.user.first_name.capitalize %></p>
+  <p><strong>Seats available:</strong> <%= @order.trip.seat %> seats</p>
+  <p><strong>Chat with driver:</strong> <%= link_to "Chat", trip_path(@order.trip) %></p>
+
+<h4>Meeting point with Laurent</h4>
