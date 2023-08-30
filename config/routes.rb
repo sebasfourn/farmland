@@ -4,6 +4,6 @@ Rails.application.routes.draw do
   root to: "farms#index"
 
   resources :farms, only: [:index, :show]
-  resources :orders, only: %i[index show]
+  resources :orders, only: %i[index show create update]
 
 end
