@@ -7,4 +7,6 @@ class User < ApplicationRecord
   has_many :trips, dependent: :destroy
   has_many :messages
   has_many :orders
+
+  acts_as_favoritor
 end

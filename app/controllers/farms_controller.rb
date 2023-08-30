@@ -8,6 +8,20 @@ class FarmsController < ApplicationController
     @order = Order.new
   end
 
+  def favorite
+    farm = Farm.find(params[:id])
+    current_user.favorite(farm)
+  end
+
+  def unfavorite
+    farm = Farm.find(params[:id])
+    current_user.unfavorite(farm)
+  end
+
+  def favorites
+    @farms = current_user.favorited_by_type('Farm')
+  end
+
   private
 
   def farm_params
