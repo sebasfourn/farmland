@@ -11,6 +11,8 @@ Rails.application.routes.draw do
   end
 
   resources :orders, only: %i[index show]
+  resources :trips, only: %i[index show update]
 
   get "/favorites", to: "farms#favorites"
+
 end
