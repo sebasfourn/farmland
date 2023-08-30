@@ -86,6 +86,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_08_29_201141) do
     t.bigint "product_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.float "cost"
     t.index ["order_id"], name: "index_order_products_on_order_id"
     t.index ["product_id"], name: "index_order_products_on_product_id"
   end
@@ -107,6 +108,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_08_29_201141) do
     t.bigint "farm_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.float "price"
     t.index ["farm_id"], name: "index_products_on_farm_id"
   end
 

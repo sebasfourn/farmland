@@ -5,6 +5,7 @@ class FarmsController < ApplicationController
 
   def show
     @farm = Farm.find(params[:id])
+    @order = Order.new
   end
 
   def favorite

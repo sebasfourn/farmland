@@ -25,36 +25,36 @@ users << nicole
 
 farms = []
 
-ferme_bibeau = Farm.create!(name: "Ail Sherbrooke", address: "3336 Chemin Bibeau
+ferme_bibeau = Farm.create!(name: "Ferme Bibeau", address: "3336 Chemin Bibeau
   Sherbrooke, QC", open: true, rating: 4.5, description: "Ferme Bibeau covers 95 hectares, of which 65 are cultivated and 30 are wooded. There is also an elderberry orchard with an area of one hectare. Within the 65 cultivated hectares, measures to protect biodiversity have been put in place, particularly with regard to the protection of rural birds. The 30 hectares of forest are intended for the integral conservation of the natural environment.")
-ferme_d_oree = Farm.create!(name: "Ferme d'ORée", address: "273, Chemin Beaver ridge
+ferme_d_oree = Farm.create!(name: "Ferme d'Orée", address: "273, Chemin Beaver ridge
   Newport, QC", open: true, rating: 3.5, description: "We produce grass-fed beef, pastured pork, lamb, eggs, and unpasteurized honey and sell directly to the consumer and through specialized butchers.")
-sanders_farm = Farm.create!(name: "Sanders Farm", address: "475 Hyatt’s Mills, Compton, QC", open: true, rating: 4.5, description: "Sanders farm is a family-run, organic fruit and vegetable farm, nestled in the beautiful rolling hills of Compton, in Quebec’s Eastern Townships since 1974.")
+sanders_farm = Farm.create!(name: "Sanders Farm", address: "475 Hyatt's Mills, Compton, QC", open: true, rating: 4.5, description: "Sanders farm is a family-run, organic fruit and vegetable farm, nestled in the beautiful rolling hills of Compton, in Quebec’s Eastern Townships since 1974.")
 
 farms << ferme_bibeau
 farms << ferme_d_oree
 farms << sanders_farm
 
 tomato_photo = URI.open("https://th.bing.com/th/id/OIG._o3h2oVb035wj82ZFwSr?pid=ImgGn")
-tomato = Product.new(name: "tomato", category: "vegetable", unit: "kg", stock: 20, farm: ferme_bibeau)
+tomato = Product.new(name: "tomato", category: "vegetable", unit: "kg", stock: 20, farm: ferme_bibeau, price: 5.51)
 tomato.photo.attach(io: tomato_photo, filename: 'tomato.jpg', content_type: 'image/jpeg')
 tomato.save!
 
 onion_photo = URI.open("https://th.bing.com/th/id/OIG.7hsSKMRE04pZ273BG4mI?pid=ImgGn")
-onion = Product.new(name: "onion", category: "vegetable", unit: "kg", stock: 40, farm: ferme_d_oree)
+onion = Product.new(name: "onion", category: "vegetable", unit: "kg", stock: 40, farm: ferme_d_oree, price: 4.01)
 onion.photo.attach(io: onion_photo, filename: 'onion.jpg', content_type: 'image/jpeg')
 onion.save!
 
-turkey = Product.new(name: "turkey", category: "meat", unit: "kg", stock: 90, farm: sanders_farm)
+turkey = Product.new(name: "turkey", category: "meat", unit: "kg", stock: 90, farm: sanders_farm, price: 7.25)
 turkey.save!
 
-carrot = Product.new(name: "carrot", category: "vegetable", unit: "kg", stock: 40, farm: ferme_bibeau)
+carrot = Product.new(name: "carrot", category: "vegetable", unit: "kg", stock: 40, farm: ferme_bibeau, price: 2.63)
 carrot.save!
 
-pepper = Product.new(name: "pepper", category: "vegetable", unit: "kg", stock: 70, farm: ferme_d_oree)
+pepper = Product.new(name: "pepper", category: "vegetable", unit: "kg", stock: 70, farm: ferme_d_oree, price: 6.11)
 pepper.save!
 
-poultry = Product.new(name: "poultry", category: "meat", unit: "kg", stock: 50, farm: sanders_farm)
+poultry = Product.new(name: "poultry", category: "meat", unit: "kg", stock: 50, farm: sanders_farm, price: 7.30)
 poultry.save!
 
 trips = []
@@ -77,10 +77,14 @@ therese_order = Order.new(trip: trip_two, user: therese)
 therese_order.save!
 
 seb_poultry = OrderProduct.new(quantity: 10, order: seb_order, product: poultry)
+seb_poultry.cost = seb_poultry.quantity * seb_poultry.product.price
 seb_poultry.save!
 seb_pepper = OrderProduct.new(quantity: 4, order: seb_order, product: pepper)
+seb_pepper.cost = seb_pepper.quantity * seb_pepper.product.price
 seb_pepper.save!
 therese_turkey = OrderProduct.new(quantity: 12, order: therese_order, product: turkey)
+therese_turkey.cost = therese_turkey.quantity * therese_turkey.product.price
 therese_turkey.save!
 therese_carrot = OrderProduct.new(quantity: 3, order: therese_order, product: carrot)
+therese_carrot.cost = therese_carrot.quantity * therese_carrot.product.price
 therese_carrot.save!
