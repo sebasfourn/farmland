@@ -9,13 +9,16 @@
 </ul>
 
 <h2>Products</h2>
+<h2>TODO: INSERT NEW ORDER FORM</h2>
 <ul>
   <% @farm.products.each do |product| %>
-    <li>Product name: <%= product.name %> </li>
-    <li>Product category: <%= product.category %>
-    <li><%= product.unit %></li>
-    <li>In stock: <%= product.stock %></li>
+    <li><%= product.name.capitalize.pluralize%>: <%= product.stock %> <%= product.unit %> in stock </li>
   <% end %>
+<h1>New order</h1>
+<%= simple_form_for [@order, @farm.products] do |f| %>
+  <%= f.input :product %>
+  <%= f.submit "Submit review", class: "btn btn-primary" %>
+<% end %>
 </ul>
 
 <%= simple_form_for ([@order]) do |f|%>
@@ -28,7 +31,6 @@
   <% end %>
   <%= f.button :submit %>
 <%end%>
-
 <div>
 <br>
 </div>

@@ -5,6 +5,14 @@ class OrdersController < ApplicationController
 
   def show
     @order = Order.find(params[:id])
+    @order_products = @order.order_products.includes(:product)
+    @farm = @order.trip.farm
+  end
+
+  private
+
+  def order_params
+    params.require(:trip).permit(:quantity, :order, :address, :date)
   end
 
   def create
