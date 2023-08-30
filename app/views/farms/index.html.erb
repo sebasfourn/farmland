@@ -1,7 +1,7 @@
-<h1>Hello Jo!</h1>
+<h1>Hello <%= current_user.first_name.capitalize %> !</h1>
+<%= current_user.address %>
 
 <% @farms.each do |farm| %>
-
   <div>
     <%= link_to farm_path(farm) do %>
       <div class="card">

@@ -73,18 +73,22 @@ trips << trip_three
 
 seb_order = Order.new(trip: trip_one, user: sebastien)
 seb_order.save!
+
 therese_order = Order.new(trip: trip_two, user: therese)
 therese_order.save!
 
 seb_poultry = OrderProduct.new(quantity: 10, order: seb_order, product: poultry)
 seb_poultry.cost = seb_poultry.quantity * seb_poultry.product.price
 seb_poultry.save!
+
 seb_pepper = OrderProduct.new(quantity: 4, order: seb_order, product: pepper)
 seb_pepper.cost = seb_pepper.quantity * seb_pepper.product.price
 seb_pepper.save!
+
 therese_turkey = OrderProduct.new(quantity: 12, order: therese_order, product: turkey)
 therese_turkey.cost = therese_turkey.quantity * therese_turkey.product.price
 therese_turkey.save!
+
 therese_carrot = OrderProduct.new(quantity: 3, order: therese_order, product: carrot)
 therese_carrot.cost = therese_carrot.quantity * therese_carrot.product.price
 therese_carrot.save!
