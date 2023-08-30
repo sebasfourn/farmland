@@ -1,3 +1,13 @@
-<h1>Order</h1>
+<h1>Order Details</h1>
 
-<%= @order %>
+<% @order.id %></p>
+<% @order.trip_id %></p>
+<% @order.user_id %></p>
+
+<ul>
+  <% @order_products.each do |order_product| %>
+    <li>
+      <%= order_product.product.name %>, Quantity: <%= order_product.quantity %>
+    </li>
+  <% end %>
+</ul>
