@@ -11,20 +11,26 @@
 <h2>Products</h2>
 <ul>
   <% @farm.products.each do |product| %>
-    <li><%= product.name.capitalize.pluralize%>: <%= product.stock %> <%= product.unit %> in stock </li>
+    <li>Product name: <%= product.name %> </li>
+    <li>Product category: <%= product.category %>
+    <li><%= product.unit %></li>
+    <li>In stock: <%= product.stock %></li>
   <% end %>
 </ul>
-<h2>Place an order</h2>
+
 <%= simple_form_for ([@order]) do |f|%>
   <%= f.association :trip, collection: @farm.trips, as: :radio_buttons, label_method: :date%>
   <% @products.where.not(stock: 0).each do |product| %>
     <%= f.simple_fields_for :order_products do |order_product| %>
-    <%= order_product.input :product, input_html: { value: "#{product.name.capitalize} - #{product.price} per #{product.unit}"}, disabled: true%>
-    <%= order_product.input :quantity, input_html: { min:0, max: product.stock }, as: :integer%>
+    <%# order_product.input :product, input_html: { value: "#{product.name.capitalize} - #{product.price} per #{product.unit}"}, disabled: false%>
+    <%= order_product.label product.name %>
+    <%= order_product.input :quantity, input_html: { min:0, max: product.stock, name: "order[order_products][#{product.name}][quantity]" }, as: :integer%>
+    <%= order_product.input :product, input_html: {value: product.id, name: "order[order_products][#{product.name}][product_id]" }, as: :hidden %>
     <% end %>
   <% end %>
   <%= f.button :submit %>
 <%end%>
+
 <div>
 <br>
 </div>
