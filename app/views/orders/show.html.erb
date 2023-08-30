@@ -17,7 +17,7 @@
 
 <%# TODO: finish carpool recap, basket recap and total price %>
 <h3>Carpool Recap</h3>
-  <p><strong>Date:</strong> <%= @order.trip.date.strftime('%Y-%m-%d %H:%M') %></p>
+  <p><strong>Date:</strong> <%= distance_of_time_in_words(Time.now, @order.trip.date) %><%= @order.trip.date.strftime('%l:%M %p') %></p>
   <p><strong>Driver:</strong> <%= @order.trip.user.first_name.capitalize %></p>
   <p><strong>Seats available:</strong> <%= @order.trip.seat %> seats</p>
   <p><strong>Chat with driver:</strong> <%= link_to "Chat", trip_path(@order.trip) %></p>
