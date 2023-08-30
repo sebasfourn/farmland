@@ -5,7 +5,12 @@ class OrdersController < ApplicationController
 
   def show
     @order = Order.find(params[:id])
+
+    @order_products = @order.order_products.includes(:product)
+    @farm = @order.trip.farm
   end
+
+  private
 
   def create
     @order = Order.new(order_params)

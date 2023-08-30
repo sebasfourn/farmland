@@ -10,9 +10,12 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :orders, only: %i[index show create] do
-    resources :order_products, only: %i[create]
+  resources :orders, only: %i[index show create update] do
+      resources :order_products, only: %i[create]
   end
-  resources :trips, only: %i[index show create update]
+  resources :trips, only: %i[index show create update] do
+    resources :messages, only: :create
+  end
+
   get "/favorites", to: "farms#favorites"
 end

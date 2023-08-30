@@ -12,7 +12,15 @@
           <%= order_product.product.name %>
         </div>
       <% end %>
-      <p> On <%= order.trip.date %> </p>
+
+      <h4>Carpool</h4>
+      <% if order.trip.date.to_date == Date.today %>
+        <%= distance_of_time_in_words(Time.now, order.trip.date) %>
+      <% else %>
+        <%= order.trip.date.strftime('%B %d %l:%M %p') %>
+      <% end %>
+
+      
       <%= "Electric car" if order.trip.user.electric_car %>
       <%= "#{order.trip.seat} seats available" %>
       <%= "Driver: #{order.trip.user.first_name.capitalize}" %>
