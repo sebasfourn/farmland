@@ -13,7 +13,7 @@
         </div>
       <% end %>
       <h4>Carpool</h4>
-      <%= order.trip.date %>
+      <%= order.trip.date.strftime('%Y-%m-%d %H:%M') %>
       <%= "Electric car" if order.trip.user.electric_car %>
       <%= "#{order.trip.seat} seats available" %>
       <%= "Driver: #{order.trip.user.first_name.capitalize}" %>
