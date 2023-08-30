@@ -12,6 +12,6 @@ class OrdersController < ApplicationController
   private
 
   def order_params
-    params.require(:trip).permit(:quantity, :order, :address)
+    params.require(:trip).permit(:quantity, :order, :address, :date)
   end
 end
