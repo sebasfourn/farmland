@@ -10,3 +10,24 @@
 // Your CSS partials
 @import "components/index";
 @import "pages/index";
+
+// general rules for the whole app
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+h3 {
+  font-family: $subtitles-font;
+}
+
+.emph {
+  font-family: $emph-font;
+}
+
+li {
+  list-style: none;
+  list-style-type: none;
+}
