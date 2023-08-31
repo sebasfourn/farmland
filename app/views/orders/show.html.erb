@@ -27,8 +27,9 @@
   </h3>
   <div class="carpool-info">
     <p><%= @order.trip.user.electric_car ? "Electric" : "Gaz" %> car, <%= @order.trip.seat %> seats available</p>
+    <p><%= @order.trip.user.distance_to([current_user.latitude, current_user.longitude]).round %> km away from you</p>
     <p>Driver : <%= @order.trip.user.first_name.capitalize %></p>
-    <p>Chat with driver: <%= link_to "Chat", trip_path(@order.trip) %></p>
+    <button>Chat with driver: <%= link_to "Chat", trip_path(@order.trip) %></button>
     <%# adding distance in km from driver to current_user %>
   </div>
 </div>

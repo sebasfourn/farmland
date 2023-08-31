@@ -23,8 +23,8 @@
         </span>
         <div class="carpool-info">
           <p><span class="light-text"><%= order.trip.user.electric_car ? "Electric" : "Gas" %></span> car, <span class="light-text"><%= order.trip.seat %></span> seats available</p>
+          <p><%= order.trip.user.distance_to([current_user.latitude, current_user.longitude]).round %> km away from you</p>
           <p> Driver : <span class="light-text"><%= order.trip.user.first_name.capitalize %></span></p>
-          <%# adding distance in km from driver to current_user %>
         </div>
       </div>
     </div>
