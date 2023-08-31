@@ -1,23 +1,27 @@
 <nav class="navbar">
   <ul class="nav-icons">
     <li>
-      <%= link_to root_path, class: "nav-item img" do %>
-        <%= inline_svg_tag "home.svg"%>
+      <%= link_to root_path, class: "nav-icon img" do %>
+        <%= inline_svg_tag "home.svg" %>
+        <span class="nav-links">Home</span>
       <% end %>
     </li>
     <li>
-      <%= link_to orders_path, class: "nav-item img" do %>
-        <%= inline_svg_tag "basket.svg"%>
+      <%= link_to orders_path, class: "nav-icon img" do %>
+        <%= inline_svg_tag "basket.svg" %>
+        <span class="nav-links">Orders</span>
       <% end %>
     </li>
     <li>
-      <%= link_to favorites_path, class: "nav-item img" do %>
-        <%= inline_svg_tag "favorites.svg"%>
+      <%= link_to favorites_path, class: "nav-icon img" do %>
+        <%= inline_svg_tag "favorites.svg" %>
+        <span class="nav-links">Favorites</span>
       <% end %>
     </li>
-        <li>
-      <%= link_to trips_path, class: "nav-item img" do %>
-        <%= inline_svg_tag "chat.svg"%>
+    <li>
+      <%= link_to trips_path, class: "nav-icon img" do %>
+        <%= inline_svg_tag "chat.svg" %>
+        <span class="nav-links">Chats</span>
       <% end %>
     </li>
   </ul>
