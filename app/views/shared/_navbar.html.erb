@@ -2,7 +2,8 @@
   <ul class="nav-icons">
     <li>
       <%= link_to root_path, class: "nav-item img" do %>
-        <img src="home.svg" alt="Home">
+        <%# <img src="home.svg" alt="Home"> %>
+        <%= inline_svg_tag "home.svg"%>
       <% end %>
     </li>
     <%= link_to "Order", orders_path %>
