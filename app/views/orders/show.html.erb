@@ -17,15 +17,21 @@
 
 <%# TODO: finish carpool recap, basket recap and total price %>
 <h3>Carpool Recap</h3>
-  <strong><p>
+<div class="carpool-orders-show-card">
+  <h3>
     <% if @order.trip.date.to_date == Date.today %>
       <%= distance_of_time_in_words(Time.now, @order.trip.date) %>
     <% else %>
       <%= @order.trip.date.strftime('%B %d %l:%M %p') %>
     <% end %>
-  </strong></p>
-  <p><strong>Driver:</strong> <%= @order.trip.user.first_name.capitalize %></p>
-  <p><strong>Seats available:</strong> <%= @order.trip.seat %> seats</p>
-  <p><strong>Chat with driver:</strong> <%= link_to "Chat", trip_path(@order.trip) %></p>
+  </h3>
+  <div class="carpool-info">
+    <p><%= @order.trip.user.electric_car ? "Electric" : "Gaz" %> car, <%= @order.trip.seat %> seats available</p>
+    <p>Driver : <%= @order.trip.user.first_name.capitalize %></p>
+    <p>Chat with driver: <%= link_to "Chat", trip_path(@order.trip) %></p>
+    <%# adding distance in km from driver to current_user %>
+  </div>
+</div>
+
 
 <h4>Meeting point with Laurent</h4>
