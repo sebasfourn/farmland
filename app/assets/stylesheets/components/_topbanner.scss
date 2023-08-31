@@ -1,5 +1,8 @@
 .topbanner {
   padding: 10px 0;
+  position: fixed;
+  z-index: 999;
+  top: 0;
   font-size: 11px;
   background-color: $green-main;
   height: 35px;
