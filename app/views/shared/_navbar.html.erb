@@ -2,7 +2,7 @@
   <ul class="nav-icons">
     <li>
       <%= link_to root_path, class: "nav-icon img" do %>
-        <%= inline_svg_tag "home.svg" %>
+        <%= current_page?(root_path) ? inline_svg_tag("home-selected.svg") : inline_svg_tag("home.svg") %>
         <span class="nav-links">Home</span>
       <% end %>
     </li>

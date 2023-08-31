@@ -18,17 +18,13 @@
   margin: 0;
 }
 
-.nav-links{
+.nav-links {
   font-size: 16px;
   margin-top: 5px;
   text-align: center;
   padding: 12px;
   text-decoration: none;
-  color: rgb(97,97,97)
-}
-
-.nav-links span{
-  text-decoration: none;
+  color: rgb(97, 97, 97);
 }
 
 .nav-icon img {
@@ -38,4 +34,7 @@
   opacity: 0.5;
 }
 
-  // background-color:rgb(59, 99, 94);
+// .nav-icon.img.clicked {
+//   fill: rgb(59, 99, 94);
+//   transition: fill 0.3s ease;
+// }
