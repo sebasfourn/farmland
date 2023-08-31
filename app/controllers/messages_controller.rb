@@ -5,7 +5,11 @@ class MessagesController < ApplicationController
     @message.trip = @trip
     @message.user = current_user
     if @message.save
-      redirect_to trip_path(@trip)
+      ChatroomChannel.broadcast_to(
+        @trip,
+        render_to_string(partial: "message", locals: { message: @message })
+      )
+      head :ok
     else
       render "trips/show"
     end

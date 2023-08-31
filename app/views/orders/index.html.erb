@@ -1,30 +1,32 @@
 <h1>My orders</h1>
 
 <% @orders.each do |order| %>
-  <%= link_to order_path(order) do %>
+  <%= link_to order_path(order), class: "order-card-link" do %>
+    <div class="order-card">
+      <h2><%= order.trip.farm.name %> Order</h2>
+      <h3>Products</h3>
+        <% order.order_products.each do |order_product| %>
+          <div>
+            <%= "#{order_product.quantity}#{order_product.product.unit}"%>
+            <%= order_product.product.category == "meat" ? order_product.product.name : order_product.product.name.pluralize %>
+          </div>
+      <% end %>
 
-    <div class="card mb-4">
-      <%= order.trip.farm.name %>
-      <p>Products:<p>
-      <% order.order_products.each do |order_product| %>
-        <div>
-          <%= order_product.quantity %>
-          <%= order_product.product.name %>
+      <h3>Carpool</h3>
+      <div class="carpool-orders-card">
+      <span class="carpool-date">
+        <% if order.trip.date.to_date == Date.today %>
+          <%= distance_of_time_in_words(Time.now, order.trip.date) %>
+        <% else %>
+          <%= order.trip.date.strftime('%B %d %l:%M %p') %>
+        <% end %>
+        </span>
+        <div class="carpool-info">
+          <p><span class="light-text"><%= order.trip.user.electric_car ? "Electric" : "Gas" %></span> car, <span class="light-text"><%= order.trip.seat %></span> seats available</p>
+          <p> Driver : <span class="light-text"><%= order.trip.user.first_name.capitalize %></span></p>
+          <%# adding distance in km from driver to current_user %>
         </div>
-      <% end %>
-
-      <h4>Carpool</h4>
-      <% if order.trip.date.to_date == Date.today %>
-        <%= distance_of_time_in_words(Time.now, order.trip.date) %>
-      <% else %>
-        <%= order.trip.date.strftime('%B %d %l:%M %p') %>
-      <% end %>
-
-      
-      <%= "Electric car" if order.trip.user.electric_car %>
-      <%= "#{order.trip.seat} seats available" %>
-      <%= "Driver: #{order.trip.user.first_name.capitalize}" %>
+      </div>
     </div>
-
   <% end %>
 <% end %>
