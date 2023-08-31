@@ -14,12 +14,7 @@
     </h3>
     <div class="carpool-info">
       <p><%= trip.user.electric_car ? "Electric" : "Gaz" %> car, <%= trip.seat %> seats available</p>
-      <p>
-      Driver : <%= trip.user.first_name.capitalize %>
-        <%# <% if trip.user.verified %>
-          <%# <%= inline_svg_tag "verified.svg", class: 'some-class' %>
-        <%# <% end %>
-      </p>
+      <p>Driver : <%= trip.user.first_name.capitalize %> </p>
     </div>
   <%  end %>
 </div>
