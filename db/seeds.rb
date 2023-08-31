@@ -8,6 +8,7 @@
 
 require "open-uri"
 
+Message.destroy_all
 Trip.destroy_all
 Farm.destroy_all
 Product.destroy_all
@@ -59,15 +60,15 @@ lamb.save!
 
 trips = []
 
-trip_one = Trip.new(date: DateTime.new(2023,9,15,17,0,0), seat: 3, user: users[0], farm: farms[0], address: "Université De Sherbrooke, Quai D, Sherbrooke, QC J1K 2R1")
+trip_one = Trip.new(date: DateTime.new(2023,9,15,17,0,0), seat: 3, user: users[2], farm: farms[0], address: "Université De Sherbrooke, Quai D, Sherbrooke, QC J1K 2R1")
 trip_one.save!
 trips << trip_one
 
-trip_two = Trip.new(date: DateTime.new(2023,8,30,16,0,0), seat: 3, user: users[2], farm: farms[1], address: "Université De Sherbrooke, Quai D, Sherbrooke, QC J1K 2R1")
+trip_two = Trip.new(date: DateTime.new(2023,8,30,16,0,0), seat: 3, user: users[3], farm: farms[1], address: "Université De Sherbrooke, Quai D, Sherbrooke, QC J1K 2R1")
 trip_two.save!
 trips << trip_two
 
-trip_three = Trip.new(date: DateTime.new(2023,9,15,12,0,0), seat: 5, user: users[0],  farm: farms[2], address: "3050 Boulevard De Portland, Sherbrooke, Quebec J1L 1K1")
+trip_three = Trip.new(date: DateTime.new(2023,9,15,12,0,0), seat: 5, user: users[2], farm: farms[2], address: "3050 Boulevard De Portland, Sherbrooke, Quebec J1L 1K1")
 trip_three.save!
 trips << trip_three
 
