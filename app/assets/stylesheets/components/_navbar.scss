@@ -1,37 +1,54 @@
 .navbar {
   position: fixed;
-  height: 75px;
   bottom: 0;
+  z-index: 999;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  height: 10%;
   width: 100%;
   background-color: white;
   border-top: 1px solid white;
   flex-grow: 0;
-  margin-top: 20px;
+  padding-top: 8px;
+  & ul {
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+  & a {
+    color: $gray !important;
+  }
+  & a:active,
+  a:visited {
+    color: $green-main !important;
+  }
 }
 
 .nav-icons {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
+  gap: 50px;
   list-style: none;
   text-align: center;
-  padding: 10px 0;
-  margin: 0;
+  & svg {
+    margin-bottom: 8px;
+  }
 }
 
 .nav-links {
-  font-size: 16px;
-  margin-top: 5px;
+  display: flex;
+  flex-direction: column;
+  font-size: 11px;
   text-align: center;
-  padding: 12px;
   text-decoration: none;
-  color: rgb(97, 97, 97);
 }
 
 .nav-icon img {
   display: block;
   width: 40px;
   height: auto;
-  opacity: 0.5;
+  opacity: 1;
 }
 
 // .nav-icon.img.clicked {
