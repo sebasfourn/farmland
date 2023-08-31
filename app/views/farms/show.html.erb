@@ -1,14 +1,30 @@
-<h1><%= @farm.name %></h1>
+<h2><%= @farm.name %></h2>
 <p><%= @farm.description %></p>
 
-<h2>Upcoming trips</h2>
-<ul>
-<% @farm.trips.each do |trip| %>
-<li><%= trip.date %></li>
-<%  end %>
-</ul>
+<h3>Join a car trip</h3>
 
-<h2>Products</h2>
+<div class="carpool-orders-card">
+  <% @farm.trips.each do |trip| %>
+    <h3>
+      <% if trip.date.to_date == Date.today %>
+        <%= distance_of_time_in_words(Time.now, trip.date) %>
+      <% else %>
+        <%= trip.date.strftime('%B %d %l:%M %p') %>
+      <% end %>
+    </h3>
+    <div class="carpool-info">
+      <p><%= trip.user.electric_car ? "Electric" : "Gaz" %> car, <%= trip.seat %> seats available</p>
+      <p>
+      Driver : <%= trip.user.first_name.capitalize %>
+        <%# <% if trip.user.verified %>
+          <%# <%= inline_svg_tag "verified.svg", class: 'some-class' %>
+        <%# <% end %>
+      </p>
+    </div>
+  <%  end %>
+</div>
+
+<h3>Products</h3>
 <ul>
   <% @farm.products.each do |product| %>
     <li>Product name: <%= product.name %> </li>

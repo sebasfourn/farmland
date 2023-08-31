@@ -2,29 +2,34 @@
 
 <% @orders.each do |order| %>
   <%= link_to order_path(order) do %>
-
     <div class="card mb-4">
-      <%= order.trip.farm.name %>
-      <p>Products:<p>
-      <% order.order_products.each do |order_product| %>
+      <h2><%= order.trip.farm.name %> Order</h2>
+      <h3>Products</h3>
+        <% order.order_products.each do |order_product| %>
         <div>
           <%= order_product.quantity %>
           <%= order_product.product.name %>
         </div>
       <% end %>
 
-      <h4>Carpool</h4>
-      <% if order.trip.date.to_date == Date.today %>
-        <%= distance_of_time_in_words(Time.now, order.trip.date) %>
-      <% else %>
-        <%= order.trip.date.strftime('%B %d %l:%M %p') %>
-      <% end %>
+      <h3>Carpool</h3>
+      <div class="carpool-orders-card">
+        <% if order.trip.date.to_date == Date.today %>
+          <%= distance_of_time_in_words(Time.now, order.trip.date) %>
+        <% else %>
+          <%= order.trip.date.strftime('%B %d %l:%M %p') %>
+        <% end %>
 
-      
-      <%= "Electric car" if order.trip.user.electric_car %>
-      <%= "#{order.trip.seat} seats available" %>
-      <%= "Driver: #{order.trip.user.first_name.capitalize}" %>
+      <div class="carpool-info">
+        <p><%= order.trip.user.electric_car ? "Electric" : "Gaz" %> car, <%= order.trip.seat %> seats available</p>
+        <p>
+        Driver : <%= order.trip.user.first_name.capitalize %></p>
+      </div>
+
+      </div>
     </div>
-
   <% end %>
 <% end %>
+
+
+<h3>

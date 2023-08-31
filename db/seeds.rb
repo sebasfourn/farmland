@@ -14,10 +14,10 @@ Product.destroy_all
 User.destroy_all
 
 users = []
-seb = User.create!(first_name: "seb", last_name: "fournier", email: "seb@email.com", password: "secret", address: "2810 Rue Beaudry, Sherbrooke, QC J1L 2N6", driver: true, electric_car: true)
-therese = User.create!(first_name: "therese", last_name: "trudeau", email: "therese@email.com", password: "secret", address: "495 Rue Longpre, Sherbrooke, QC J1G 4C4", driver: false)
-jane = User.create!(first_name: "jane", last_name: "johnson", email: "jane@email.com", password: "secret", address: "2080 Rue Andre, Sherbrooke, QC J1H 6G8", driver: true, electric_car: true)
-nicole = User.create!(first_name: "nicole", last_name: "naudin", email: "nicole@email.com", password: "secret", address: "814 Rue Fabien, Sherbrooke, QC J1N 2J8", driver: false)
+seb = User.create!(first_name: "seb", last_name: "fournier", email: "seb@email.com", password: "secret", address: "2810 Rue Beaudry, Sherbrooke, QC J1L 2N6", driver: true, electric_car: true, verified: true)
+therese = User.create!(first_name: "therese", last_name: "trudeau", email: "therese@email.com", password: "secret", address: "495 Rue Longpre, Sherbrooke, QC J1G 4C4", driver: false, verified: true)
+jane = User.create!(first_name: "jane", last_name: "johnson", email: "jane@email.com", password: "secret", address: "2080 Rue Andre, Sherbrooke, QC J1H 6G8", driver: true, electric_car: true, verified: true)
+nicole = User.create!(first_name: "nicole", last_name: "naudin", email: "nicole@email.com", password: "secret", address: "814 Rue Fabien, Sherbrooke, QC J1N 2J8", driver: false, verified: true)
 users << seb
 users << therese
 users << jane
