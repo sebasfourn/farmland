@@ -1,30 +1,48 @@
-<h1><%= @farm.name %></h1>
+<h2><%= @farm.name %></h2>
 <p><%= @farm.description %></p>
 
-<h2>Upcoming trips</h2>
-<ul>
-<% @farm.trips.each do |trip| %>
-<li><%= trip.date %></li>
-<%  end %>
-</ul>
+<h3>Join a car trip</h3>
 
-<h2>Products</h2>
+<div class="carpool-orders-card">
+  <% @farm.trips.each do |trip| %>
+    <h3>
+      <% if trip.date.to_date == Date.today %>
+        <%= distance_of_time_in_words(Time.now, trip.date) %>
+      <% else %>
+        <%= trip.date.strftime('%B %d %l:%M %p') %>
+      <% end %>
+    </h3>
+    <div class="carpool-info">
+      <p><%= trip.user.electric_car ? "Electric" : "Gaz" %> car, <%= trip.seat %> seats available</p>
+      <p>Driver : <%= trip.user.first_name.capitalize %> </p>
+      <%# adding distance in km from farm to current_user %>
+    </div>
+  <%  end %>
+</div>
+
+<h3>Products</h3>
 <ul>
   <% @farm.products.each do |product| %>
-    <li><%= product.name.capitalize.pluralize%>: <%= product.stock %> <%= product.unit %> in stock </li>
+    <li>Product name: <%= product.name %> </li>
+    <li>Product category: <%= product.category %>
+    <li><%= product.unit %></li>
+    <li>In stock: <%= product.stock %></li>
   <% end %>
 </ul>
-<h2>Place an order</h2>
+
 <%= simple_form_for ([@order]) do |f|%>
   <%= f.association :trip, collection: @farm.trips, as: :radio_buttons, label_method: :date%>
   <% @products.where.not(stock: 0).each do |product| %>
     <%= f.simple_fields_for :order_products do |order_product| %>
-    <%= order_product.input :product, input_html: { value: "#{product.name.capitalize} - #{product.price} per #{product.unit}"}, disabled: true%>
-    <%= order_product.input :quantity, input_html: { min:0, max: product.stock }, as: :integer%>
+    <%# order_product.input :product, input_html: { value: "#{product.name.capitalize} - #{product.price} per #{product.unit}"}, disabled: false%>
+    <%= order_product.label product.name %>
+    <%= order_product.input :quantity, input_html: { min:0, max: product.stock, name: "order[order_products][#{product.name}][quantity]" }, as: :integer%>
+    <%= order_product.input :product, input_html: {value: product.id, name: "order[order_products][#{product.name}][product_id]" }, as: :hidden %>
     <% end %>
   <% end %>
   <%= f.button :submit %>
 <%end%>
+
 <div>
 <br>
 </div>

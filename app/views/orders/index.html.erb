@@ -1,27 +1,30 @@
 <h1>My orders</h1>
 
 <% @orders.each do |order| %>
-  <%= link_to order_path(order) do %>
-
-    <div>
-      <%= order.trip.farm.name %>
-      <h4>Products</h4>
-      <% order.order_products.each do |order_product| %>
+  <%= link_to order_path(order), class: "order-card-link" do %>
+    <div class="card mb-4">
+      <h2><%= order.trip.farm.name %> Order</h2>
+      <h3>Products</h3>
+        <% order.order_products.each do |order_product| %>
         <div>
           <%= order_product.quantity %>
           <%= order_product.product.name %>
         </div>
       <% end %>
-      <h4>Carpool</h4>
-      <% if order.trip.date.to_date == Date.today %>
-        <%= distance_of_time_in_words(Time.now, order.trip.date) %>
-      <% else %>
-        <%= order.trip.date.strftime('%B %d %l:%M %p') %>
-      <% end %>
-      <%= "Electric car" if order.trip.user.electric_car %>
-      <%= "#{order.trip.seat} seats available" %>
-      <%= "Driver: #{order.trip.user.first_name.capitalize}" %>
-    </div>
 
+      <h3>Carpool</h3>
+      <div class="carpool-orders-card">
+        <% if order.trip.date.to_date == Date.today %>
+          <%= distance_of_time_in_words(Time.now, order.trip.date) %>
+        <% else %>
+          <%= order.trip.date.strftime('%B %d %l:%M %p') %>
+        <% end %>
+        <div class="carpool-info">
+          <p><%= order.trip.user.electric_car ? "Electric" : "Gaz" %> car, <%= order.trip.seat %> seats available</p>
+          <p> Driver : <%= order.trip.user.first_name.capitalize %></p>
+          <%# adding distance in km from driver to current_user %>
+        </div>
+      </div>
+    </div>
   <% end %>
 <% end %>
