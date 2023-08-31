@@ -83,3 +83,6 @@ end
 # PU added gem to store cloudinary
 gem "dotenv-rails"
 gem "cloudinary"
+
+# PU added gem for svg
+gem 'inline_svg'

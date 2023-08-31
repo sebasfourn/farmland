@@ -37,7 +37,13 @@ li {
 }
 
 
+.app-container {
+  margin-left: 20px;
+  margin-right: 20px;
+  margin-bottom: 80px;
+}
+
 a {
   text-decoration: none !important;
-  color: black;
+  color: $black;
 }
