@@ -1,20 +1,35 @@
-<h1>Hello <%= current_user.first_name.capitalize %> !</h1>
-<%= current_user.address %>
+<div class="name-address-div">
+  <h2>Hello <%= current_user.first_name.capitalize %> !</h2>
+  <strong><p class="small-font"><%= current_user.address.split(",")[0] %></p></strong>
+</div>
 
 <% @farms.each do |farm| %>
-  <div>
-    <%= link_to farm_path(farm) do %>
-      <div class="card">
-        <img src="https://res.cloudinary.com/dpfoq3knh/image/upload/v1692648557/production/v8q0d0r2z3jr5sq5szjj1xvju8wf.jpg" class="card-img-top" alt="...">
-        <div class="card-body">
-          <h5 class="card-title"><%= farm.name %></h5>
-          <p class="card-text"><%= farm.address %></p>
-          <p class="card-text"><%= farm.rating %></p>
-          <p class="card-text"><%= farm.open ? "Open" : "Close" %></p>
-          <%= link_to "favorite", favorite_farm_path(farm), data: { turbo_method: :post } %>
-          <%= link_to "unfavorite", unfavorite_farm_path(farm), data: { turbo_method: :post } %>
+  <%= link_to farm_path(farm) do %>
+    <div class="farm-card">
+      <img src="https://res.cloudinary.com/dpfoq3knh/image/upload/v1692648557/production/v8q0d0r2z3jr5sq5szjj1xvju8wf.jpg" class="farm-card-img" alt="<% farm.name %>">
+      <div class="farm-card-body">
+        <div class="farm-fav-div">
+          <div class="farm-name-div">
+            <% if farm.open %>
+              <i class="fa-solid fa-circle fa-sm open-margin" style="color: #87C29B;"></i>
+            <% else %>
+              <i class="fa-solid fa-circle fa-sm open-margin" style="color: #616161;"></i>
+            <% end %>
+            <h2><%= farm.name %></h2>
+          </div>
+          <i class="fa-regular fa-heart fa-xl" style="color: #121212;"></i>
         </div>
+
+        <p><%= farm.address %></p>
+        <div class="rating-div">
+          <strong><p class="rating-text"><%= farm.rating %></p></strong>
+          <i class="fa-solid fa-star fa-sm" style="color: #2D655E;"></i>
+        </div>
+
+        <%# <%= link_to "favorite", favorite_farm_path(farm), data: { turbo_method: :post } %>
+        <%# <%= link_to "unfavorite", unfavorite_farm_path(farm), data: { turbo_method: :post } %>
+        <%# <i class="fa-solid fa-heart fa-xl" style="color: #E05E42;"></i> %>
       </div>
-    <% end %>
-  </div>
+    </div>
+  <% end %>
 <% end %>
