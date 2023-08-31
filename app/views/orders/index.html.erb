@@ -1,7 +1,7 @@
 <h1>My orders</h1>
 
 <% @orders.each do |order| %>
-  <%= link_to order_path(order) do %>
+  <%= link_to order_path(order), class: "order-card-link" do %>
     <div class="card mb-4">
       <h2><%= order.trip.farm.name %> Order</h2>
       <h3>Products</h3>
@@ -19,13 +19,11 @@
         <% else %>
           <%= order.trip.date.strftime('%B %d %l:%M %p') %>
         <% end %>
-
-      <div class="carpool-info">
-        <p><%= order.trip.user.electric_car ? "Electric" : "Gaz" %> car, <%= order.trip.seat %> seats available</p>
-        <p> Driver : <%= order.trip.user.first_name.capitalize %></p>
-        <%# adding distance in km from driver to current_user %>
-      </div>
-
+        <div class="carpool-info">
+          <p><%= order.trip.user.electric_car ? "Electric" : "Gaz" %> car, <%= order.trip.seat %> seats available</p>
+          <p> Driver : <%= order.trip.user.first_name.capitalize %></p>
+          <%# adding distance in km from driver to current_user %>
+        </div>
       </div>
     </div>
   <% end %>
