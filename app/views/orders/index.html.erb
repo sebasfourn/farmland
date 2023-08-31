@@ -1,10 +1,10 @@
 <h1>My orders</h1>
 
 <% @orders.each do |order| %>
-  <%= link_to order_path(order) do %>
+  <%= link_to order_path(order), class: "order-card-link" do %>
 
-    <div class="card mb-4">
-      <%= order.trip.farm.name %>
+    <div class="order-card">
+      <h2><%= order.trip.farm.name %> order</h2>
       <p>Products:<p>
       <% order.order_products.each do |order_product| %>
         <div>
@@ -20,7 +20,7 @@
         <%= order.trip.date.strftime('%B %d %l:%M %p') %>
       <% end %>
 
-      
+
       <%= "Electric car" if order.trip.user.electric_car %>
       <%= "#{order.trip.seat} seats available" %>
       <%= "Driver: #{order.trip.user.first_name.capitalize}" %>
