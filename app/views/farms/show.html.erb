@@ -1,7 +1,8 @@
+<img class="farm-image" alt="Farm" src="/assets/farm.png" >
 <h2><%= @farm.name %></h2>
 <p><%= @farm.description %></p>
 
-<h3>Join a car trip</h3>
+<h3>Join a carpool</h3>
 
 <div class="carpool-orders-card">
   <% @farm.trips.each do |trip| %>
@@ -22,12 +23,14 @@
 
 <h3>Products</h3>
 <ul>
-  <% @farm.products.each do |product| %>
-    <li>Product name: <%= product.name %> </li>
-    <li>Product category: <%= product.category %>
-    <li><%= product.unit %></li>
-    <li>In stock: <%= product.stock %></li>
-  <% end %>
+  <div class=product-card>
+    <% @farm.products.each do |product| %>
+      <li>Product name: <%= product.name %> </li>
+      <li>Product category: <%= product.category %>
+      <li><%= product.unit %></li>
+      <li>In stock: <%= product.stock %></li>
+    <% end %>
+  </div>
 </ul>
 
 <%= simple_form_for ([@order]) do |f|%>
