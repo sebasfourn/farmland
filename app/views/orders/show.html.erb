@@ -1,0 +1,31 @@
+<h1><%=@farm.name %> Order</h1>
+
+<% @order.id %></p>
+<% @order.trip_id %></p>
+<% @order.user_id %></p>
+
+<h3>Basket Recap</h3>
+<div class="ordered-products">
+  <% @order_products.each do |order_product| %>
+    <div class="ordered-product">
+      <p><strong>Product:</strong><%= order_product.product.name %></p>
+      <p><strong>Quantity:</strong><%= order_product.quantity %></p>
+      <p><strong>Total:</strong><%= order_product.cost %></p>
+    </div>
+  <% end %>
+</div>
+
+<%# TODO: finish carpool recap, basket recap and total price %>
+<h3>Carpool Recap</h3>
+  <strong><p>
+    <% if @order.trip.date.to_date == Date.today %>
+      <%= distance_of_time_in_words(Time.now, @order.trip.date) %>
+    <% else %>
+      <%= @order.trip.date.strftime('%B %d %l:%M %p') %>
+    <% end %>
+  </strong></p>
+  <p><strong>Driver:</strong> <%= @order.trip.user.first_name.capitalize %></p>
+  <p><strong>Seats available:</strong> <%= @order.trip.seat %> seats</p>
+  <p><strong>Chat with driver:</strong> <%= link_to "Chat", trip_path(@order.trip) %></p>
+
+<h4>Meeting point with Laurent</h4>

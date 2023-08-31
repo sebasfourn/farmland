@@ -1,0 +1,20 @@
+<h1>Hello <%= current_user.first_name.capitalize %> !</h1>
+<%= current_user.address %>
+
+<% @farms.each do |farm| %>
+  <div>
+    <%= link_to farm_path(farm) do %>
+      <div class="card">
+        <img src="https://res.cloudinary.com/dpfoq3knh/image/upload/v1692648557/production/v8q0d0r2z3jr5sq5szjj1xvju8wf.jpg" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title"><%= farm.name %></h5>
+          <p class="card-text"><%= farm.address %></p>
+          <p class="card-text"><%= farm.rating %></p>
+          <p class="card-text"><%= farm.open ? "Open" : "Close" %></p>
+          <%= link_to "favorite", favorite_farm_path(farm), data: { turbo_method: :post } %>
+          <%= link_to "unfavorite", unfavorite_farm_path(farm), data: { turbo_method: :post } %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+<% end %>

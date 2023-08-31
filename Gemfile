@@ -53,6 +53,7 @@ gem "devise"
 gem "autoprefixer-rails"
 gem "font-awesome-sass", "~> 6.1"
 gem "simple_form", github: "heartcombo/simple_form"
+gem "acts_as_favoritor"
 
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
@@ -77,3 +78,10 @@ group :test do
   gem "selenium-webdriver"
   gem "webdrivers"
 end
+
+# PU added gem to store cloudinary
+gem "dotenv-rails"
+gem "cloudinary"
+
+# PU added gem for svg
+gem 'inline_svg'

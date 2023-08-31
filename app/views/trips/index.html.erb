@@ -1,0 +1,15 @@
+<h1>Chat history</h1>
+
+<% @trips.each do |trip| %>
+
+  <%= link_to trip_path(trip) do %>
+    <div>
+      <% if trip.messages.any? %>
+        <%= trip.user.first_name %>
+        <%= trip.messages.last.content %>
+        <%= trip.messages.last.created_at %>
+      <% end %>
+    </div>
+  <% end %>
+
+<% end %>
