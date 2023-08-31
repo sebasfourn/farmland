@@ -15,6 +15,7 @@
     <div class="carpool-info">
       <p><%= trip.user.electric_car ? "Electric" : "Gaz" %> car, <%= trip.seat %> seats available</p>
       <p>Driver : <%= trip.user.first_name.capitalize %> </p>
+      <%# adding distance in km from farm to current_user %>
     </div>
   <%  end %>
 </div>

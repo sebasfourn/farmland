@@ -29,6 +29,7 @@
     <p><%= @order.trip.user.electric_car ? "Electric" : "Gaz" %> car, <%= @order.trip.seat %> seats available</p>
     <p>Driver : <%= @order.trip.user.first_name.capitalize %></p>
     <p>Chat with driver: <%= link_to "Chat", trip_path(@order.trip) %></p>
+    <%# adding distance in km from driver to current_user %>
   </div>
 </div>
 
