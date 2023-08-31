@@ -21,8 +21,8 @@
         <% end %>
         <div class="carpool-info">
           <p><%= order.trip.user.electric_car ? "Electric" : "Gaz" %> car, <%= order.trip.seat %> seats available</p>
-          <p> Driver : <%= order.trip.user.first_name.capitalize %></p>
-          <%# adding distance in km from driver to current_user %>
+          <p><%= order.trip.user.distance_to([current_user.latitude, current_user.longitude]).round %> km away from you</p>
+          <p>Driver : <%= order.trip.user.first_name.capitalize %></p>
         </div>
       </div>
     </div>
