@@ -5,7 +5,7 @@
   <%= link_to trip_path(trip) do %>
     <div>
       <% if trip.messages.any? %>
-        <%= trip.user.first_name %>
+        <p>Trip to <%= trip.farm.name %></p>
         <%= trip.messages.last.content %>
         <%= trip.messages.last.created_at %>
       <% end %>
