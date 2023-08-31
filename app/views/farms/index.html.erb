@@ -11,19 +11,19 @@
         <div class="farm-fav-div">
           <div class="farm-name-div">
             <% if farm.open %>
-              <i class="fa-solid fa-circle fa-sm open-margin" style="color: #87C29B;"></i>
+              <i class="fa-solid fa-circle fa-sm open-margin open"></i>
             <% else %>
-              <i class="fa-solid fa-circle fa-sm open-margin" style="color: #616161;"></i>
+              <i class="fa-solid fa-circle fa-sm open-margin close"></i>
             <% end %>
             <h2><%= farm.name %></h2>
           </div>
-          <i class="fa-regular fa-heart fa-xl" style="color: #121212;"></i>
+          <i class="fa-regular fa-heart fa-xl"></i>
         </div>
 
         <p><%= farm.address %></p>
         <div class="rating-div">
           <strong><p class="rating-text"><%= farm.rating %></p></strong>
-          <i class="fa-solid fa-star fa-sm" style="color: #2D655E;"></i>
+          <i class="fa-solid fa-star fa-sm star"></i>
         </div>
 
         <%# <%= link_to "favorite", favorite_farm_path(farm), data: { turbo_method: :post } %>

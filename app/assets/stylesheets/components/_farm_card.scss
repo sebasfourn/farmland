@@ -31,6 +31,14 @@
         .open-margin {
           margin-right: 10px;
         }
+
+        .open {
+          color: $open-green;
+        }
+
+        .close {
+          color: $gray;
+        }
       }
     }
 
@@ -47,6 +55,10 @@
       .rating-text {
         color: $green-main;
         margin-right: 2px;
+      }
+
+      .star {
+        color: $yellow;
       }
     }
   }
