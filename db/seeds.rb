@@ -36,26 +36,26 @@ farms << ferme_d_oree
 farms << sanders_farm
 
 tomato_photo = URI.open("https://th.bing.com/th/id/OIG._o3h2oVb035wj82ZFwSr?pid=ImgGn")
-tomato = Product.new(name: "tomato", category: "vegetable", unit: "kg", stock: 20, farm: ferme_bibeau, price: 5.51)
+tomato = Product.new(name: "tomato", category: "vegetable", unit: "kg", stock: 20, farm: ferme_bibeau, price: 5.51, co2_saved: 0.997891042)
 tomato.photo.attach(io: tomato_photo, filename: 'tomato.jpg', content_type: 'image/jpeg')
 tomato.save!
 
 onion_photo = URI.open("https://th.bing.com/th/id/OIG.7hsSKMRE04pZ273BG4mI?pid=ImgGn")
-onion = Product.new(name: "onion", category: "vegetable", unit: "kg", stock: 40, farm: ferme_d_oree, price: 4.01)
+onion = Product.new(name: "onion", category: "vegetable", unit: "kg", stock: 40, farm: ferme_d_oree, price: 4.01, co2_saved: 0.28091509)
 onion.photo.attach(io: onion_photo, filename: 'onion.jpg', content_type: 'image/jpeg')
 onion.save!
 
-turkey = Product.new(name: "turkey", category: "meat", unit: "kg", stock: 90, farm: sanders_farm, price: 7.25)
+turkey = Product.new(name: "turkey", category: "meat", unit: "kg", stock: 90, farm: sanders_farm, price: 7.25, co2_saved: 2.369843236)
 turkey.save!
 
-carrot = Product.new(name: "carrot", category: "vegetable", unit: "kg", stock: 40, farm: ferme_bibeau, price: 2.63)
+carrot = Product.new(name: "carrot", category: "vegetable", unit: "kg", stock: 40, farm: ferme_bibeau, price: 2.63, co2_saved: 0.258896692)
 carrot.save!
 
-pepper = Product.new(name: "pepper", category: "vegetable", unit: "kg", stock: 70, farm: ferme_d_oree, price: 6.11)
+pepper = Product.new(name: "pepper", category: "vegetable", unit: "kg", stock: 70, farm: ferme_d_oree, price: 6.11, co2_saved: 0.53757996)
 pepper.save!
 
-poultry = Product.new(name: "poultry", category: "meat", unit: "kg", stock: 50, farm: sanders_farm, price: 7.30)
-poultry.save!
+lamb = Product.new(name: "lamb", category: "meat", unit: "kg", stock: 50, farm: sanders_farm, price: 7.30, co2_saved: 2.212007161)
+lamb.save!
 
 trips = []
 
@@ -77,9 +77,9 @@ seb_order.save!
 therese_order = Order.new(trip: trip_one, user: therese)
 therese_order.save!
 
-seb_poultry = OrderProduct.new(quantity: 10, order: seb_order, product: poultry)
-seb_poultry.cost = seb_poultry.quantity * seb_poultry.product.price
-seb_poultry.save!
+seb_lamb = OrderProduct.new(quantity: 10, order: seb_order, product: lamb)
+seb_lamb.cost = seb_lamb.quantity * seb_lamb.product.price
+seb_lamb.save!
 
 seb_pepper = OrderProduct.new(quantity: 4, order: seb_order, product: pepper)
 seb_pepper.cost = seb_pepper.quantity * seb_pepper.product.price
