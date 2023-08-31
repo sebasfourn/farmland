@@ -10,9 +10,21 @@
     <%= javascript_importmap_tags %>
   </head>
 
-  <body><%= render "shared/navbar" %>
-<%= render "shared/flashes" %>
-
-    <%= yield %>
+  <body class="background">
+    <%= render "shared/topbanner" %>
+      <div class= "app-container">
+        <main>
+          <%= yield %>
+        </main>
+      </div>
+    <nav class="navbar">
+      <ul class="nav-icons">
+        <li><a href="#" class="nav-item active"><img src="home.svg" alt="Home"></a></li>
+        <li><a href="#" class="nav-item"><img src="basket.svg" alt="Orders"></a></li>
+        <li><a href="#" class="nav-item"><img src="favorites.svg" alt="Favorites"></a></li>
+        <li><a href="#" class="nav-item"><img src="chat.svg" alt="Chats"></a></li>
+      </ul>
+    </nav>
+    <%= render "shared/navbar" %>
   </body>
 </html>
