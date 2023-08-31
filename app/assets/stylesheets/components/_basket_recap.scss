@@ -16,6 +16,24 @@
       font-weight: bold;
     }
   }
+
+  .carbon-recap {
+    width: 80%;
+    margin: 10px auto;
+    background-color: $green-light;
+    border-radius: 10px;
+    padding: 10px 30px;
+
+    h3 {
+      color: $white;
+      text-align: center;
+    }
+    
+    p{
+      color: $white;
+      text-align: center;
+    }
+  }
 }
 
 .carpool-orders-show-card {

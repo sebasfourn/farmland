@@ -20,6 +20,14 @@
         <%= "#{order_product.quantity}#{order_product.product.unit} of #{order_product.product.category == "meat" ? order_product.product.name : order_product.product.name.pluralize }" %>
       </div>
     <% end %>
+    <div class="carbon-recap">
+    <h3>Well done!</h3>
+    <% carbon_total = 0%>
+    <% @order_products.each do |order_product|%>
+      <% carbon_total += (order_product.quantity * order_product.product.co2_saved) %>
+    <% end %>
+    <p> You saved <%= carbon_total.round(3) %>kg of Carbon Dioxide by shopping with Farmland! <p>
+    </div>
   </div>
 </div>
 
