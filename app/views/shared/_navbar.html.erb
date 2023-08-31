@@ -8,19 +8,19 @@
     </li>
     <li>
       <%= link_to orders_path, class: "nav-icon img" do %>
-        <%= inline_svg_tag "basket.svg" %>
+      <%= current_page?(orders_path) ? inline_svg_tag("basket-selected.svg") : inline_svg_tag("basket.svg")%>
         <span class="nav-links">Orders</span>
       <% end %>
     </li>
     <li>
       <%= link_to favorites_path, class: "nav-icon img" do %>
-        <%= inline_svg_tag "favorites.svg" %>
+        <%= current_page?(favorites_path) ? inline_svg_tag("favorites-selected.svg") : inline_svg_tag("favorites.svg")%>
         <span class="nav-links">Favorites</span>
       <% end %>
     </li>
     <li>
       <%= link_to trips_path, class: "nav-icon img" do %>
-        <%= inline_svg_tag "chat.svg" %>
+        <%= current_page?(trips_path) ? inline_svg_tag("chat-selected.svg") : inline_svg_tag("chat.svg")%>
         <span class="nav-links">Chats</span>
       <% end %>
     </li>
