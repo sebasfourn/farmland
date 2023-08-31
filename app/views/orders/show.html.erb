@@ -4,15 +4,23 @@
 <% @order.trip_id %></p>
 <% @order.user_id %></p>
 
-<h3>Basket Recap</h3>
-<div class="ordered-products">
-  <% @order_products.each do |order_product| %>
-    <div class="ordered-product">
-      <p><strong>Product:</strong><%= order_product.product.name %></p>
-      <p><strong>Quantity:</strong><%= order_product.quantity %></p>
-      <p><strong>Total:</strong><%= order_product.cost %></p>
-    </div>
-  <% end %>
+<div class="basket-recap">
+  <div class="basket-topline">
+    <h3>Basket Recap</h3>
+      <% total = 0%>
+      <% @order_products.each do |order_product|%>
+        <% total += order_product.cost %>
+      <% end %>
+      <div class="total"><span class="light-text">My total:</span>
+       <span class="total-cost"><%= "$#{total}" %></span></div>
+  </div>
+  <div class="ordered-products">
+    <% @order_products.each do |order_product| %>
+      <div class="ordered-product">
+        <%= "#{order_product.quantity}#{order_product.product.unit} of #{order_product.product.category == "meat" ? order_product.product.name : order_product.product.name.pluralize }" %>
+      </div>
+    <% end %>
+  </div>
 </div>
 
 <%# TODO: finish carpool recap, basket recap and total price %>

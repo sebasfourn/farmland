@@ -1,0 +1,19 @@
+.basket-recap {
+
+  margin-bottom: 15px;
+
+  .basket-topline {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+
+    .light-text{
+      color: #616161;
+    }
+
+    .total-cost{
+      color: $green-light;
+      font-weight: bold;
+    }
+  }
+}
