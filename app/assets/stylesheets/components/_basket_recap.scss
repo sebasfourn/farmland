@@ -17,3 +17,38 @@
     }
   }
 }
+
+.carpool-orders-show-card {
+  width: 100%;
+  border-radius: 10px;
+  background-color: $white;
+  color: $gray;
+  border: 1px solid #000000;
+  padding: 10px 15px;
+  box-shadow: 2px 3px #000000;
+  margin-bottom: 15px;
+
+  .carpool-date {
+    color: $black ;
+    margin-bottom: 10px;
+  }
+
+  p {
+    margin-bottom: 0px;
+  }
+
+  .black-text{
+    color: $black ;
+  }
+
+  .driver-chat-button{
+    background-color: $yellow;
+    border-radius: 20px;
+    border: none;
+    padding: 8px 16px;
+
+    p {
+      color: $black;
+    }
+  }
+}

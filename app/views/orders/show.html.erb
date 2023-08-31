@@ -26,7 +26,7 @@
 <%# TODO: finish carpool recap, basket recap and total price %>
 <h3>Carpool Recap</h3>
 <div class="carpool-orders-show-card">
-  <h3>
+  <h3 class="carpool-date">
     <% if @order.trip.date.to_date == Date.today %>
       <%= distance_of_time_in_words(Time.now, @order.trip.date) %>
     <% else %>
@@ -34,13 +34,15 @@
     <% end %>
   </h3>
   <div class="carpool-info">
-    <p><%= @order.trip.user.electric_car ? "Electric" : "Gaz" %> car, <%= @order.trip.seat %> seats available</p>
-    <p><%= @order.trip.user.distance_to([current_user.latitude, current_user.longitude]).round %> km away from you</p>
-    <p>Driver : <%= @order.trip.user.first_name.capitalize %></p>
-    <button>Chat with driver: <%= link_to "Chat", trip_path(@order.trip) %></button>
+    <p><span class="black-text"><%= @order.trip.user.electric_car ? "Electric" : "Gas" %></span> car, <%= @order.trip.seat %> seats available</p>
+    <p><span class="black-text"><%= @order.trip.user.distance_to([current_user.latitude, current_user.longitude]).round %></span> km away from you</p>
+    <p>Driver : <span class="black-text"><%= @order.trip.user.first_name.capitalize %></span></p>
+    <%= link_to trip_path(@order.trip) do %>
+    <button class="driver-chat-button"><small>Message <%= @order.trip.user.first_name.capitalize %></small></button>
+    <% end%>
     <%# adding distance in km from driver to current_user %>
   </div>
 </div>
 
 
-<h4>Meeting point with Laurent</h4>
+<h4>Meeting point with <%= @order.trip.user.first_name.capitalize %></h4>
