@@ -19,6 +19,10 @@
   padding: 0;
 }
 
+body {
+  padding-top: 70px;
+}
+
 h3 {
   font-family: $subtitles-font;
 }
@@ -36,8 +40,13 @@ li {
   background-color: $beige-background;
 }
 
+.app-container {
+  margin-left: 20px;
+  margin-right: 20px;
+  margin-bottom: 80px;
+}
 
 a {
   text-decoration: none !important;
-  color: black;
+  color: $black;
 }

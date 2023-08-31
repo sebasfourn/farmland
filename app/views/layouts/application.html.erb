@@ -12,7 +12,11 @@
 
   <body class="background">
     <%= render "shared/topbanner" %>
-    <%= yield %>
+      <div class= "app-container">
+        <main>
+          <%= yield %>
+        </main>
+      </div>
     <%= render "shared/navbar" %>
   </body>
 </html>
