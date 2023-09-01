@@ -10,15 +10,13 @@ class OrdersController < ApplicationController
     @farm = @order.trip.farm
   end
 
-  private
-
   def create
     @order = Order.new(order_params)
     @order.user = current_user
     if @order.save
-
       params["order"]["order_products"].each_value do |order_product|
           new_order_product = OrderProduct.new(quantity: order_product["quantity"], product_id: order_product["product_id"])
+          new_order_product.cost = (new_order_product.product.price*new_order_product.quantity)
           new_order_product.order = @order
           # new_order_product.product_id = hash["product_id"]
           # new_order_product.quantity = hash["quantity"]
