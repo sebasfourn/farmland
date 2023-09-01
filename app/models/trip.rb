@@ -5,6 +5,6 @@ class Trip < ApplicationRecord
   has_many :messages
 
   def label_text
-    return "#{self.date.strftime('%B %d %l:%M %p')}, Pickup point:  #{self.address} "
+    return "#{self.date.strftime('%B %d %l:%M %p')} || Pickup point:  #{self.address} || #{seat} #{'seat'.pluralize(seat)}."
   end
 end
