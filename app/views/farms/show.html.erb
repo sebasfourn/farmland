@@ -33,13 +33,19 @@
   </div>
 </ul>
 
-<%= simple_form_for ([@order]) do |f|%>
-  <%= f.association :trip, collection: @farm.trips, as: :radio_buttons, label_method: :date%>
+<div class="farm-order-radio-buttons">
+  <%= simple_form_for ([@order]) do |f|%>
+  <div class="radio-button-text">
+  <%= f.association :trip, collection: @farm.trips, as: :radio_buttons, label_method: :label_text%>
+
+  </div>
+</div>
   <% @products.where.not(stock: 0).each do |product| %>
     <%= f.simple_fields_for :order_products do |order_product| %>
     <%# order_product.input :product, input_html: { value: "#{product.name.capitalize} - #{product.price} per #{product.unit}"}, disabled: false%>
     <%= order_product.label product.name %>
     <div class="product-carbon-savings">
+    <p><%= product.stock %> available </p>
     <p><%= product.co2_saved >= 1 ? "#{product.co2_saved.round(3)} kg" : "#{(product.co2_saved * 1000).round(0)}g" %> of CO2 saved/kg compared to the stores!</p>
     </div>
     <%= order_product.input :quantity, label: "Quantity (#{product.unit})", input_html: { min:0, max: product.stock, name: "order[order_products][#{product.name}][quantity]" }, as: :integer%>
