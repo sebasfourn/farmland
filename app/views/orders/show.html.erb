@@ -48,9 +48,17 @@
     <%= link_to trip_path(@order.trip) do %>
     <button class="driver-chat-button"><small>Message <%= @order.trip.user.first_name.capitalize %></small></button>
     <% end%>
-    <%# adding distance in km from driver to current_user %>
   </div>
 </div>
 
 
-<h4>Meeting point with <%= @order.trip.user.first_name.capitalize %></h4>
+<h3>Meeting point with <%= @order.trip.user.first_name.capitalize %></h3>
+<div class="map-container">
+  <div
+    style="width: 100%; height: 150px; border-radius: 20px;"
+    data-controller="map"
+    data-map-markers-value="<%= @markers.to_json %>"
+    data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
+  </div>
+  <button class="gmap-redirection"><%= link_to "Open on google maps", "https://www.google.com/maps/search/?api=1&query=#{@order.trip.user.latitude},#{@order.trip.user.longitude}" %></button>
+</div>
