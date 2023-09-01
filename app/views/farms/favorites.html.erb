@@ -1,19 +1,31 @@
-<h1>Favorite farms</h1>
+<div class="name-address-div">
+  <h2>My favorites</h2>
+</div>
 
 <% @farms.each do |farm| %>
-  <div>
+  <div class="farm-card" data-favorite-target="favorites">
     <%= link_to farm_path(farm) do %>
-      <div class="card">
-        <img src="https://res.cloudinary.com/dpfoq3knh/image/upload/v1692648557/production/v8q0d0r2z3jr5sq5szjj1xvju8wf.jpg" class="card-img-top" alt="...">
-        <div class="card-body">
-          <h5 class="card-title"><%= farm.name %></h5>
-          <p class="card-text"><%= farm.address %></p>
-          <p class="card-text"><%= farm.rating %></p>
-          <p class="card-text"><%= farm.open ? "Open" : "Close" %></p>
-          <%= link_to "favorite", favorite_farm_path(farm), data: { turbo_method: :post } %>
-          <%= link_to "unfavorite", unfavorite_farm_path(farm), data: { turbo_method: :post } %>
-        </div>
-      </div>
+      <img src="https://res.cloudinary.com/dpfoq3knh/image/upload/v1692648557/production/v8q0d0r2z3jr5sq5szjj1xvju8wf.jpg" class="farm-card-img-fav" alt="<% farm.name %>">
     <% end %>
+
+    <div class="farm-card-body" data-controller="favorite">
+      <div class="farm-fav-div">
+        <div class="farm-name-div">
+          <% if farm.open %>
+            <i class="fa-solid fa-circle fa-sm open-margin open"></i>
+          <% else %>
+            <i class="fa-solid fa-circle fa-sm open-margin close"></i>
+          <% end %>
+          <h2><%= farm.name %></h2>
+        </div>
+        <%= render "heart", farm: farm %>
+      </div>
+
+      <p><%= farm.address %></p>
+      <div class="rating-div">
+        <strong><p class="rating-text"><%= farm.rating %></p></strong>
+        <i class="fa-solid fa-star fa-sm star"></i>
+      </div>
+    </div>
   </div>
 <% end %>

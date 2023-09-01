@@ -1,7 +1,7 @@
 <div data-favorite-target="heart">
   <% if farm.favorited_by?(current_user) %>
     <%= link_to unfavorite_farm_path(farm), data: { turbo_method: :post, favorite_target: "unfavorite" } do %>
-      <i class="fa-solid fa-heart fa-xl heart" data-action="click->favorite#unfavorite"></i>
+      <i class="fa-solid fa-heart fa-xl heart" data-action="click->favorite#unfavorite" data-action="click->favorite#favorites"></i>
     <% end %>
   <% else %>
     <%= link_to favorite_farm_path(farm), data: { turbo_method: :post, favorite_target: "favorite" } do %>
