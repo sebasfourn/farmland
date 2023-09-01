@@ -18,8 +18,8 @@
             You: <%= trip.messages.last.content %>
           </div>
         </div>
+        <span class="timestamp"><%= trip.messages.last.created_at.strftime('%l:%M %p') %></span>
       <% end %>
-      <span class="timestamp"><%= trip.messages.last.created_at.strftime('%l:%M %p') %></span>
     </div>
   <% end %>
 <% end %>
