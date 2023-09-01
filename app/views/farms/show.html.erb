@@ -4,8 +4,8 @@
 
 <h3>Join a carpool</h3>
 
-<div class="carpool-orders-card">
-  <% @farm.trips.each do |trip| %>
+<% @farm.trips.each do |trip| %>
+  <div class="carpool-orders-card">
     <h3>
       <% if trip.date.to_date == Date.today %>
         <%= distance_of_time_in_words(Time.now, trip.date) %>
@@ -19,8 +19,8 @@
       <p>Driver : <span class="light-text"><%= trip.user.first_name.capitalize %></span> </p>
       <%# adding distance in km from farm to current_user %>
     </div>
-  <%  end %>
-</div>
+  </div>
+<%  end %>
 
 <h3>Products</h3>
 <ul>
