@@ -33,8 +33,10 @@
   </div>
 </ul>
 
-<%= simple_form_for ([@order]) do |f|%>
-  <%= f.association :trip, collection: @farm.trips, as: :radio_buttons, label_method: :date%>
+<div class="farm-order-radio-buttons">
+  <%= simple_form_for ([@order]) do |f|%>
+    <%= f.association :trip, collection: @farm.trips, as: :radio_buttons, label_method: :date%>
+</div>
   <% @products.where.not(stock: 0).each do |product| %>
     <%= f.simple_fields_for :order_products do |order_product| %>
     <%# order_product.input :product, input_html: { value: "#{product.name.capitalize} - #{product.price} per #{product.unit}"}, disabled: false%>
