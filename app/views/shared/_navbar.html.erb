@@ -3,25 +3,25 @@
     <li>
       <%= link_to root_path, class: "nav-icon img" do %>
         <%= current_page?(root_path) ? inline_svg_tag("home-selected.svg") : inline_svg_tag("home.svg") %>
-        <span class="nav-links">Home</span>
+          <span class="nav-links <%= "current-page" if current_page?(root_path) %>">Home</span>
       <% end %>
     </li>
     <li>
       <%= link_to orders_path, class: "nav-icon img" do %>
-      <%= current_page?(orders_path) ? inline_svg_tag("basket-selected.svg") : inline_svg_tag("basket.svg")%>
-        <span class="nav-links">Orders</span>
+        <%= current_page?(orders_path) ? inline_svg_tag("basket-selected.svg") : inline_svg_tag("basket.svg")%>
+        <span class="nav-links <%= "current-page" if current_page?(orders_path) %>">Orders</span>
       <% end %>
     </li>
     <li>
       <%= link_to favorites_path, class: "nav-icon img" do %>
         <%= current_page?(favorites_path) ? inline_svg_tag("favorites-selected.svg") : inline_svg_tag("favorites.svg")%>
-        <span class="nav-links">Favorites</span>
+        <span class="nav-links <%= "current-page" if current_page?(favorites_path) %>">Favorites</span>
       <% end %>
     </li>
     <li>
       <%= link_to trips_path, class: "nav-icon img" do %>
         <%= current_page?(trips_path) ? inline_svg_tag("chat-selected.svg") : inline_svg_tag("chat.svg")%>
-        <span class="nav-links">Chats</span>
+        <span class="nav-links <%= "current-page" if current_page?(trips_path) %>">chats</span>
       <% end %>
     </li>
   </ul>

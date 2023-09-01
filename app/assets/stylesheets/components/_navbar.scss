@@ -21,7 +21,7 @@
   }
   & a:active,
   a:visited {
-    color: $green-main !important;
+    color: $gray !important;
   }
 }
 
@@ -42,6 +42,9 @@
   font-size: 11px;
   text-align: center;
   text-decoration: none;
+  &.current-page {
+    color: $green-main;
+  }
 }
 
 .nav-icon img {
