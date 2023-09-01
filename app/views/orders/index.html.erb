@@ -1,4 +1,11 @@
-<h1>My orders</h1>
+<div class="title-div">
+  <%= link_to url_for(:back) do %>
+    <div class="arrow-div">
+      <i class="fa-solid fa-chevron-left fa-lg arrow"></i>
+      <h2>My orders</h2>
+    </div>
+  <% end %>
+</div>
 
 <% @orders.each do |order| %>
   <%= link_to order_path(order), class: "order-card-link" do %>

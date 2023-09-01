@@ -1,4 +1,11 @@
-<h1>You're chatting with <%= @trip.user.first_name.capitalize %></h1>
+<div class="title-div">
+  <%= link_to url_for(:back) do %>
+    <div class="arrow-div">
+      <i class="fa-solid fa-chevron-left fa-lg arrow"></i>
+      <h2>You're chatting with <%= @trip.user.first_name %></h2>
+    </div>
+  <% end %>
+</div>
 
 <div class="chatroom" data-controller="chatroom-subscription" data-chatroom-subscription-chatroom-id-value="<%= @trip.id %>">
   <div class="messages" data-chatroom-subscription-target="messages">

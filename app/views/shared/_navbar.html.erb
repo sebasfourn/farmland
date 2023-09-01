@@ -2,8 +2,8 @@
   <ul class="nav-icons">
     <li>
       <%= link_to farms_path, class: "nav-icon img" do %>
-        <%= current_page?(root_path) ? inline_svg_tag("home-selected.svg") : inline_svg_tag("home.svg") %>
-          <span class="nav-links <%= "current-page" if current_page?(root_path) %>">Home</span>
+        <%= current_page?(farms_path) ? inline_svg_tag("home-selected.svg") : inline_svg_tag("home.svg") %>
+          <span class="nav-links <%= "current-page" if current_page?(farms_path) %>">Home</span>
       <% end %>
     </li>
     <li>

@@ -1,4 +1,11 @@
-<h1>Chat history</h1>
+<div class="title-div">
+  <%= link_to url_for(:back) do %>
+    <div class="arrow-div">
+      <i class="fa-solid fa-chevron-left fa-lg arrow"></i>
+      <h2>Chat history</h2>
+    </div>
+  <% end %>
+</div>
 
 <% @trips.each do |trip| %>
   <%= link_to trip_path(trip) do %>
