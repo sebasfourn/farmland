@@ -12,6 +12,11 @@
     padding-top: 10px;
     padding-bottom: 10px;
 
+    .leaf {
+      color: $green-light;
+      padding-right: 10px;
+    }
+
     .farm-fav-div {
       display: flex;
       justify-content: space-between;
