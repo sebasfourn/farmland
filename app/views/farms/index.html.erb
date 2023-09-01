@@ -22,7 +22,14 @@
         <%= render "favorite", farm: farm %>
       </div>
 
-      <p><%= farm.address %></p>
+      <p>
+        <i class="fa-solid fa-leaf leaf"></i>
+        <span class="black-text"><%= farm.distance_to([current_user.latitude, current_user.longitude]).round %></span> km ●
+        <% time = (farm.distance_to([current_user.latitude, current_user.longitude]).round * 60) / 50 %>
+        <% hours, minutes = time.divmod(60)  %>
+        <%= hours > 0 ? "#{hours} hours" : "" %>
+        <%= minutes %> min
+      </p>
       <div class="rating-div">
         <strong><p class="rating-text"><%= farm.rating %></p></strong>
         <i class="fa-solid fa-star fa-sm star"></i>

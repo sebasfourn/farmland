@@ -10,7 +10,6 @@ class OrdersController < ApplicationController
     @farm = @order.trip.farm
 
     @driver = @order.trip.user
-    # geocode instead of geocoded to make it work on show page for only 1 driver
     @markers =
       [{
         lat: @driver.latitude,
