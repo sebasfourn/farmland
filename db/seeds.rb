@@ -29,7 +29,7 @@ farms = []
 ferme_bibeau = Farm.create!(name: "Ferme Bibeau", address: "3336 Chemin Bibeau
   Sherbrooke, QC", open: true, rating: 4.5, description: "Ferme Bibeau covers 95 hectares, of which 65 are cultivated and 30 are wooded. There is also an elderberry orchard with an area of one hectare. Within the 65 cultivated hectares, measures to protect biodiversity have been put in place, particularly with regard to the protection of rural birds. The 30 hectares of forest are intended for the integral conservation of the natural environment.")
 ferme_d_oree = Farm.create!(name: "Ferme d'Orée", address: "273, Chemin Beaver ridge
-  Newport, QC", open: true, rating: 3.5, description: "We produce grass-fed beef, pastured pork, lamb, eggs, and unpasteurized honey and sell directly to the consumer and through specialized butchers.")
+  Newport, QC", open: false, rating: 3.5, description: "We produce grass-fed beef, pastured pork, lamb, eggs, and unpasteurized honey and sell directly to the consumer and through specialized butchers.")
 sanders_farm = Farm.create!(name: "Sanders Farm", address: "475 Hyatt's Mills, Compton, QC", open: true, rating: 4.5, description: "Sanders farm is a family-run, organic fruit and vegetable farm, nestled in the beautiful rolling hills of Compton, in Quebec’s Eastern Townships since 1974.")
 
 farms << ferme_bibeau
@@ -71,6 +71,10 @@ trips << trip_two
 trip_three = Trip.new(date: DateTime.new(2023,9,15,12,0,0), seat: 5, user: users[2], farm: farms[2], address: "3050 Boulevard De Portland, Sherbrooke, Quebec J1L 1K1")
 trip_three.save!
 trips << trip_three
+
+trip_four = Trip.new(date: DateTime.new(2023,9,16,17,0,0), seat: 3, user: users[2], farm: farms[0], address: "Université De Sherbrooke, Quai D, Sherbrooke, QC J1K 2R1")
+trip_four.save!
+trips << trip_four
 
 seb_order = Order.new(trip: trip_one, user: seb)
 seb_order.save!

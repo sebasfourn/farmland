@@ -1,12 +1,13 @@
 #order-card-link{
   color: #ff0 !important;
+
 }
 
 .order-card {
   background-color: #FFFFFF;
   border-radius: 10px;
   margin: 15px auto;
-  width: 80%;
+  width: 100%;
   padding: 15px 30px;
 
   h3{
@@ -17,7 +18,7 @@
 .carpool-orders-card {
   width: 100%;
   border-radius: 10px;
-  background-color: #2D655E;
+  background-color: $green-main;
   color: #F4F2F1;
   border: 1px solid #000000;
   padding: 10px 15px;

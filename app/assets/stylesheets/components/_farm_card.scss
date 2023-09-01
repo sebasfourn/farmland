@@ -1,0 +1,63 @@
+.farm-card {
+  margin-bottom: 30px;
+
+  .farm-card-img {
+    width: 100%;
+    height: 150px;
+    border-radius: 10px;
+    object-fit: cover;
+  }
+
+  .farm-card-body {
+    padding-top: 10px;
+    padding-bottom: 10px;
+
+    .farm-fav-div {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 7px;
+
+      .farm-name-div {
+        display: flex;
+        align-items: center;
+
+        h2 {
+          margin-bottom: 0px;
+        }
+
+        .open-margin {
+          margin-right: 10px;
+        }
+
+        .open {
+          color: $open-green;
+        }
+
+        .close {
+          color: $gray;
+        }
+      }
+    }
+
+    p {
+      font-size: 14px;
+      margin-bottom: 0px;
+    }
+
+    .rating-div {
+      display: flex;
+      align-items: center;
+      margin-top: 7px;
+
+      .rating-text {
+        color: $green-main;
+        margin-right: 2px;
+      }
+
+      .star {
+        color: $yellow;
+      }
+    }
+  }
+}
