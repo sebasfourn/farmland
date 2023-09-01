@@ -1,17 +1,18 @@
 <h1>Chat history</h1>
 
 <% @trips.each do |trip| %>
-
   <%= link_to trip_path(trip) do %>
     <div class="chat-box">
-    <img src="assets/driver.png">
+      <img src="assets/driver.png" class="driver-img">
       <% if trip.messages.any? %>
-        <p class="trip-info">Trip to <%= trip.farm.name %></p>
+        <div class="trip-info-wrapper">
+          <p class="trip-info">Trip to <%= trip.farm.name %></p>
           <div class="last-message">
             You: <%= trip.messages.last.content %>
-              <span class="timestamp"><%= trip.messages.last.created_at %></span>
           </div>
+        </div>
       <% end %>
+      <span class="timestamp"><%= trip.messages.last.created_at.strftime('%l:%M %p') %></span>
     </div>
   <% end %>
 <% end %>
