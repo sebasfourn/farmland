@@ -1,4 +1,6 @@
 class FarmsController < ApplicationController
+  skip_before_action :verify_authenticity_token, only: %i[favorite unfavorite]
+
   def index
     @farms = Farm.all
   end
@@ -10,13 +12,21 @@ class FarmsController < ApplicationController
   end
 
   def favorite
-    farm = Farm.find(params[:id])
-    current_user.favorite(farm)
+    @farm = Farm.find(params[:id])
+    current_user.favorite(@farm)
+    respond_to do |format|
+      format.text { render partial: "favorite", locals: { farm: @farm }, formats: [:html] }
+      format.html { redirect_to farms_path }
+    end
   end
 
   def unfavorite
-    farm = Farm.find(params[:id])
-    current_user.unfavorite(farm)
+    @farm = Farm.find(params[:id])
+    current_user.unfavorite(@farm)
+    respond_to do |format|
+      format.text { render partial: "favorite", locals: { farm: @farm }, formats: [:html] }
+      format.html { redirect_to farms_path }
+    end
   end
 
   def favorites
