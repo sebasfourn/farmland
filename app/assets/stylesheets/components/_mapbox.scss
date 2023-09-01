@@ -1,0 +1,19 @@
+.map-container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+.gmap-redirection {
+  z-index: 888;
+  position: relative;
+  top: -50px;
+  right: 10px;
+  width: 50%;
+  font-size: 11px;
+  border: 1px solid $black;
+  background-color: $beige-background;
+  color: $black;
+  padding: 10px 0;
+  border-radius: 50px;
+}
