@@ -1,4 +1,4 @@
-<h1>You're chatting with <%= @trip.user.first_name %></h1>
+<h1>You're chatting with <%= @trip.user.first_name.capitalize %></h1>
 
 <div class="chatroom" data-controller="chatroom-subscription" data-chatroom-subscription-chatroom-id-value="<%= @trip.id %>">
   <div class="messages" data-chatroom-subscription-target="messages">
