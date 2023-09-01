@@ -1,0 +1,73 @@
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  margin: 0;
+}
+
+.farmland-title {
+  text-align: center;
+  margin-bottom: 50px;
+  margin-top: 30px;
+  & h1 {
+    font-family: "Eiko";
+    font-size: 40px;
+    font-weight: bold;
+    color: #2d655e;
+  }
+}
+
+.welcome-text {
+  text-align: left;
+  margin-bottom: 20px;
+  margin-top: 20px;
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+.welcome-description {
+  text-align: left;
+  margin-bottom: 20px;
+  margin-top: 20px;
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+.button-center {
+  text-align: center;
+  margin-bottom: 20px;
+  margin-top: 20px;
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+.landing-button {
+  display: inline-block;
+  background-color: #2d655e;
+  font-size: 16px;
+  border: none;
+  border-radius: 100px;
+  padding: 0px;
+  padding-left: 20px;
+  padding-right: 20px;
+  text-align: center;
+  text-decoration: none;
+  font-weight: bold;
+  cursor: pointer;
+  display: inline-flex;
+  transition: background-color 0.4s ease;
+  align-items: center;
+  box-sizing: border-box;
+  justify-content: center;
+  line-height: 20px;
+  max-width: 480px;
+  min-height: 40px;
+  min-width: 0px;
+  overflow: hidden;
+}
+
+.landing-button:hover {
+  background-color: #44998f;
+}
