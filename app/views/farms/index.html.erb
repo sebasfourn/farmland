@@ -19,7 +19,7 @@
           <% end %>
           <h2><%= farm.name %></h2>
         </div>
-        <%= render "heart", farm: farm %>
+        <%= render "favorite", farm: farm %>
       </div>
 
       <p><%= farm.address %></p>
@@ -28,5 +28,6 @@
         <i class="fa-solid fa-star fa-sm star"></i>
       </div>
     </div>
+
   </div>
 <% end %>

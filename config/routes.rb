@@ -11,7 +11,7 @@ Rails.application.routes.draw do
   end
 
   resources :orders, only: %i[index show create update] do
-    resources :order_products, only: %i[create]
+      resources :order_products, only: %i[create]
   end
   resources :trips, only: %i[index show create update] do
     resources :messages, only: :create

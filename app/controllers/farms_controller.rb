@@ -15,7 +15,7 @@ class FarmsController < ApplicationController
     @farm = Farm.find(params[:id])
     current_user.favorite(@farm)
     respond_to do |format|
-      format.text { render partial: "heart", locals: { farm: @farm }, formats: [:html] }
+      format.text { render partial: "favorite", locals: { farm: @farm }, formats: [:html] }
       format.html { redirect_to farms_path }
     end
   end
@@ -24,7 +24,7 @@ class FarmsController < ApplicationController
     @farm = Farm.find(params[:id])
     current_user.unfavorite(@farm)
     respond_to do |format|
-      format.text { render partial: "heart", locals: { farm: @farm }, formats: [:html] }
+      format.text { render partial: "favorite", locals: { farm: @farm }, formats: [:html] }
       format.html { redirect_to farms_path }
     end
   end
