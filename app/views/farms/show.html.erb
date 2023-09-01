@@ -1,5 +1,7 @@
 <img class="farm-image" alt="Farm" src="/assets/farm.png" >
-
+<div>
+<br>
+</div>
 <div class="title-div">
   <%= link_to url_for(:back) do %>
     <div class="arrow-div">
@@ -11,36 +13,8 @@
 
 <p><%= @farm.description %></p>
 
+
 <h3>Join a carpool</h3>
-
-<% @farm.trips.each do |trip| %>
-  <div class="carpool-orders-card">
-    <h3>
-      <% if trip.date.to_date == Date.today %>
-        <%= distance_of_time_in_words(Time.now, trip.date) %>
-      <% else %>
-        <%= trip.date.strftime('%B %d %l:%M %p') %>
-      <% end %>
-    </h3>
-    <div class="carpool-info">
-      <p><span class="light-text"><%= trip.user.electric_car ? "Electric" : "Gaz" %></span> car, <%= trip.seat %> seats available</p>
-      <p><span class="light-text"><%= trip.user.distance_to([current_user.latitude, current_user.longitude]).round %></span> km away from you</p>
-      <p>Driver : <span class="light-text"><%= trip.user.first_name.capitalize %></span> </p>
-      <%# adding distance in km from farm to current_user %>
-    </div>
-  </div>
-<%  end %>
-
-<h3>Products</h3>
-<ul>
-  <div class=product-card>
-    <% @farm.products.each do |product| %>
-      <li>Product name: <%= product.category == "meat" ? product.name.capitalize : product.name.capitalize.pluralize %> </li>
-      <li><%= product.unit %></li>
-      <li>In stock: <%= product.stock %></li>
-    <% end %>
-  </div>
-</ul>
 
   <%= simple_form_for ([@order]) do |f|%>
   <div class="radio-button-text farm-order-radio-buttons">
@@ -49,8 +23,9 @@
 <% @products.where.not(stock: 0).each do |product| %>
   <%= f.simple_fields_for :order_products do |order_product| %>
   <%# order_product.input :product, input_html: { value: "#{product.name.capitalize} - #{product.price} per #{product.unit}"}, disabled: false%>
-    <%= order_product.label product.name %>
+    <strong><%= order_product.label product.name %></strong>
   <div class="product-carbon-savings">
+    <p><%= product.price %>/ <%= product.unit %></p>
     <p><%= product.stock %> available </p>
     <p><%= product.co2_saved >= 1 ? "#{product.co2_saved.round(3)} kg" : "#{(product.co2_saved * 1000).round(0)}g" %> of CO2 saved/kg compared to the stores!</p>
   </div>
