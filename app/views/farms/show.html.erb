@@ -14,8 +14,9 @@
       <% end %>
     </h3>
     <div class="carpool-info">
-      <p><%= trip.user.electric_car ? "Electric" : "Gaz" %> car, <%= trip.seat %> seats available</p>
-      <p>Driver : <%= trip.user.first_name.capitalize %> </p>
+      <p><span class="light-text"><%= trip.user.electric_car ? "Electric" : "Gaz" %></span> car, <%= trip.seat %> seats available</p>
+      <p><span class="light-text"><%= trip.user.distance_to([current_user.latitude, current_user.longitude]).round %></span> km away from you</p>
+      <p>Driver : <span class="light-text"><%= trip.user.first_name.capitalize %></span> </p>
       <%# adding distance in km from farm to current_user %>
     </div>
   <%  end %>
