@@ -1,5 +1,10 @@
-<div class="name-address-div">
-  <h2>Favorite farms</h2>
+<div class="title-div">
+  <%= link_to url_for(:back) do %>
+    <div class="arrow-div">
+      <i class="fa-solid fa-chevron-left fa-lg arrow"></i>
+      <h2>Favorite farms</h2>
+    </div>
+  <% end %>
 </div>
 
 <% @farms.each do |farm| %>

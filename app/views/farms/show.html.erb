@@ -1,5 +1,14 @@
 <img class="farm-image" alt="Farm" src="/assets/farm.png" >
-<h2><%= @farm.name %></h2>
+
+<div class="title-div">
+  <%= link_to url_for(:back) do %>
+    <div class="arrow-div">
+      <i class="fa-solid fa-chevron-left fa-lg arrow"></i>
+      <h2><%= @farm.name %></h2>
+    </div>
+  <% end %>
+</div>
+
 <p><%= @farm.description %></p>
 
 <h3>Join a carpool</h3>
