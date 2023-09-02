@@ -5,3 +5,39 @@
   height: 100%;
 }
 
+.carpool-buttons-container{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  width: auto;
+  height: 180px;
+
+  legend {
+    display: none;
+  }
+}
+
+.farm-product-field {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: $white;
+  border-radius: 10px;
+}
+
+.farm-product-label {
+  padding: 10px 5px;
+  width: 60%;
+    p{
+      padding: 0px;
+      margin: 0px;
+    }
+}
+
+.carbon-savings {
+  display: block;
+  padding: 10px 5px;
+  font-size: small;
+  text-align: center;
+}
