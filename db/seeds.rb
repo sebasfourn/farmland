@@ -76,24 +76,24 @@ trip_four = Trip.new(date: DateTime.new(2023,9,16,17,0,0), seat: 3, user: users[
 trip_four.save!
 trips << trip_four
 
-seb_order = Order.new(trip: trip_one, user: seb)
-seb_order.save!
+# seb_order = Order.new(trip: trip_one, user: seb)
+# seb_order.save!
 
-therese_order = Order.new(trip: trip_one, user: therese)
-therese_order.save!
+# therese_order = Order.new(trip: trip_one, user: therese)
+# therese_order.save!
 
-seb_lamb = OrderProduct.new(quantity: 10, order: seb_order, product: lamb)
-seb_lamb.cost = seb_lamb.quantity * seb_lamb.product.price
-seb_lamb.save!
+# # seb_lamb = OrderProduct.new(quantity: 10, order: seb_order, product: lamb)
+# # seb_lamb.cost = seb_lamb.quantity * seb_lamb.product.price
+# # seb_lamb.save!
 
-seb_pepper = OrderProduct.new(quantity: 4, order: seb_order, product: pepper)
-seb_pepper.cost = seb_pepper.quantity * seb_pepper.product.price
-seb_pepper.save!
+# # seb_pepper = OrderProduct.new(quantity: 4, order: seb_order, product: pepper)
+# # seb_pepper.cost = seb_pepper.quantity * seb_pepper.product.price
+# # seb_pepper.save!
 
-therese_turkey = OrderProduct.new(quantity: 12, order: therese_order, product: turkey)
-therese_turkey.cost = therese_turkey.quantity * therese_turkey.product.price
-therese_turkey.save!
+# therese_turkey = OrderProduct.new(quantity: 12, order: therese_order, product: turkey)
+# therese_turkey.cost = therese_turkey.quantity * therese_turkey.product.price
+# therese_turkey.save!
 
-therese_carrot = OrderProduct.new(quantity: 3, order: therese_order, product: carrot)
-therese_carrot.cost = therese_carrot.quantity * therese_carrot.product.price
-therese_carrot.save!
+# therese_carrot = OrderProduct.new(quantity: 3, order: therese_order, product: carrot)
+# therese_carrot.cost = therese_carrot.quantity * therese_carrot.product.price
+# therese_carrot.save!
