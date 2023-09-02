@@ -1,5 +1,8 @@
 .farm-order-radio-buttons{
 
+
+  flex: 0 0 300px;
+
   input[type="radio"] {
     display:none;
   }
@@ -11,22 +14,16 @@
     // margin-top:10px;
     // display:block;
     // position:relative;
-    width: 100%;
     border-radius: 10px;
     background-color: $green-main;
     color: #F4F2F1;
     border: 1px solid #000000;
     padding: 10px 15px;
     box-shadow: 2px 3px #000000;
-    margin-top: 10px;
-  }
-
-  label:hover {
-    cursor:pointer;
-    background-color:#EEE;
+    margin: 10px;
   }
 
   input[type="radio"]:checked + label {
-    background-color:#DDD;
+    background-color: $green-light;
   }
 }

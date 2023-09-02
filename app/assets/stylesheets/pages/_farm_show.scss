@@ -5,3 +5,15 @@
   height: 100%;
 }
 
+.carpool-buttons-container{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  width: auto;
+  height: 180px;
+
+  legend {
+    display: none;
+  }
+}
