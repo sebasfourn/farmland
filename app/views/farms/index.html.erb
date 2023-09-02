@@ -6,7 +6,7 @@
 <% @farms.each do |farm| %>
   <div class="farm-card">
     <%= link_to farm_path(farm) do %>
-      <img src="https://res.cloudinary.com/dpfoq3knh/image/upload/v1692648557/production/v8q0d0r2z3jr5sq5szjj1xvju8wf.jpg" class="farm-card-img" alt="<% farm.name %>">
+      <%= image_tag "farm.png", class: "farm-card-img", alt: farm.name %>
     <% end %>
 
     <div class="farm-card-body" data-controller="favorite">

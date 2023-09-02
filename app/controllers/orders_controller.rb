@@ -32,7 +32,7 @@ class OrdersController < ApplicationController
           new_order_product.save
         end
       end
-      redirect_to orders_path
+      redirect_to order_path(@order)
     else
       # redirect_to farm_path(params["farm"])
       @farm = Farm.find(params["farm"])
