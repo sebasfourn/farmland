@@ -12,21 +12,21 @@
     <div class="order-card">
       <h2><%= order.trip.farm.name %> Order</h2>
       <h3>Products</h3>
-        <% order.order_products.each do |order_product| %>
-          <div>
-            <%= "#{order_product.quantity}#{order_product.product.unit}"%>
-            <%= order_product.product.category == "meat" ? order_product.product.name : order_product.product.name.pluralize %>
-          </div>
+      <% order.order_products.each do |order_product| %>
+        <div>
+          <%= "#{order_product.quantity}#{order_product.product.unit}"%>
+          <%= order_product.product.category == "meat" ? order_product.product.name : order_product.product.name.pluralize %>
+        </div>
       <% end %>
 
       <h3>Carpool</h3>
       <div class="carpool-orders-card">
-      <span class="carpool-date">
-        <% if order.trip.date.to_date == Date.today %>
-          <%= distance_of_time_in_words(Time.now, order.trip.date) %>
-        <% else %>
-          <%= order.trip.date.strftime('%B %d %l:%M %p') %>
-        <% end %>
+        <span class="carpool-date">
+          <% if order.trip.date.to_date == Date.today %>
+            <%= distance_of_time_in_words(Time.now, order.trip.date) %>
+          <% else %>
+            <%= order.trip.date.strftime('%B %d %l:%M %p') %>
+          <% end %>
         </span>
         <div class="carpool-info">
           <p><span class="light-text"><%= order.trip.user.electric_car ? "Electric" : "Gas" %></span> car, <span class="light-text"><%= order.trip.seat %></span> seats available</p>

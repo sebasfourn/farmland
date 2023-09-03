@@ -14,13 +14,15 @@
 <div class="basket-recap">
   <div class="basket-topline">
     <h3>Basket Recap</h3>
-      <% total = 0%>
-      <% @order_products.each do |order_product|%>
-        <% total += order_product.cost %>
-      <% end %>
-      <div class="total"><span class="light-text">My total:</span>
-       <span class="total-cost"><%= "$#{total}" %></span></div>
+    <% total = 0%>
+    <% @order_products.each do |order_product|%>
+      <% total += order_product.cost %>
+    <% end %>
+    <div class="total"><span class="light-text">My total:</span>
+      <span class="total-cost"><%= "$#{total}" %></span>
+    </div>
   </div>
+
   <div class="ordered-products">
     <% @order_products.each do |order_product| %>
       <div class="ordered-product">
@@ -28,12 +30,12 @@
       </div>
     <% end %>
     <div class="carbon-recap">
-    <h3>Well done!</h3>
-    <% carbon_total = 0%>
-    <% @order_products.each do |order_product|%>
-      <% carbon_total += (order_product.quantity * order_product.product.co2_saved) %>
-    <% end %>
-    <p> You saved <%= carbon_total.round(3) %>kg of Carbon Dioxide by shopping with Farmland! <p>
+      <h3>Well done!</h3>
+      <% carbon_total = 0%>
+      <% @order_products.each do |order_product|%>
+        <% carbon_total += (order_product.quantity * order_product.product.co2_saved) %>
+      <% end %>
+      <p> You saved <%= carbon_total.round(3) %>kg of Carbon Dioxide by shopping with Farmland! <p>
     </div>
   </div>
 </div>
@@ -53,11 +55,10 @@
     <p><span class="black-text"><%= @order.trip.user.distance_to([current_user.latitude, current_user.longitude]).round %></span> km away from you</p>
     <p>Driver : <span class="black-text"><%= @order.trip.user.first_name.capitalize %></span></p>
     <%= link_to trip_path(@order.trip) do %>
-    <button class="driver-chat-button"><small>Message <%= @order.trip.user.first_name.capitalize %></small></button>
+      <button class="driver-chat-button"><small>Message <%= @order.trip.user.first_name.capitalize %></small></button>
     <% end%>
   </div>
 </div>
-
 
 <h3>Meeting point with <%= @order.trip.user.first_name.capitalize %></h3>
 <div class="map-container">
