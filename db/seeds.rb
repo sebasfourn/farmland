@@ -79,8 +79,8 @@ trips << trip_four
 # seb_order = Order.new(trip: trip_one, user: seb)
 # seb_order.save!
 
-# therese_order = Order.new(trip: trip_one, user: therese)
-# therese_order.save!
+therese_order = Order.new(trip: trip_one, user: therese)
+therese_order.save!
 
 # # seb_lamb = OrderProduct.new(quantity: 10, order: seb_order, product: lamb)
 # # seb_lamb.cost = seb_lamb.quantity * seb_lamb.product.price
