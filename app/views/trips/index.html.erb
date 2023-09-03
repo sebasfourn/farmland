@@ -1,10 +1,10 @@
 <div class="title-div">
-  <%= link_to url_for(:back) do %>
-    <div class="arrow-div">
+  <div class="arrow-div">
+    <%= link_to url_for(:back) do %>
       <i class="fa-solid fa-chevron-left fa-lg arrow"></i>
-      <h2>Chat history</h2>
-    </div>
-  <% end %>
+    <% end %>
+    <h2>Chat history</h2>
+  </div>
 </div>
 
 <% @trips.each do |trip| %>
