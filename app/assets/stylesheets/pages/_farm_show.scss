@@ -92,6 +92,11 @@
   .light-green {
     color: $green-light;
   }
+
+  .quantity-input {
+    width: 50px;
+    height: 50px;
+  }
 }
 
 // .carbon-savings {
@@ -109,9 +114,4 @@
   border-radius: 50px;
   color: $black;
   width: 100%;
-}
-
-.quantity-input {
-  width: 50px;
-  height: auto;
 }

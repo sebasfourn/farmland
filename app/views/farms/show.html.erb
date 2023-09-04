@@ -37,7 +37,7 @@
             <p><span class="light-green"><%= "$#{product.price} / #{product.unit}" %></span></p>
             <p>Saving <span class="light-green"><%= product.co2_saved >= 1 ? "#{product.co2_saved.round(3)} kg" : "#{(product.co2_saved * 1000).round(0)}" %> co2 / kg</span></p>
           </div>
-          <div class="farm-product-inputs">
+          <div class="farm-product-inputs" style="margin-top: 10px;">
             <%= order_product.input :quantity, label: false, placeholder: "0",
                                     input_html: { min: 0,
                                                   max: product.stock,
