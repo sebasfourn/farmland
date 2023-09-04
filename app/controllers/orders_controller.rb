@@ -39,8 +39,7 @@ class OrdersController < ApplicationController
       # redirect_to farm_path(params["farm"])
       @farm = Farm.find(params["farm"])
       @products = @farm.products
-      @order =
-      render "farms/show", status: :unprocessable_entity
+      @order = render "farms/show", status: :unprocessable_entity
     end
   end
 
