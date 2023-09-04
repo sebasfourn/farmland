@@ -54,12 +54,16 @@ form {
 }
 
 .carpool-buttons-container {
-  display: flex;
-  flex-direction: row;
   flex-wrap: nowrap;
   overflow-x: auto;
   width: auto;
-  height: 180px;
+  margin: 0 -20px;
+
+  fieldset {
+    padding: 0 20px;
+    display: flex;
+    flex-direction: row;
+  }
 
   legend {
     display: none;
