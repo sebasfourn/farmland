@@ -3,14 +3,19 @@
     <%= link_to url_for(:back) do %>
       <i class="fa-solid fa-chevron-left fa-lg arrow"></i>
     <% end %>
-    <h2>Favorite farms</h2>
+    <h2>Favorites</h2>
   </div>
 </div>
 
 <% @farms.each do |farm| %>
   <div class="farm-card">
     <%= link_to farm_path(farm) do %>
-      <img src="https://res.cloudinary.com/dpfoq3knh/image/upload/v1692648557/production/v8q0d0r2z3jr5sq5szjj1xvju8wf.jpg" class="farm-card-img-fav" alt="<% farm.name %>">
+      <div class="farm-card-img-div">
+        <% if farm.grass_fed %>
+          <p class="farm-card-tag"><i class="fa-solid fa-tag"></i> grass fed</p>
+        <% end %>
+        <%= image_tag "farm.png", class: "farm-card-img-fav", alt: farm.name %>
+      </div>
     <% end %>
 
     <div class="farm-card-body"
@@ -28,10 +33,18 @@
         <%= render "heart", farm: farm %>
       </div>
 
-      <p><%= farm.address %></p>
-      <div class="rating-div">
-        <strong><p class="rating-text"><%= farm.rating %></p></strong>
-        <i class="fa-solid fa-star fa-sm star"></i>
+      <div class="farm-card-description">
+        <p>
+          <span class="distance-color"><%= farm.distance_to([current_user.latitude, current_user.longitude]).round %> km ●
+          <% time = (farm.distance_to([current_user.latitude, current_user.longitude]).round * 60) / 50 %>
+          <% hours, minutes = time.divmod(60)  %>
+          <%= hours > 0 ? "#{hours} hours" : "" %>
+          <%= minutes %> min</span>
+        </p>
+        <div class="rating-div">
+          <strong><p class="rating-text"><%= farm.rating %></p></strong>
+          <i class="fa-solid fa-star fa-sm star"></i>
+        </div>
       </div>
     </div>
   </div>
