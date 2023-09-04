@@ -15,8 +15,13 @@
     margin-bottom: 0;
   }
 
-  .farm-rating i {
-    margin-left: 5px;
+  .farm-rating {
+    .star {
+      color: $yellow;
+    }
+    i {
+      margin-left: 5px;
+    }
   }
   .farm-title {
     display: flex;
@@ -26,15 +31,14 @@
       margin-top: 5px;
     }
     i {
-      padding-right: 5px;
+      padding-right: 20px;
+    }
+    .open {
+      color: $open-green;
+    }
 
-      .open {
-        color: $open-green;
-      }
-
-      .closed {
-        color: $red;
-      }
+    .closed {
+      color: $red;
     }
   }
 }
