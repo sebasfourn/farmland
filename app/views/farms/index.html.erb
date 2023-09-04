@@ -8,6 +8,17 @@
   </div>
 </div>
 
+<div class="search-div">
+  <%= form_with url: farms_path, method: :get do %>
+      <%= text_field_tag :query,
+            nil,
+            class: "search-input",
+            placeholder: "Search for a farm, product..."
+      %>
+  <% end %>
+  <i class="fa-solid fa-magnifying-glass loop"></i>
+</div>
+
 <% @farms.each do |farm| %>
   <div class="farm-card"
     data-controller="favorite"

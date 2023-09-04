@@ -10,4 +10,12 @@ class Farm < ApplicationRecord
   # def distance(lng1, lng2, lat1, lat2)
   #   Geocoder::Calculations.distance_between([lat1,lng1], [lat2,lng2])
   # end
+
+  include PgSearch::Model
+
+  pg_search_scope :search_farm,
+                  against: %i[name description],
+                  using: {
+                    tsearch: { prefix: true }
+                  }
 end

@@ -1,0 +1,18 @@
+.search-div {
+  position: relative;
+
+  .search-input {
+    width: 100%;
+    padding: 12px 48px;
+    margin-bottom: 25px;
+    border-radius: 25px;
+    border: none;
+    font-size: 14px;
+  }
+
+  .loop {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+  }
+}
