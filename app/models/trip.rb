@@ -17,4 +17,4 @@ class Trip < ApplicationRecord
             </div>".html_safe
   end
 end
-# <span class='black-text'>#{self.user.distance_to([current_user.latitude, current_user.longitude]).round}</span> km away from you
+# <span class='emph-carpool'>#{self.user.distance_to([current_user.latitude, current_user.longitude]).round}</span> km away from you
