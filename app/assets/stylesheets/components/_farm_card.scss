@@ -1,5 +1,14 @@
 .farm-card {
-  margin-bottom: 30px;
+  margin-bottom: 15px;
+  .farm-card-description {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    .distance-color {
+      color: $gray;
+    }
+  }
 
   .farm-card-img {
     width: 100%;
@@ -64,7 +73,6 @@
     .rating-div {
       display: flex;
       align-items: center;
-      margin-top: 7px;
 
       .rating-text {
         color: $green-main;
