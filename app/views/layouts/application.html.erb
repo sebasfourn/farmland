@@ -11,12 +11,16 @@
   </head>
 
   <body class="background">
-    <%= render "shared/topbanner" %>
-      <div class= "app-container">
-        <main>
-          <%= yield %>
-        </main>
-      </div>
-    <%= render "shared/navbar" %>
+    <% unless @_request.fullpath == root_path || @_request.fullpath == user_session_path %>
+      <%= render "shared/topbanner" %>
+    <% end %>
+    <div class= "app-container">
+      <main>
+        <%= yield %>
+      </main>
+    </div>
+    <% unless @_request.fullpath == root_path || @_request.fullpath == user_session_path  %>
+      <%= render "shared/navbar" %>
+    <% end %>
   </body>
 </html>
