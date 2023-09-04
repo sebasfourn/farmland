@@ -38,6 +38,7 @@
           </div>
           <%= order_product.input :quantity, label: false, placeholder: "0",
                                   input_html: { min: 0,
+                                                max: product.stock,
                                                 name: "order[order_products][#{product.name}][quantity]",
                                                 type: :number,
                                                 class: 'quantity-input',
