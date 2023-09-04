@@ -27,8 +27,13 @@ class FarmsController < ApplicationController
     current_user.unfavorite(@farm)
     respond_to do |format|
       if params[:page] == "favorites"
-        format.text { head :no_content }
-        format.html { redirect_to favorites_path }
+        if @current_user.all_favorited.empty?
+          format.text { head :ok }
+          format.html { redirect_to favorites_path }
+        else
+          format.text { head :no_content }
+          format.html { redirect_to favorites_path }
+        end
       else
         format.text { render partial: "heart", locals: { farm: @farm }, formats: [:html] }
         format.html { redirect_to farms_path }

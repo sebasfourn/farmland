@@ -9,7 +9,9 @@
 </div>
 
 <% @farms.each do |farm| %>
-  <div class="farm-card">
+  <div class="farm-card"
+    data-controller="favorite"
+    data-favorite-page-value="index">
     <%= link_to farm_path(farm) do %>
       <div class="farm-card-img-div">
         <% if farm.grass_fed %>
@@ -19,9 +21,7 @@
       </div>
     <% end %>
 
-    <div class="farm-card-body"
-      data-controller="favorite"
-      data-favorite-page-value="index">
+    <div class="farm-card-body">
       <div class="farm-fav-div">
         <div class="farm-name-div">
           <% if farm.open %>
