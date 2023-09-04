@@ -3,14 +3,18 @@
     <%= link_to url_for(:back) do %>
       <i class="fa-solid fa-chevron-left fa-lg arrow"></i>
     <% end %>
-    <h2>You're chatting with <%= @trip.user.first_name %></h2>
+    <h2>You're chatting with <%= @trip.user.first_name.capitalize %></h2>
   </div>
 </div>
 
 <div class="chatroom" data-controller="chatroom-subscription" data-chatroom-subscription-chatroom-id-value="<%= @trip.id %>">
   <div class="messages" data-chatroom-subscription-target="messages">
     <% @trip.messages.each do |message| %>
+      <div class="message-row d-flex <%= message.sender?(current_user) ? 'justify-content-end' : 'justify-content-start' %>">
+        <div class="<%= message.sender?(current_user) ? 'sender-style' : 'receiver-style' %>">
       <%= render "messages/message", message: message %>
+        </div>
+    </div>
     <% end %>
   </div>
 
