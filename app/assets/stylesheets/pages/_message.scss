@@ -1,3 +1,19 @@
+.chatroom {
+  margin-top: 9px;
+  height: calc(100vh - 208px);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  flex-grow: 1;
+  background-color: $white;
+}
+
+.messages {
+  height: 100%;
+  overflow: scroll;
+  padding: 1rem;
+}
+
 .message-row {
   margin-bottom: 10px;
   padding: 8px;
@@ -27,24 +43,26 @@
   border-top-left-radius: 20px;
   border-bottom-left-radius: 20px;
   font-size: 16px;
-  outline: none;
   background-color: $green-dark;
-  color: #fff;
   margin-bottom: 0 !important;
-  padding: 8px;
+  padding: 8px 15px;
+  &::placeholder {
+color: white;
+  }
 }
+
 .message-input:focus {
   background-color: $green-dark;
-  color: #fff;
+  color: $white;
 }
 
 .message-input ::placeholder {
-  color: white;
+  color: $white;
 }
 
 .send-button {
   background-color: $green-dark;
-  color: #fff;
+  color: $white;
   border: none;
   border-top-right-radius: 20px;
   border-bottom-right-radius: 20px;
@@ -57,4 +75,12 @@
 
 .send-button:hover {
   background-color: $green-light;
+}
+
+#new_message {
+  border-top: none !important;
+
+  .form-group {
+    margin-bottom: 0;
+  }
 }
