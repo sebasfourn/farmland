@@ -28,8 +28,12 @@ export default class extends Controller {
         headers: { "Accept": "text/plain" }
       })
         .then((response) => {
+          console.log(response)
           if (response.status === 204) {
-            this.element.parentElement.remove()
+            this.element.remove()
+          } else if (response.status === 200) {
+            this.element.remove()
+            document.querySelector(".no-message").classList.remove("d-none")
           }
         }
       )
@@ -45,7 +49,8 @@ export default class extends Controller {
       .then(response => response.text())
       .then((data) => {
         this.#insertfavoriteAndScrollDown(data)
-      })
+      }
+    )
   }
 
   #insertfavoriteAndScrollDown(data) {
