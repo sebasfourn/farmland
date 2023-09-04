@@ -27,8 +27,8 @@
           <p><%= "$#{product.price}/#{product.unit}" %></p>
           <p><%= "#{product.stock}#{product.unit} available" %></p>
         </div>
-        <%= order_product.input :quantity, label: "Quantity (#{product.unit})", collection: 0..product.stock, input_html: {name: "order[order_products][#{product.name}][quantity]" }%>
-        <%= order_product.input :product, input_html: {value: product.id, name: "order[order_products][#{product.name}][product_id]" }, as: :hidden %>
+        <%= order_product.input :quantity, label: "Quantity (#{product.unit})", collection: 0..product.stock, input_html: {name: "order[order_products][#{product.name}][quantity]", data: {action: "input->carbon-bar-update#quantity", carbon_bar_current_co2_value: 12} }%>
+        <%= order_product.input :product, input_html: {value: product.id, name: "order[order_products][#{product.name}][product_id]"}, as: :hidden %>
         <%= order_product.input :farm, input_html: {value: product.farm.id, name: "farm"}, as: :hidden %>
       </div>
       <div class="carbon-savings">
