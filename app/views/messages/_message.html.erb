@@ -1,7 +1,9 @@
-<div>
+<div class="message-row d-flex <%= message.sender?(current_user) ? 'justify-content-end' : 'justify-content-start' %>">
+  <div class="<%= message.sender?(current_user) ? 'sender-style' : 'receiver-style' %>">
   <!-- <small>
     <strong><%= message.user.first_name.capitalize %></strong>
     <i><%= message.created_at.strftime("%a %b %e at %l:%M %p") %></i>
   </small> %> -->
-  <p><%= message.content %></p>
+    <p><%= message.content %></p>
+  </div>
 </div>

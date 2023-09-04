@@ -10,11 +10,7 @@
 <div class="chatroom" data-controller="chatroom-subscription" data-chatroom-subscription-chatroom-id-value="<%= @trip.id %>">
   <div class="messages" data-chatroom-subscription-target="messages">
     <% @trip.messages.each do |message| %>
-      <div class="message-row d-flex <%= message.sender?(current_user) ? 'justify-content-end' : 'justify-content-start' %>">
-        <div class="<%= message.sender?(current_user) ? 'sender-style' : 'receiver-style' %>">
       <%= render "messages/message", message: message %>
-        </div>
-    </div>
     <% end %>
   </div>
 

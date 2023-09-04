@@ -3,10 +3,6 @@ class Message < ApplicationRecord
   belongs_to :user
 
   def sender?(user)
-    if self.user == user
-      return true
-    else
-      return false
-    end
+    self.user == user
   end
 end
