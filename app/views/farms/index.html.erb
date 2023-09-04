@@ -1,7 +1,8 @@
 <div class="title-div">
   <h2>Hello <%= current_user.first_name.capitalize %> !</h2>
-  <strong><p class="small-font"><%= current_user.address.split(",")[0] %></p></strong>
+  <p class="small-font"><%= current_user.address.split(",")[0] %>  <i class="fa-solid fa-chevron-down"></i></p>
 </div>
+<p class="title-div-description">Share a ride, shop local, save the planet !</p>
 
 <% @farms.each do |farm| %>
   <div class="farm-card">
@@ -22,17 +23,18 @@
         <%= render "heart", farm: farm %>
       </div>
 
-      <p>
-        <i class="fa-solid fa-leaf leaf"></i>
-        <span class="black-text"><%= farm.distance_to([current_user.latitude, current_user.longitude]).round %></span> km ●
-        <% time = (farm.distance_to([current_user.latitude, current_user.longitude]).round * 60) / 50 %>
-        <% hours, minutes = time.divmod(60)  %>
-        <%= hours > 0 ? "#{hours} hours" : "" %>
-        <%= minutes %> min
-      </p>
-      <div class="rating-div">
-        <strong><p class="rating-text"><%= farm.rating %></p></strong>
-        <i class="fa-solid fa-star fa-sm star"></i>
+      <div class="farm-card-description">
+        <p>
+          <span class="distance-color"><%= farm.distance_to([current_user.latitude, current_user.longitude]).round %> km ●
+          <% time = (farm.distance_to([current_user.latitude, current_user.longitude]).round * 60) / 50 %>
+          <% hours, minutes = time.divmod(60)  %>
+          <%= hours > 0 ? "#{hours} hours" : "" %>
+          <%= minutes %> min</span>
+        </p>
+        <div class="rating-div">
+          <strong><p class="rating-text"><%= farm.rating %></p></strong>
+          <i class="fa-solid fa-star fa-sm star"></i>
+        </div>
       </div>
     </div>
   </div>
