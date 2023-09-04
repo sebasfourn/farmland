@@ -17,6 +17,12 @@
       font-size: 18px;
       color: $yellow;
     }
+    .carpool-info {
+      color: $beige-emph;
+      .emph-carpool {
+        color: $beige-background;
+      }
+    }
   }
 
   input[type="radio"]:checked + label {
@@ -27,7 +33,7 @@
     }
     .carpool-info {
       color: $gray;
-      .black-text {
+      .emph-carpool {
         color: $black;
       }
     }
