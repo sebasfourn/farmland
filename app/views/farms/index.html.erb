@@ -10,7 +10,9 @@
       <%= image_tag "farm.png", class: "farm-card-img", alt: farm.name %>
     <% end %>
 
-    <div class="farm-card-body" data-controller="favorite">
+    <div class="farm-card-body"
+      data-controller="favorite"
+      data-favorite-page-value="index">
       <div class="farm-fav-div">
         <div class="farm-name-div">
           <% if farm.open %>
