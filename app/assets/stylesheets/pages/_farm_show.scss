@@ -5,7 +5,55 @@
   height: 100%;
 }
 
-.carpool-buttons-container{
+.farm-header {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  gap: 15px;
+  margin-top: -10px;
+  .farm-rating p {
+    margin-bottom: 0;
+  }
+
+  .farm-rating {
+    .star {
+      color: $yellow;
+    }
+    i {
+      margin-left: 5px;
+    }
+  }
+  .farm-title {
+    display: flex;
+    align-items: center;
+    flex-grow: 1;
+    h2 {
+      margin-top: 5px;
+    }
+    i {
+      padding-right: 20px;
+    }
+    .open {
+      color: $open-green;
+    }
+
+    .closed {
+      color: $red;
+    }
+  }
+}
+
+.farm-description {
+  margin-bottom: 40px;
+}
+
+form {
+  h3 {
+    margin: 20px 0;
+  }
+}
+
+.carpool-buttons-container {
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
@@ -18,33 +66,55 @@
   }
 }
 
+.farm-products {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
 .farm-product-field {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: space-around;
   background-color: $white;
-  border-radius: 10px;
+  padding: 20px;
+  border-radius: 20px;
 }
 
 .farm-product-label {
-  padding: 10px 5px;
-  width: 60%;
-    p{
-      padding: 0px;
-      margin: 0px;
-    }
-}
+  display: flex;
+  flex-direction: column;
+  h4 {
+    font-size: 15px;
+    margin-bottom: 2px;
+    font-family: $emph-font;
+  }
 
-.carbon-savings {
-  display: block;
-  padding: 10px 5px;
-  font-size: small;
-  text-align: center;
+  p {
+    font-size: 13px;
+    margin: 0;
+  }
+
+  .light-green {
+    color: $green-light;
+  }
+
+  .quantity-input {
+    width: 50px;
+    height: 50px;
+  }
 }
 
 .submit-button {
   padding: 10px;
-  background-color: $green-main;
-  border-radius: 10px;
-  color: white;
+  font-family: $emph-font;
+  background-color: $yellow;
+  border-radius: 50px;
+  color: $black;
+  width: 100%;
+}
+
+.red {
+  color: $red;
 }
