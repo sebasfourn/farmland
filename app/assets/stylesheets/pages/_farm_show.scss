@@ -5,7 +5,41 @@
   height: 100%;
 }
 
-.carpool-buttons-container{
+.farm-header {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  gap: 15px;
+  margin-top: -10px;
+  .farm-rating p {
+    margin-bottom: 0;
+  }
+
+  .farm-rating i {
+    margin-left: 5px;
+  }
+  .farm-title {
+    display: flex;
+    align-items: center;
+    flex-grow: 1;
+    h2 {
+      margin-top: 5px;
+    }
+    i {
+      padding-right: 5px;
+
+      .open {
+        color: $open-green;
+      }
+
+      .closed {
+        color: $red;
+      }
+    }
+  }
+}
+
+.carpool-buttons-container {
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
@@ -29,10 +63,10 @@
 .farm-product-label {
   padding: 10px 5px;
   width: 60%;
-    p{
-      padding: 0px;
-      margin: 0px;
-    }
+  p {
+    padding: 0px;
+    margin: 0px;
+  }
 }
 
 .carbon-savings {

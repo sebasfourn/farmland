@@ -2,13 +2,23 @@
 <div>
 <br>
 </div>
-<div class="title-div">
-  <div class="arrow-div">
+<div class="farm-header">
+
     <%= link_to url_for(:back) do %>
       <i class="fa-solid fa-chevron-left fa-lg arrow"></i>
     <% end %>
-    <h2><%= @farm.name %></h2>
-  </div>
+    <div class="farm-title">
+      <% if @farm.open %>
+          <i class="fa-solid fa-circle fa-sm open"></i>
+        <% else %>
+          <i class="fa-solid fa-circle fa-sm close"></i>
+      <% end %>
+      <h2><%= @farm.name %></h2>
+    </div>
+    <div class="farm-rating">
+      <p><%= @farm.rating %><i class="fa-solid fa-star fa-sm"></i></p>
+    </div>
+
 </div>
 
 <p><%= @farm.description %></p>
