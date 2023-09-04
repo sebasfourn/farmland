@@ -2,7 +2,9 @@ class FarmsController < ApplicationController
   skip_before_action :verify_authenticity_token, only: %i[favorite unfavorite]
 
   def index
-    @farms = Farm.all
+    @farms = Farm.all.sort_by do |farm|
+      farm.distance_to([current_user.latitude, current_user.longitude]).round
+    end
   end
 
   def show
@@ -25,8 +27,13 @@ class FarmsController < ApplicationController
     current_user.unfavorite(@farm)
     respond_to do |format|
       if params[:page] == "favorites"
-        format.text { head :no_content }
-        format.html { redirect_to favorites_path }
+        if @current_user.all_favorited.empty?
+          format.text { head :ok }
+          format.html { redirect_to favorites_path }
+        else
+          format.text { head :no_content }
+          format.html { redirect_to favorites_path }
+        end
       else
         format.text { render partial: "heart", locals: { farm: @farm }, formats: [:html] }
         format.html { redirect_to farms_path }

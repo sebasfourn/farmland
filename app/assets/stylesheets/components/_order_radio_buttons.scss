@@ -1,10 +1,9 @@
-.farm-order-radio-buttons{
-
-
+.farm-order-radio-buttons {
+  overflow-x: hidden;
   flex: 0 0 300px;
 
   input[type="radio"] {
-    display:none;
+    display: none;
   }
 
   label {
@@ -16,7 +15,7 @@
     // position:relative;
     border-radius: 10px;
     background-color: $green-main;
-    color: #F4F2F1;
+    color: #f4f2f1;
     border: 1px solid #000000;
     padding: 10px 15px;
     box-shadow: 2px 3px #000000;

@@ -10,6 +10,21 @@
     }
   }
 
+  .farm-card-img-div {
+    position: relative;
+  }
+
+  .farm-card-tag {
+    position: absolute;
+    font-size: 13px;
+    color: $white;
+    background-color: $green-main;
+    border-radius: 3px;
+    padding-left: 7px;
+    padding-right: 7px;
+    margin: 10px;
+  }
+
   .farm-card-img {
     width: 100%;
     height: 150px;

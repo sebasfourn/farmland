@@ -3,21 +3,20 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  margin: 0;
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background-image: url('https://th.bing.com/th/id/OIG.DuZAPLQsYNJtbVVaHPcP?pid=ImgGn');
-  background-size: cover;
+  background-image: url('https://images.unsplash.com/photo-1561602535-7f155201c950?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2787&q=80');
+  background-size: 100vw 150vh;
   background-position: center;
 }
 
 .farmland-title {
   text-align: center;
-  margin-bottom: 30px;
-  margin-top: 60px;
+  margin-bottom: 60px;
+  margin-top: -90px;
   & h1 {
     font-family: "Eiko";
     font-size: 40px;
@@ -26,23 +25,12 @@
   }
 }
 
-.welcome-text h2 {
-  text-align: left !important;
-}
-
-.welcome-text{
-  width: 100%;
-  margin-bottom: 5px;
-}
-
-.welcome-description {
-  text-align: left;
-  margin-bottom: 30px;
+.farmland-description{
+  padding: 0 40px 20px 40px;
 }
 
 .button-center {
   text-align: center;
-  margin: 20px;
 }
 
 .landing-button {
@@ -51,14 +39,13 @@
   border-radius: 50px;
   padding: 12px 0;
   text-align: center;
-  width: 100%;
+  width: 80%;
   transition: background-color 0.4s ease;
   cursor: pointer;
   a {
     font-family: "OS-Bold";
     color: $beige-background !important;
   }
-  margin-top: 10px;
 }
 
 .landing-button:hover {
