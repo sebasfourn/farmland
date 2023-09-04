@@ -15,4 +15,23 @@
   & .emph {
     color: $yellow;
   }
+
+  .add-carbon-saving {
+    animation: animate .3s ease-in-out;
+  }
+}
+
+@keyframes animate {
+ 0% {
+    letter-spacing: normal;
+    scale: 1;
+  }
+  30% {
+    letter-spacing: 1.1px;
+    scale: 1.1;
+  }
+  100% {
+    letter-spacing: normal;
+    scale: 1;
+  }
 }
