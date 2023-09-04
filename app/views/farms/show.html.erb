@@ -25,7 +25,7 @@
   <%= simple_form_for ([@order]) do |f|%>
     <h3> Join a carpool </h3>
     <div class="carpool-buttons-container">
-        <%= f.association :trip, collection: @farm.trips, as: :radio_buttons, label_method: :label_text, :collection_wrapper_class => "carpool-buttons-container", :item_wrapper_class => 'farm-order-radio-buttons radio-button-text'%>
+        <%= f.association :trip, collection: @farm.trips, as: :radio_buttons, label_method: :label_text, collection_wrapper_class: "carpool-buttons-container", item_wrapper_class: 'farm-order-radio-buttons radio-button-text'%>
     </div>
     <div data-controller="carbon-bar-update" data-carbon-bar-update-current-value = <%=current_user.total_co2_saved%>>
       <h3> Products </h3>
