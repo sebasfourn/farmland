@@ -21,47 +21,48 @@
 </div>
 <p class="farm-description"><%= @farm.description %></p>
 
-<div data-controller="carbon-bar-update">
+<div data-controller="carbon-bar-update" class="form">
   <%= simple_form_for ([@order]) do |f|%>
-  <h3> Join a carpool </h3>
-  <div class="carpool-buttons-container">
-      <%= f.association :trip, collection: @farm.trips, as: :radio_buttons, label_method: :label_text, :collection_wrapper_class => "carpool-buttons-container", :item_wrapper_class => 'farm-order-radio-buttons radio-button-text'%>
-  </div>
-  <h3> Products </h3>
-  <div class="farm-products">
-    <% @products.where.not(stock: 0).each do |product| %>
-      <%= f.simple_fields_for :order_products do |order_product| %>
-        <div class="farm-product-field">
-          <div class = "farm-product-label">
-            <h3><%= order_product.label (product.category == "meat" ? product.name : product.name.pluralize) %></h3>
-            <p><span class="light-green"><%= "$#{product.price} / #{product.unit}" %></span></p>
-            <p>Saving <span class="light-green"><%= product.co2_saved >= 1 ? "#{product.co2_saved.round(3)} kg" : "#{(product.co2_saved * 1000).round(0)}" %> co2 / kg</span></p>
+    <h3> Join a carpool </h3>
+    <div class="carpool-buttons-container">
+        <%= f.association :trip, collection: @farm.trips, as: :radio_buttons, label_method: :label_text, :collection_wrapper_class => "carpool-buttons-container", :item_wrapper_class => 'farm-order-radio-buttons radio-button-text'%>
+    </div>
+
+    <h3> Products </h3>
+    <div class="farm-products">
+      <% @products.where.not(stock: 0).each do |product| %>
+        <%= f.simple_fields_for :order_products do |order_product| %>
+          <div class="farm-product-field">
+            <div class = "farm-product-label">
+              <h4><%= order_product.label (product.category == "meat" ? product.name : product.name.pluralize) %></h4>
+              <p><span class="light-green"><%= "$#{product.price} / #{product.unit}" %></span></p>
+              <p>Saving <span class="light-green"><%= product.co2_saved >= 1 ? "#{product.co2_saved.round(3)} kg" : "#{(product.co2_saved * 1000).round(0)}" %> co2 / kg</span></p>
+            </div>
+            <div class="farm-product-inputs" style="margin-top: 10px;">
+              <%= order_product.input :quantity, label: false, placeholder: "0",
+                                      input_html: { min: 0,
+                                                    max: product.stock,
+                                                    name: "order[order_products][#{product.name}][quantity]",
+                                                    type: :number,
+                                                    class: 'quantity-input',
+                                                    data: { action: "input->carbon-bar-update#quantity",
+                                                    carbon_bar_current_co2_value: 12 }
+                                                  }%>
+              <%= order_product.input :product,
+                                      input_html: { value: product.id,
+                                                    name: "order[order_products][#{product.name}][product_id]"},
+                                      as: :hidden %>
+              <%= order_product.input :farm,
+                                      input_html: { value: product.farm.id,
+                                                    name: "farm" },
+                                      as: :hidden %>
+            </div>
           </div>
-          <div class="farm-product-inputs" style="margin-top: 10px;">
-            <%= order_product.input :quantity, label: false, placeholder: "0",
-                                    input_html: { min: 0,
-                                                  max: product.stock,
-                                                  name: "order[order_products][#{product.name}][quantity]",
-                                                  type: :number,
-                                                  class: 'quantity-input',
-                                                  data: { action: "input->carbon-bar-update#quantity",
-                                                  carbon_bar_current_co2_value: 12 }
-                                                }%>
-            <%= order_product.input :product,
-                                    input_html: { value: product.id,
-                                                  name: "order[order_products][#{product.name}][product_id]"},
-                                    as: :hidden %>
-            <%= order_product.input :farm,
-                                    input_html: { value: product.farm.id,
-                                                  name: "farm" },
-                                    as: :hidden %>
-          </div>
-        </div>
+        <% end %>
       <% end %>
-    <% end %>
-  </div>
-  <div class = "d-flex justify-content-center">
-  <%= f.button :submit, "Place your order", class: "submit-button"%>
-  </div>
+    </div>
+    <div class = "d-flex justify-content-center">
+    <%= f.button :submit, "Place your order", class: "submit-button"%>
+    </div>
   <%end%>
 </div>

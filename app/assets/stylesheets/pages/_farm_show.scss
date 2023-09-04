@@ -47,6 +47,12 @@
   margin-bottom: 40px;
 }
 
+form {
+  h3 {
+    margin: 20px 0;
+  }
+}
+
 .carpool-buttons-container {
   display: flex;
   flex-direction: row;
@@ -79,9 +85,10 @@
 .farm-product-label {
   display: flex;
   flex-direction: column;
-  h3 {
+  h4 {
     font-size: 15px;
     margin-bottom: 2px;
+    font-family: $emph-font;
   }
 
   p {
@@ -98,14 +105,6 @@
     height: 50px;
   }
 }
-
-// .carbon-savings {
-//   padding: 10px 5px;
-//   font-size: small;
-//   text-align: center;
-//   background-color: $green-dark;
-//   color: white;
-// }
 
 .submit-button {
   padding: 10px;
