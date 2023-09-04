@@ -14,17 +14,17 @@
     <% end %>
   </div>
 
-  <%= simple_form_for [@trip, @message], html: { data: { action: "turbo:submit-end->chatroom-subscription#resetForm" }, class: "d-flex" } do |f| %>
+<%= simple_form_for [@trip, @message], html: { data: { action: "turbo:submit-end->chatroom-subscription#resetForm" }, class: "d-flex" } do |f| %>
+  <div class="message-row">
     <div class="send-box">
       <%= f.input :content,
         label: false,
         placeholder: "Type a message...",
-        wrapper_html: {class: "flex-grow-1 message-input"},
-        as: "search"
-      %>
-    </div>
-      <%= f.button :button, class: "btn send-button"  do %>
+        wrapper_html: { class: "flex-grow-1 message-input" },
+        input_html: { class: "message-input", rows: 1 } %>
+      <%= f.button :button, class: "btn send-button" do %>
         <%= inline_svg_tag("send.svg") %>
       <% end %>
-  <% end %>
-</div>
+    </div>
+  </div>
+<% end %>
