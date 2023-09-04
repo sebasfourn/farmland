@@ -59,21 +59,23 @@
     display: none;
   }
 }
+
 .farm-products {
   display: flex;
   flex-direction: column;
   gap: 15px;
 }
+
 .farm-product-field {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: space-around;
   background-color: $white;
+  padding: 20px 20px 0 20px;
   border-radius: 20px;
 }
 
 .farm-product-label {
-  padding: 20px 20px 0 20px;
   h3 {
     font-size: 15px;
   }
@@ -82,15 +84,19 @@
     font-size: 13px;
     margin-top: -5px;
   }
+
+  .light-green {
+    color: $green-light;
+  }
 }
 
-.carbon-savings {
-  padding: 10px 5px;
-  font-size: small;
-  text-align: center;
-  background-color: $green-dark;
-  color: white;
-}
+// .carbon-savings {
+//   padding: 10px 5px;
+//   font-size: small;
+//   text-align: center;
+//   background-color: $green-dark;
+//   color: white;
+// }
 
 .submit-button {
   padding: 10px;
@@ -101,5 +107,4 @@
 
 .quantity-input {
   width: 50px;
-  margin-top: 20px;
 }
