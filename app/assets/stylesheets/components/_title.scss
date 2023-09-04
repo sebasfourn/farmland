@@ -2,7 +2,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 30px;
+  margin-bottom: 25px;
 
   h2 {
     margin-bottom: 0px;
@@ -15,8 +15,12 @@
   }
 }
 
+.arrow {
+  margin-left: 10px;
+}
+
 .title-div-description {
-  margin-top: -25px;
-  font-size: 13px;
-  color: $green-main;
+  margin-top: -20px;
+  margin-bottom: 25px;
+  font-size: 11px;
 }
