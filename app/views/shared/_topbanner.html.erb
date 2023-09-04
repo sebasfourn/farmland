@@ -1,3 +1,7 @@
 <div class="topbanner">
-  <p>You saved <span class="emph">30.2 g of CO2</span></p>
+  <% if current_user %>
+    <p> You saved <span class="emph"> <%= current_user.total_co2_saved.round(2) %> kg of CO2!</span></p>
+  <% else %>
+    <p>Place an order to start saving CO2!</p>
+  <% end %>
 </div>

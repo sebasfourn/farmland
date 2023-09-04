@@ -19,7 +19,7 @@
       <% total += order_product.cost %>
     <% end %>
     <div class="total"><span class="light-text">My total:</span>
-      <span class="total-cost"><%= "$#{total}" %></span>
+      <span class="total-cost"><%= number_to_currency(total) %></span>
     </div>
   </div>
 
