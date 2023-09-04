@@ -1,13 +1,22 @@
-<div class="title-div">
-  <h2>Hello <%= current_user.first_name.capitalize %> !</h2>
-  <p class="small-font"><%= current_user.address.split(",")[0] %>  <i class="fa-solid fa-chevron-down"></i></p>
+<div>
+  <div class="title-div">
+    <h2>Hello <%= current_user.first_name.capitalize %> !</h2>
+    <p><%= current_user.address.split(",")[0] %><i class="fa-solid fa-chevron-down arrow"></i></p>
+  </div>
+  <div class="title-div-description">
+    <strong><p>Share a ride, shop local, save the planet !</p></strong>
+  </div>
 </div>
-<p class="title-div-description">Share a ride, shop local, save the planet !</p>
 
 <% @farms.each do |farm| %>
   <div class="farm-card">
     <%= link_to farm_path(farm) do %>
-      <%= image_tag "farm.png", class: "farm-card-img", alt: farm.name %>
+      <div class="farm-card-img-div">
+        <% if farm.grass_fed %>
+          <p class="farm-card-tag"><i class="fa-solid fa-tag"></i> grass fed</p>
+        <% end %>
+        <%= image_tag "farm.png", class: "farm-card-img", alt: farm.name %>
+      </div>
     <% end %>
 
     <div class="farm-card-body"
