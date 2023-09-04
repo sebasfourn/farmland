@@ -5,6 +5,7 @@ class FarmsController < ApplicationController
     @farms = Farm.all.sort_by do |farm|
       farm.distance_to([current_user.latitude, current_user.longitude]).round
     end
+    @farms = Farm.search_farm(params[:query]) if (params[:query]).present?
   end
 
   def show
