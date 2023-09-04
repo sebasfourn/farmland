@@ -2,7 +2,9 @@ class FarmsController < ApplicationController
   skip_before_action :verify_authenticity_token, only: %i[favorite unfavorite]
 
   def index
-    @farms = Farm.all
+    @farms = Farm.all.sort_by do |farm|
+      farm.distance_to([current_user.latitude, current_user.longitude]).round
+    end
   end
 
   def show

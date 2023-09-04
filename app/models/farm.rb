@@ -7,7 +7,7 @@ class Farm < ApplicationRecord
   after_validation :geocode, if: :will_save_change_to_address?
   acts_as_favoritable
 
-  def distance(lng1, lng2, lat1, lat2)
-    Geocoder::Calculations.distance_between([lat1,lng1], [lat2,lng2])
-  end
+  # def distance(lng1, lng2, lat1, lat2)
+  #   Geocoder::Calculations.distance_between([lat1,lng1], [lat2,lng2])
+  # end
 end
