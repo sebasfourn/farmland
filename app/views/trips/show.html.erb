@@ -3,7 +3,7 @@
     <%= link_to url_for(:back) do %>
       <i class="fa-solid fa-chevron-left fa-lg arrow"></i>
     <% end %>
-    <h2>You're chatting with <%= @trip.user.first_name %></h2>
+    <h2>You're chatting with <%= @trip.user.first_name.capitalize %></h2>
   </div>
 </div>
 
@@ -14,13 +14,17 @@
     <% end %>
   </div>
 
-  <%= simple_form_for [@trip, @message], html: { data: { action: "turbo:submit-end->chatroom-subscription#resetForm" }, class: "d-flex" } do |f| %>
-    <%= f.input :content,
-      label: false,
-      placeholder: "Aa",
-      wrapper_html: {class: "flex-grow-1"},
-      as: "search"
-    %>
-    <%= f.submit "Send", class: "btn btn-primary mb-3" %>
-  <% end %>
-</div>
+<%= simple_form_for [@trip, @message], html: { data: { action: "turbo:submit-end->chatroom-subscription#resetForm" }, class: "d-flex" } do |f| %>
+  <div class="message-row">
+    <div class="send-box">
+      <%= f.input :content,
+        label: false,
+        placeholder: "Type a message...",
+        wrapper_html: { class: "flex-grow-1 message-input" },
+        input_html: { class: "message-input", rows: 1 } %>
+      <%= f.button :button, class: "btn send-button" do %>
+        <%= inline_svg_tag("send.svg") %>
+      <% end %>
+    </div>
+  </div>
+<% end %>
