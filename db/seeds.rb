@@ -73,12 +73,32 @@ trip_three = Trip.new(date: DateTime.new(2023,9,15,12,0,0), seat: 5, user: users
 trip_three.save!
 trips << trip_three
 
-trip_four = Trip.new(date: DateTime.new(2023,9,16,17,0,0), seat: 3, user: users[2], farm: farms[0], address: "Université De Sherbrooke, Quai D, Sherbrooke, QC J1K 2R1")
+trip_four = Trip.new(date: DateTime.new(2023,9,16,17,0,0), seat: 3, user: users[2], farm: farms[0], address: "2500 Bd de l'Université, Sherbrooke, QC J1K 2R1")
 trip_four.save!
 trips << trip_four
 
-seb_order = Order.new(trip: trip_one, user: seb)
-seb_order.save!
+trip_five = Trip.new(date: DateTime.new(2023,9,20,16,0,0), seat: 3, user: users[3], farm: farms[1], address: "2500, boul. de l'Université Local E1-1043, Pavillon de la vie étudiante, Sherbrooke, QC J1K 2R1")
+trip_five.save!
+trips << trip_five
+
+trip_six = Trip.new(date: DateTime.new(2023,10,15,12,0,0), seat: 5, user: users[2], farm: farms[2], address: "3050 Boulevard De Portland, Sherbrooke, Quebec J1L 1K1")
+trip_six.save!
+trips << trip_six
+
+trip_seven = Trip.new(date: DateTime.new(2023,10,10,12,0,0), seat: 5, user: users[2], farm: farms[2], address: "2500 Bd de l'Université, Sherbrooke, QC J1K 2R1")
+trip_seven.save!
+trips << trip_seven
+
+trip_eight = Trip.new(date: DateTime.new(2023,9,8,17,0,0), seat: 3, user: users[2], farm: farms[0], address: "Université De Sherbrooke, Quai D, Sherbrooke, QC J1K 2R1")
+trip_eight.save!
+trips << trip_eight
+
+trip_nine = Trip.new(date: DateTime.new(2023,9,30,16,0,0), seat: 3, user: users[3], farm: farms[1], address: "Université De Sherbrooke, Quai D, Sherbrooke, QC J1K 2R1")
+trip_nine.save!
+trips << trip_nine
+
+# seb_order = Order.new(trip: trip_one, user: seb)
+# seb_order.save!
 
 therese_order = Order.new(trip: trip_one, user: therese)
 therese_order.save!

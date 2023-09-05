@@ -25,7 +25,15 @@
   <%= simple_form_for ([@order]) do |f|%>
     <h3> Join a carpool </h3>
     <div class="carpool-buttons-container">
-        <%= f.association :trip, collection: @farm.trips, as: :radio_buttons, label_method: :label_text, :collection_wrapper_class => "carpool-buttons-container", :item_wrapper_class => 'farm-order-radio-buttons radio-button-text'%>
+        <%= f.association :trip, collection: @farm.trips, as: :radio_buttons, label_method: lambda { |trip| render "show_carpool_label", trip: trip, current_user: current_user }, collection_wrapper_class: "carpool-buttons-container", item_wrapper_class: 'farm-order-radio-buttons radio-button-text'%>
+        <%# if I wanted all the cards from the app to have the same informations, I can make a partial called carpool_card
+        and render it where I need to. For example, on order-show page :
+         label_method: lambda { |trip| render "carpool_card", trip: @order.trip, current_user: current_user }
+         OR on order index page
+         label_method: lambda { |trip| render "show_carpool_label", trip: order.trip, current_user: current_user }
+         it would have been useful if I did made a css component for the carpool card, but it's a pain to refactor.
+         At least we know how to do it for another project ;)
+         %>
     </div>
     <div data-controller="carbon-bar-update" data-carbon-bar-update-current-value = <%=current_user.total_co2_saved%>>
       <h3> Products </h3>
@@ -33,6 +41,7 @@
         <% @products.where.not(stock: 0).each do |product| %>
           <%= f.simple_fields_for :order_products do |order_product| %>
             <div class="farm-product-field">
+              <%= image_tag "product-placeholder.jpeg", alt: "Product" %>
               <div class = "farm-product-label">
                 <h4><%= order_product.label (product.category == "meat" ? product.name : product.name.pluralize) %></h4>
                 <p><span class="light-green"><%= "$#{product.price} / #{product.unit}" %></span></p>

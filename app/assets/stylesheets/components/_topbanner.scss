@@ -3,7 +3,7 @@
   position: fixed;
   z-index: 999;
   top: 0;
-  font-size: 11px;
+  font-size: 14px;
   background-color: $green-main;
   height: 35px;
   width: 100%;
@@ -12,7 +12,90 @@
   display: flex;
   justify-content: center;
   margin-bottom: 20px;
+  overflow: hidden;
+
   & .emph {
     color: $yellow;
+    margin-right: 15px;
+  }
+
+  .add-carbon-saving {
+    animation: animate .3s ease-in-out;
+  }
+}
+
+.topbanner-clicked {
+  padding: 10px 0;
+  position: fixed;
+  z-index: -1;
+  font-size: 14px;
+  background-color: $green-main;
+  width: 100%;
+  box-shadow: 0px 5px 0px 0px $black;
+  color: $beige-background;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 5px;
+  overflow: hidden;
+  animation: grow .3s ease-in;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+  p {
+    text-align: center;
+    animation: fade-text .3s ease-in;
+    margin-bottom: 0px;;
+  }
+  .top-banner-extended-container {
+    width: 80%;
+  }
+}
+
+.rotate-chevron {
+  transform: rotate(90deg);
+}
+
+.banner-tree{
+  height: 25px;
+  width: auto;
+  color:$open-green;
+  fill: $open-green;
+}
+@keyframes animate {
+ 0% {
+    letter-spacing: normal;
+    scale: 1;
+  }
+  30% {
+    letter-spacing: 1.1px;
+    scale: 1.1;
+  }
+  100% {
+    letter-spacing: normal;
+    scale: 1;
+  }
+}
+
+@keyframes grow {
+  0% {
+    top: -40px;
+  }
+
+  100% {
+    top: 34px;
+  }
+
+}
+
+@keyframes fade-text {
+  0% {
+    opacity: 0;
+  }
+
+  40% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
   }
 }

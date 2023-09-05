@@ -6,19 +6,26 @@
   border-radius: 5px;
   padding: 10px;
   margin-bottom: 10px;
+  gap: 10px;
 }
 
-.trip-info-wrapper{
+.trip-info-wrapper {
   flex-direction: column;
   display: flex;
   flex-grow: 1;
+  margin: 0;
+
+  h4 {
+    font-family: $subtitles-font;
+    font-size: 14px;
+    margin: 0;
+  }
 }
 
 .driver-img {
   width: 60px;
   height: 60px;
   margin-right: 10px;
-  margin-left: 10px;
   border-radius: 50%;
   max-width: 100%;
   max-height: 100%;
@@ -32,7 +39,6 @@
 
 .last-message {
   font-size: 14px;
-  margin-left: 20px;
 }
 
 .timestamp {

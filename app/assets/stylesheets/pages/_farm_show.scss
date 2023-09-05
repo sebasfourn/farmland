@@ -54,15 +54,23 @@ form {
 }
 
 .carpool-buttons-container {
-  display: flex;
-  flex-direction: row;
   flex-wrap: nowrap;
   overflow-x: auto;
   width: auto;
-  height: 180px;
+  margin: 0 -20px;
+
+  fieldset {
+    padding: 0 20px;
+    display: flex;
+    flex-direction: row;
+  }
 
   legend {
     display: none;
+  }
+
+  .carpool-info p {
+    margin-bottom: 0;
   }
 }
 
@@ -80,6 +88,12 @@ form {
   background-color: $white;
   padding: 20px;
   border-radius: 20px;
+  img {
+    width: 50px;
+    height: 50px;
+    border-radius: 100%;
+    object-fit: cover;
+  }
 }
 
 .farm-product-label {
