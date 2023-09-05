@@ -1,0 +1,63 @@
+.ordered-products {
+  display: flex;
+  flex-direction: row;
+  overflow-x: auto;
+  margin: 0 -20px;
+}
+
+.ordered-product {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: center;
+  margin: 0 20px;
+  img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+  }
+}
+
+.carpool-recap {
+  .carpool-orders-show-card {
+    width: 100%;
+    border-radius: 10px;
+    background-color: $white;
+    color: $gray;
+    border: 1px solid #000000;
+    padding: 20px;
+    box-shadow: 2px 3px #000000;
+    margin: 35px 0;
+
+    h3 {
+      color: $black;
+      margin-bottom: 15px;
+    }
+
+    p {
+      margin-bottom: 0px;
+    }
+
+    .black-text {
+      color: $black;
+    }
+
+    a {
+      display: flex;
+      justify-content: center;
+      margin-top: 10px;
+    }
+
+    .driver-chat-button {
+      background-color: $yellow;
+      border-radius: 20px;
+      border: none;
+      padding: 8px 16px;
+
+      p {
+        color: $black;
+      }
+    }
+  }
+}
