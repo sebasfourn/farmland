@@ -4,5 +4,4 @@ import "controllers";
 import "@popperjs/core";
 import "bootstrap";
 import "@rails/actioncable";
-// import "./gsap_order_show_carbon";
 import "gsap";
