@@ -14,8 +14,6 @@ export default class extends Controller {
       this.carbonPopupTarget.classList.remove("d-none");
       this.spaceTarget.classList.remove("space-none");
       const tl = gsap.timeline({ defaults: { ease: "power1.out" } });
-
-      console.log("gsap working");
       tl.fromTo(
         ".carbon-recap",
         { opacity: 0, y: 100 },
