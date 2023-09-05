@@ -3,7 +3,7 @@
   position: fixed;
   z-index: 999;
   top: 0;
-  font-size: 11px;
+  font-size: 14px;
   background-color: $green-main;
   height: 35px;
   width: 100%;
@@ -28,16 +28,15 @@
   padding: 10px 0;
   position: fixed;
   z-index: -1;
-  height: 45px;
-  top: 34px;
-  font-size: 11px;
+  height: 75px;
+  font-size: 14px;
   background-color: $green-main;
   width: 100%;
   box-shadow: 0px 5px 0px 0px $black;
   color: $beige-background;
   display: flex;
   justify-content: center;
-  margin-bottom: 20px;
+  margin-bottom: 5px;
   overflow: hidden;
   animation: grow .3s ease-in;
   animation-iteration-count: 1;
@@ -53,6 +52,12 @@
 
 .rotate-chevron {
   transform: rotate(90deg);
+}
+
+.banner-oak-tree{
+  height: 25px;
+  width: auto;
+  fill: $open-green;
 }
 @keyframes animate {
  0% {
@@ -71,11 +76,11 @@
 
 @keyframes grow {
   0% {
-    top: 0px;
+    top: -40px;
   }
 
   100% {
-    top: 20px;
+    top: 34px;
   }
 
 }
@@ -85,7 +90,7 @@
     opacity: 0;
   }
 
-  20% {
+  40% {
     opacity: 0;
   }
 
