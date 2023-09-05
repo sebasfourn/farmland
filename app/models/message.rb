@@ -6,4 +6,5 @@ class Message < ApplicationRecord
   def sender?(user)
     self.user == user
   end
+
 end

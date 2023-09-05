@@ -1,4 +1,5 @@
-<nav class="navbar">
+<nav class="navbar" data-controller="notification-subscription"
+  data-notification-subscription-user-id-value="<%= current_user.id %>">
   <ul class="nav-icons">
     <li>
       <%= link_to farms_path, class: "nav-icon img" do %>
@@ -18,7 +19,10 @@
         <span class="nav-links <%= "current-page" if current_page?(favorites_path) %>">Favorites</span>
       <% end %>
     </li>
-    <li>
+    <li data-notification-subscription-target="navbar">
+      <% if @number_of_notifications %>
+        <%= render "shared/notification"%>
+      <% end %>
       <%= link_to trips_path, class: "nav-icon img" do %>
         <%= current_page?(trips_path) ? inline_svg_tag("chat-selected.svg") : inline_svg_tag("chat.svg")%>
         <span class="nav-links <%= "current-page" if current_page?(trips_path) %>">Chats</span>

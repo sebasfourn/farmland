@@ -7,7 +7,12 @@ class MessagesController < ApplicationController
     if @message.save
       ChatroomChannel.broadcast_to(
         @trip,
-        render_to_string(partial: "message", locals: { message: @message })
+        render_to_string(partial: "message", locals: {message: @message})
+      )
+      NotificationChannel.broadcast_to(
+        current_user.id,
+        message: "notify"
+        # render_to_string(partial: "shared/notification")
       )
       head :ok
     else
