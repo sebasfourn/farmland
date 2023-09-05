@@ -4,7 +4,7 @@
       <%= link_to url_for(:back) do %>
         <i class="fa-solid fa-chevron-left fa-lg arrow"></i>
       <% end %>
-      <h2>You're chatting with <%= @trip.user.first_name.capitalize %></h2>
+      <h2>You're chatting with <span class ="chat-driver-name"><%= @trip.user.first_name.capitalize %></span> <%= inline_svg_tag("verified_icon.svg")%></h2>
     </div>
   </div>
 
