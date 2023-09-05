@@ -16,9 +16,7 @@
       <%= render "shared/topbanner" %>
     <% end %>
     <div class= "app-container">
-      <main>
-        <%= yield %>
-      </main>
+      <%= yield %>
     </div>
     <% unless @_request.fullpath == root_path || @_request.fullpath == user_session_path  %>
       <%= render "shared/navbar" %>
