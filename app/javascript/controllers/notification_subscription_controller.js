@@ -10,7 +10,12 @@ export default class extends Controller {
     console.log("Connected")
     this.channel = createConsumer().subscriptions.create(
       { channel: "NotificationChannel", id: this.userIdValue },
-      { received: (data) => console.log(data) }
+      {
+        received: (data) => {
+          this.navbarTarget.querySelector('.notification-container').outerHTML = data
+          console.log(data)
+        }
+      }
     )
     console.log(`Notification for ${this.userIdValue}.`)
   }

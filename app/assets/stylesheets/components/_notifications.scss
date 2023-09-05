@@ -1,0 +1,23 @@
+.notification-container {
+  position: relative;
+}
+
+.notification-dot {
+  background-color: red;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: -7px;
+  left: -7px;
+}
+
+.notification-count {
+  color: white;
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 1;
+}

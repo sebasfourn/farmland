@@ -20,7 +20,7 @@
       <% end %>
     </li>
     <li data-notification-subscription-target="navbar">
-      <% if @number_of_notifications %>
+      <% if current_user.number_of_notifications %>
         <%= render "shared/notification"%>
       <% end %>
       <%= link_to trips_path, class: "nav-icon img" do %>
