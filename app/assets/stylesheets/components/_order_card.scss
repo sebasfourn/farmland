@@ -1,38 +1,56 @@
-#order-card-link{
+#order-card-link {
   color: #ff0 !important;
 }
 
 .order-card {
-  background-color: #FFFFFF;
+  background-color: #ffffff;
   border-radius: 10px;
   margin: 15px auto;
   width: 100%;
   padding: 15px 30px;
-
   h3 {
     margin-top: 15px;
   }
+}
+
+.order-card-products {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.separator::after {
+  display: inline-block;
+  content: ",";
+  position: relative;
+  left: -3px;
+  margin-right: 5px;
+}
+
+.separator:last-child:after {
+  content: "";
 }
 
 .carpool-orders-card {
   width: 100%;
   border-radius: 10px;
   background-color: $green-main;
-  color: #F4F2F1;
+  color: #f4f2f1;
   border: 1px solid #000000;
   padding: 10px 15px;
   box-shadow: 2px 3px #000000;
-
-  .carpool-date {
-    color: #FEC480;
+  margin-bottom: 15px;
+  h3 {
+    color: $yellow;
+    font-family: $subtitles-font;
     margin-bottom: 10px;
+    font-size: 18px;
   }
 
   p {
     margin-bottom: 0px;
   }
 
-  .light-text{
-    color: #F7E9DF;
+  .light-text {
+    color: #f7e9df;
   }
 }
