@@ -21,7 +21,8 @@
 .separator::after {
   display: inline-block;
   content: ",";
-  margin-left: -5x;
+  position: relative;
+  left: -3px;
   margin-right: 5px;
 }
 
