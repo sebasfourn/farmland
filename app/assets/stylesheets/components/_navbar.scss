@@ -11,7 +11,7 @@
   background-color: white;
   border-top: 1px solid white;
   flex-grow: 0;
-  padding-top: 8px;
+  padding-top: 12px;
   & ul {
     margin: 0 !important;
     padding: 0 !important;
@@ -39,7 +39,7 @@
 .nav-links {
   display: flex;
   flex-direction: column;
-  font-size: 11px;
+  font-size: 12px;
   text-align: center;
   text-decoration: none;
   &.current-page {
