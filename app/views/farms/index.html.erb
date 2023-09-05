@@ -11,7 +11,7 @@
 <div class="search-div">
   <%= form_with url: farms_path, method: :get do %>
       <%= text_field_tag :query,
-            nil,
+            params[:query],
             class: "search-input",
             placeholder: "Search for a farm, product..."
       %>
@@ -19,45 +19,54 @@
   <i class="fa-solid fa-magnifying-glass loop"></i>
 </div>
 
-<% @farms.each do |farm| %>
-  <div class="farm-card"
-    data-controller="favorite"
-    data-favorite-page-value="index">
-    <%= link_to farm_path(farm) do %>
-      <div class="farm-card-img-div">
-        <% if farm.grass_fed %>
-          <p class="farm-card-tag"><i class="fa-solid fa-tag"></i> grass fed</p>
-        <% end %>
-        <%= image_tag "farm.png", class: "farm-card-img", alt: farm.name %>
-      </div>
-    <% end %>
-
-    <div class="farm-card-body">
-      <div class="farm-fav-div">
-        <div class="farm-name-div">
-          <% if farm.open %>
-            <i class="fa-solid fa-circle fa-sm open-margin open"></i>
-          <% else %>
-            <i class="fa-solid fa-circle fa-sm open-margin close"></i>
-          <% end %>
-          <h2><%= farm.name %></h2>
+<% if @farms.any? %>
+  <% @farms.each do |farm| %>
+    <div class="farm-card"
+      data-controller="favorite"
+      data-favorite-page-value="index">
+      <%= link_to farm_path(farm) do %>
+        <div class="farm-card-img-div">
+          <%= image_tag "farm.png", class: "farm-card-img", alt: farm.name %>
+          <div class="farm-tag-div">
+            <p class="farm-tag"><i class="fa-solid fa-tag"></i> organic</p>
+            <% if farm.grass_fed %>
+              <p class="farm-tag"><i class="fa-solid fa-tag"></i> grass fed</p>
+            <% end %>
+          </div>
         </div>
-        <%= render "heart", farm: farm %>
-      </div>
+      <% end %>
 
-      <div class="farm-card-description">
-        <p>
-          <span class="distance-color"><%= farm.distance_to([current_user.latitude, current_user.longitude]).round %> km ●
-          <% time = (farm.distance_to([current_user.latitude, current_user.longitude]).round * 60) / 50 %>
-          <% hours, minutes = time.divmod(60)  %>
-          <%= hours > 0 ? "#{hours} hours" : "" %>
-          <%= minutes %> min</span>
-        </p>
-        <div class="rating-div">
-          <strong><p class="rating-text"><%= farm.rating %></p></strong>
-          <i class="fa-solid fa-star fa-sm star"></i>
+      <div class="farm-card-body">
+        <div class="farm-fav-div">
+          <div class="farm-name-div">
+            <% if farm.open %>
+              <i class="fa-solid fa-circle fa-sm open-margin open"></i>
+            <% else %>
+              <i class="fa-solid fa-circle fa-sm open-margin close"></i>
+            <% end %>
+            <h2><%= farm.name %></h2>
+          </div>
+          <%= render "heart", farm: farm %>
+        </div>
+
+        <div class="farm-card-description">
+          <p>
+            <span class="distance-color"><%= farm.distance_to([current_user.latitude, current_user.longitude]).round %> km ●
+            <% time = (farm.distance_to([current_user.latitude, current_user.longitude]).round * 60) / 50 %>
+            <% hours, minutes = time.divmod(60)  %>
+            <%= hours > 0 ? "#{hours} hours" : "" %>
+            <%= minutes %> min</span>
+          </p>
+          <div class="rating-div">
+            <strong><p class="rating-text"><%= farm.rating %></p></strong>
+            <i class="fa-solid fa-star fa-sm star"></i>
+          </div>
         </div>
       </div>
     </div>
+  <% end %>
+<% else %>
+  <div class="no-message">
+    <p>No farms found</p>
   </div>
 <% end %>
