@@ -4,11 +4,21 @@ class MessagesController < ApplicationController
     @message = Message.new(message_params)
     @message.trip = @trip
     @message.user = current_user
+
+    # @trip.messages.where(user: current_user, seen:true)
+
     if @message.save
       ChatroomChannel.broadcast_to(
         @trip,
-        render_to_string(partial: "message", locals: { message: @message })
+        render_to_string(partial: "message", locals: {message: @message})
       )
+      # raise
+      Order.where(trip: @trip).pluck(:user_id).reject{|id| @message.user.id == id}.each do |user_id|
+        NotificationChannel.broadcast_to(
+          User.find(user_id),
+          render_to_string(partial: "shared/notification")
+        )
+      end
       head :ok
     else
       render "trips/show"
