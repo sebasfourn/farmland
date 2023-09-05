@@ -1,31 +1,33 @@
-<div class="title-div">
-  <div class="arrow-div">
-    <%= link_to url_for(:back) do %>
-      <i class="fa-solid fa-chevron-left fa-lg arrow"></i>
-    <% end %>
-    <h2>You're chatting with <%= @trip.user.first_name.capitalize %></h2>
-  </div>
-</div>
-
-<div class="chatroom" data-controller="chatroom-subscription" data-chatroom-subscription-chatroom-id-value="<%= @trip.id %>">
-  <div class="messages" data-chatroom-subscription-target="messages">
-    <% @trip.messages.each do |message| %>
-      <%= render "messages/message", message: message %>
-    <% end %>
-  </div>
-
-  <%= simple_form_for [@trip, @message], html: { data: { action: "turbo:submit-end->chatroom-subscription#resetForm" }, class: "d-flex" } do |f| %>
-    <div class="message-row">
-      <div class="send-box">
-        <%= f.search_field :content,
-          label: false,
-          placeholder: "Type a message...",
-          wrapper_html: { class: "flex-grow-1 message-input" },
-          class: "message-input" %>
-        <%= f.button :button, class: "btn send-button" do %>
-          <%= inline_svg_tag("send.svg") %>
-        <% end %>
-      </div>
+<div class="chatroom-container">
+  <div class="title-div">
+    <div class="arrow-div">
+      <%= link_to url_for(:back) do %>
+        <i class="fa-solid fa-chevron-left fa-lg arrow"></i>
+      <% end %>
+      <h2>You're chatting with <span class ="chat-driver-name"><%= @trip.user.first_name.capitalize %></span> <%= inline_svg_tag("verified_icon.svg")%></h2>
     </div>
-  <% end %>
+  </div>
+
+  <div class="chatroom" data-controller="chatroom-subscription" data-chatroom-subscription-chatroom-id-value="<%= @trip.id %>">
+    <div class="messages" data-chatroom-subscription-target="messages">
+      <% @trip.messages.each do |message| %>
+        <%= render "messages/message", message: message %>
+      <% end %>
+    </div>
+
+    <%= simple_form_for [@trip, @message], html: { data: { action: "turbo:submit-end->chatroom-subscription#resetForm" }, class: "d-flex" } do |f| %>
+      <div class="message-row">
+        <div class="send-box">
+          <%= f.search_field :content,
+            label: false,
+            placeholder: "Type a message...",
+            wrapper_html: { class: "flex-grow-1 message-input" },
+            class: "message-input" %>
+          <%= f.button :button, class: "btn send-button" do %>
+            <%= inline_svg_tag("send.svg") %>
+          <% end %>
+        </div>
+      </div>
+    <% end %>
+  </div>
 </div>
