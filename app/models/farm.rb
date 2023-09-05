@@ -13,9 +13,29 @@ class Farm < ApplicationRecord
 
   include PgSearch::Model
 
-  pg_search_scope :search_farm,
+  pg_search_scope :search_farm_by_query,
                   against: %i[name description],
                   using: {
                     tsearch: { prefix: true }
+                  }
+
+  pg_search_scope :search_farm_by_meat,
+                  associated_against: {
+                    products: :category
+                  }
+
+  pg_search_scope :search_farm_by_vegetable,
+                  associated_against: {
+                    products: :category
+                  }
+
+  pg_search_scope :search_farm_by_fruit,
+                  associated_against: {
+                    products: :category
+                  }
+
+  pg_search_scope :search_farm_by_egg,
+                  associated_against: {
+                    products: :category
                   }
 end

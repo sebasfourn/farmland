@@ -2,10 +2,25 @@ class FarmsController < ApplicationController
   skip_before_action :verify_authenticity_token, only: %i[favorite unfavorite]
 
   def index
-    @farms = Farm.all.sort_by do |farm|
-      farm.distance_to([current_user.latitude, current_user.longitude]).round
+    @farms = Farm.all
+    @farms = @farms.search_farm_by_query(params[:query]) if params[:query].present?
+    @farms = @farms.search_farm_by_meat("meat") if params[:meat].present?
+    @farms = @farms.search_farm_by_vegetable("vegetable") if params[:vegetable].present?
+    @farms = @farms.search_farm_by_fruit("fruit") if params[:fruit].present?
+    @farms = @farms.search_farm_by_egg("egg") if params[:egg].present?
+
+    case params[:sort]
+    when "open"
+      @farms = @farms.sort_by { |farm| farm.open ? 0 : 1 }
+    when "carpool"
+      @farms = @farms.select { |farm| farm.trips.any? }
+    when "rating"
+      @farms = @farms.sort_by(&:rating).reverse
+    else
+      @farms = @farms.sort_by do |farm|
+        farm.distance_to([current_user.latitude, current_user.longitude]).round
+      end
     end
-    @farms = Farm.search_farm(params[:query]) if (params[:query]).present?
   end
 
   def show
