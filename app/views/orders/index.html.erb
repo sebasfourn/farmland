@@ -11,7 +11,7 @@
   <% @orders.each do |order| %>
     <%= link_to order_path(order), class: "order-card-link" do %>
       <div class="order-card">
-        <h2><%= order.trip.farm.name %> Order</h2>
+        <h2><span class="farm-name"><%= order.trip.farm.name %></span> order</h2>
         <h3>Products</h3>
         <div class="order-card-products">
           <% order.order_products.each do |order_product| %>
