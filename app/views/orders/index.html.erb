@@ -13,12 +13,13 @@
       <div class="order-card">
         <h2><%= order.trip.farm.name %> Order</h2>
         <h3>Products</h3>
-        <% order.order_products.each do |order_product| %>
-          <div>
-            <%= "#{order_product.quantity}#{order_product.product.unit}"%>
-            <%= order_product.product.category == "meat" ? order_product.product.name : order_product.product.name.pluralize %>
-          </div>
-        <% end %>
+        <div class="order-card-products">
+          <% order.order_products.each do |order_product| %>
+            <div class="separator">
+              <%= "#{order_product.quantity}"%> <%= order_product.product.category == "meat" ? order_product.product.name : order_product.product.name.pluralize %>
+            </div>
+          <% end %>
+        </div>
 
         <h3>Carpool</h3>
         <div class="carpool-orders-card">
