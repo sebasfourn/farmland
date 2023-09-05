@@ -12,8 +12,11 @@
   display: flex;
   justify-content: center;
   margin-bottom: 20px;
+  overflow: hidden;
+
   & .emph {
     color: $yellow;
+    margin-right: 15px;
   }
 
   .add-carbon-saving {
@@ -21,6 +24,36 @@
   }
 }
 
+.topbanner-clicked {
+  padding: 10px 0;
+  position: fixed;
+  z-index: -1;
+  height: 45px;
+  top: 34px;
+  font-size: 11px;
+  background-color: $green-main;
+  width: 100%;
+  box-shadow: 0px 5px 0px 0px $black;
+  color: $beige-background;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+  overflow: hidden;
+  animation: grow .3s ease-in;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+  p {
+    text-align: center;
+    animation: fade-text .3s ease-in;
+  }
+  .top-banner-extended-container {
+    width: 80%;
+  }
+}
+
+.rotate-chevron {
+  transform: rotate(90deg);
+}
 @keyframes animate {
  0% {
     letter-spacing: normal;
@@ -33,5 +66,30 @@
   100% {
     letter-spacing: normal;
     scale: 1;
+  }
+}
+
+@keyframes grow {
+  0% {
+    top: 0px;
+  }
+
+  100% {
+    top: 20px;
+  }
+
+}
+
+@keyframes fade-text {
+  0% {
+    opacity: 0;
+  }
+
+  20% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
   }
 }
