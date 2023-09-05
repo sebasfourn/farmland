@@ -41,7 +41,7 @@
         <% @products.where.not(stock: 0).each do |product| %>
           <%= f.simple_fields_for :order_products do |order_product| %>
             <div class="farm-product-field">
-              <%= image_tag "product-placeholder.jpeg", class: "product-image", alt: "Product" %>
+              <%= image_tag "product-placeholder.jpeg", alt: "Product" %>
               <div class = "farm-product-label">
                 <h4><%= order_product.label (product.category == "meat" ? product.name : product.name.pluralize) %></h4>
                 <p><span class="light-green"><%= "$#{product.price} / #{product.unit}" %></span></p>
