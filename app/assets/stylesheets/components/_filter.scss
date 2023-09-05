@@ -1,0 +1,46 @@
+.filter-div {
+  position: relative;
+  background-color: $white;
+  border-radius: 10px;
+  padding: 15px;
+  margin-bottom: 25px;
+  margin-top: -20px;
+
+  .filter-x {
+    position: absolute;
+    top: 25px;
+    right: 15px;
+  }
+
+  .subtitle-div {
+    margin-bottom: 25px;
+
+    .checkbox-div {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 5px;
+    }
+
+    .filter-checkbox {
+      background-color: $green-main;
+      border-radius: 25px;
+      border: none;
+      padding: 5px 25px;
+      font-size: 14px;
+    }
+
+    .btn-check:checked + .filter-checkbox {
+      background-color: $yellow;
+      color: $black;
+    }
+  }
+
+  .filter-button {
+    background-color: $black;
+    border-radius: 25px;
+    border: none;
+    padding: 12px 0;
+    color: $white;
+    width: 100%;
+  }
+}

@@ -8,16 +8,51 @@
   </div>
 </div>
 
-<div class="search-div">
-  <%= form_with url: farms_path, method: :get do %>
+<%= form_with url: farms_path, method: :get do %>
+  <div data-controller="search-filter">
+    <div class="search-div">
       <%= text_field_tag :query,
             params[:query],
             class: "search-input",
             placeholder: "Search for a farm, product..."
       %>
-  <% end %>
-  <i class="fa-solid fa-magnifying-glass loop"></i>
-</div>
+      <i class="fa-solid fa-magnifying-glass loop"></i>
+      <i class="fa-solid fa-sliders filter" data-action="click->search-filter#openFilter"></i>
+    </div>
+
+    <div class="d-none" data-search-filter-target="filter">
+      <div class="filter-div">
+        <div class="subtitle-div">
+          <strong><p>Product</p></strong>
+          <div class="checkbox-div">
+            <input type="checkbox" id="meat" name="meat" value="true" class="btn-check" <% if params[:meat] %> checked <% end %>>
+            <label for="meat" class="btn btn-primary filter-checkbox">Meat</label>
+            <input type="checkbox" id="vegetable" name="vegetable" value="true" class="btn-check" <% if params[:vegetable] %> checked <% end %>>
+            <label for="vegetable" class="btn btn-primary filter-checkbox">Vegetable</label>
+            <input type="checkbox" id="fruit" name="fruit" value="true" class="btn-check" <% if params[:fruit] %> checked <% end %>>
+            <label for="fruit" class="btn btn-primary filter-checkbox">Fruit</label>
+            <input type="checkbox" id="egg" name="egg" value="true" class="btn-check" <% if params[:egg] %> checked <% end %>>
+            <label for="egg" class="btn btn-primary filter-checkbox">Egg</label>
+          </div>
+        </div>
+
+        <div class="subtitle-div">
+          <strong><p>Sort</p></strong>
+          <div class="checkbox-div">
+            <input type="radio" id="open" name="sort" value="open" class="btn-check" <% if params[:sort] == "open" %> checked <% end %>>
+            <label for="open" class="btn btn-primary filter-checkbox">Open</label>
+            <input type="radio" id="carpool" name="sort" value="carpool" class="btn-check" <% if params[:sort] == "carpool" %> checked <% end %>>
+            <label for="carpool" class="btn btn-primary filter-checkbox">Carpool</label>
+            <input type="radio" id="rating" name="sort" value="rating" class="btn-check" <% if params[:sort] == "rating" %> checked <% end %>>
+            <label for="rating" class="btn btn-primary filter-checkbox">Rating</label>
+          </div>
+        </div>
+
+        <button type="submit" class="filter-button">Apply</button>
+      </div>
+    </div>
+  </div>
+<% end %>
 
 <% if @farms.any? %>
   <% @farms.each do |farm| %>
