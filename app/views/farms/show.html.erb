@@ -25,7 +25,11 @@
   <%= simple_form_for ([@order]) do |f|%>
     <h3> Join a carpool </h3>
     <div class="carpool-buttons-container">
-        <%= f.association :trip, collection: @farm.trips, as: :radio_buttons, label_method: lambda { |trip| render "show_carpool_label", trip: trip, current_user: current_user }, collection_wrapper_class: "carpool-buttons-container", item_wrapper_class: 'farm-order-radio-buttons radio-button-text'%>
+        <%= f.association :trip, collection: @farm.trips,
+                          as: :radio_buttons,
+                          label_method: lambda { |trip| render "farms/show_carpool_label", trip: trip, current_user: current_user },
+                          collection_wrapper_class: "carpool-buttons-container",
+                          item_wrapper_class: 'farm-order-radio-buttons radio-button-text'%>
         <%# if I wanted all the cards from the app to have the same informations, I can make a partial called carpool_card
         and render it where I need to. For example, on order-show page :
          label_method: lambda { |trip| render "carpool_card", trip: @order.trip, current_user: current_user }
