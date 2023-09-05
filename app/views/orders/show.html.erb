@@ -69,11 +69,14 @@
   </div>
 </div>
 
-<div class="carbon-recap">
-  <h3>Well done!</h3>
-  <% carbon_total = 0%>
-  <% @order_products.each do |order_product|%>
-    <% carbon_total += (order_product.quantity * order_product.product.co2_saved) %>
-  <% end %>
-  <p> You saved <%= carbon_total.round(3) %>kg of Carbon Dioxide by shopping with Farmland! <p>
+<div data-controller="gsap-order-show" data-gsap-order-show-first-look-value="<%= params[:new_order].present? %>" >
+  <div class="space space-none" data-gsap-order-show-target="space"></div>
+  <div data-gsap-order-show-target="carbonPopup" class="carbon-recap d-none">
+    <h3>Well done!</h3>
+    <% carbon_total = 0%>
+    <% @order_products.each do |order_product|%>
+      <% carbon_total += (order_product.quantity * order_product.product.co2_saved) %>
+    <% end %>
+    <p> You saved <span class="emph total-carbon"><%= carbon_total.round(3) %></span> kg of Carbon Dioxide by shopping with Farmland! <p>
+  </div>
 </div>

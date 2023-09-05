@@ -62,6 +62,14 @@
   }
 }
 
+.space {
+  margin-bottom: 200px;
+}
+
+.space-none {
+  margin: 0;
+}
+
 .carbon-recap {
   z-index: 888;
   display: flex;
@@ -72,13 +80,15 @@
   padding: 30px 30px 0 30px;
   border-radius: 50px 50px 0px 0px;
   font-size: 15px;
-  background-color: $green-light;
+  background-color: $green-dark;
   position: fixed;
   bottom: 0;
   left: 0;
   margin: 60px 0;
-}
-
-.meeting-point {
-  margin-bottom: 200px;
+  h3 {
+    color: $yellow;
+  }
+  .emph {
+    color: $yellow;
+  }
 }

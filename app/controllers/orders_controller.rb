@@ -34,7 +34,7 @@ class OrdersController < ApplicationController
       end
       current_user.total_co2_saved += order_co2_saved
       current_user.save
-      redirect_to order_path(@order)
+      redirect_to order_path(@order, new_order: true)
     else
       # redirect_to farm_path(params["farm"])
       @farm = Farm.find(params["farm"])
