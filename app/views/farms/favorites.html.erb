@@ -14,10 +14,13 @@
       data-favorite-page-value="favorites">
       <%= link_to farm_path(farm) do %>
         <div class="farm-card-img-div">
-          <% if farm.grass_fed %>
-            <p class="farm-card-tag"><i class="fa-solid fa-tag"></i> grass fed</p>
-          <% end %>
           <%= image_tag "farm.png", class: "farm-card-img-fav", alt: farm.name %>
+          <div class="farm-tag-div">
+            <p class="farm-tag"><i class="fa-solid fa-tag"></i> organic</p>
+            <% if farm.grass_fed %>
+              <p class="farm-tag"><i class="fa-solid fa-tag"></i> grass fed</p>
+            <% end %>
+          </div>
         </div>
       <% end %>
 
@@ -51,7 +54,7 @@
     </div>
   <% end %>
   <div class="no-message d-none">
-      <p>No favorites yet</p>
+    <p>No favorites yet</p>
   </div>
 <% else %>
   <%= render "no-message" %>
