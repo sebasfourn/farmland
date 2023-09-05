@@ -77,8 +77,8 @@ trip_four = Trip.new(date: DateTime.new(2023,9,16,17,0,0), seat: 3, user: users[
 trip_four.save!
 trips << trip_four
 
-# seb_order = Order.new(trip: trip_one, user: seb)
-# seb_order.save!
+seb_order = Order.new(trip: trip_one, user: seb)
+seb_order.save!
 
 therese_order = Order.new(trip: trip_one, user: therese)
 therese_order.save!

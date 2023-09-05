@@ -9,11 +9,13 @@ class MessagesController < ApplicationController
         @trip,
         render_to_string(partial: "message", locals: {message: @message})
       )
-      NotificationChannel.broadcast_to(
-        current_user.id,
-        message: "notify"
-        # render_to_string(partial: "shared/notification")
-      )
+      # raise
+      Order.where(trip: @trip).pluck(:user_id).reject{|id| @message.user.id == id}.each do |user_id|
+        NotificationChannel.broadcast_to(
+          User.find(user_id),
+          render_to_string(partial: "shared/notification")
+        )
+      end
       head :ok
     else
       render "trips/show"
