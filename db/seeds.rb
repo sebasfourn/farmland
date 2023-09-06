@@ -11,6 +11,7 @@ require "open-uri"
 Message.destroy_all
 Trip.destroy_all
 Farm.destroy_all
+ProductInfo.destroy_all
 Product.destroy_all
 User.destroy_all
 
@@ -37,37 +38,51 @@ farms << ferme_bibeau
 farms << ferme_d_oree
 farms << sanders_farm
 
-asparagus = URI.open("")
-radishes = URI.open("")
-spinach = URI.open("")
-strawberries = URI.open("")
-lettuce = URI.open("")
-green_onions = URI.open("")
-herbs = URI.open("")
-rhubarb = URI.open("")
-raspberries = URI.open("")
-broccoli = URI.open("")
-zucchini = URI.open("")
-beets = URI.open("")
-kale = URI.open("")
-carrots = URI.open("")
-blueberries = URI.open("")
-cantaloupes = URI.open("")
-tomatoes = URI.open("")
-beans = URI.open("")
-leeks = URI.open("")
-eggplant = URI.open("")
-apples = URI.open("")
-pepper = URI.open("")
-sweet_potatoes = URI.open("")
-squash = URI.open("")
-turnips = URI.open("")
+# may
+asparagus = ProductInfo.create!(name: "asparagus", category: "vegetable", month: 5, co2_saved: 0)
 
-chicken_breast = URI.open("")
-ground_turkey = URI.open("")
-ground_pork = URI.open("")
-ground_beef = URI.open("")
+# june
+radish = ProductInfo.create!(name: "radish", category: "vegetable", month: 6, co2_saved: 0)
+spinach = ProductInfo.create!(name: "spinach", category: "vegetable", month: 6, co2_saved: 0)
+strawberry = ProductInfo.create!(name: "strawberry", category: "fruit", month: 6, co2_saved: 0)
+lettuce = ProductInfo.create!(name: "lettuce", category: "vegetable", month: 6, co2_saved: 0)
+green_onion = ProductInfo.create!(name: "green_onion", category: "vegetable", month: 6, co2_saved: 0)
+herb = ProductInfo.create!(name: "herb", category: "vegetable", month: 6, co2_saved: 0)
+rhubarb = ProductInfo.create!(name: "rhubarb", category: "fruit", month: 6, co2_saved: 0)
 
+# july
+raspberry = ProductInfo.create!(name: "raspberry", category: "fruit", month: 7, co2_saved: 0)
+broccoli = ProductInfo.create!(name: "broccoli", category: "vegetable", month: 7, co2_saved: 0)
+zucchini = ProductInfo.create!(name: "zucchini", category: "vegetable", month: 7, co2_saved: 0)
+beet = ProductInfo.create!(name: "beet", category: "vegetable", month: 7, co2_saved: 0)
+kale = ProductInfo.create!(name: "kale", category: "vegetable", month: 7, co2_saved: 0)
+
+# august
+carrot = ProductInfo.create!(name: "carrot", category: "vegetable", month: 8, co2_saved: 0)
+blueberry = ProductInfo.create!(name: "blueberry", category: "fruit", month: 8, co2_saved: 0)
+cantaloupe = ProductInfo.create!(name: "cantaloupe", category: "fruit", month: 8, co2_saved: 0)
+cantaloupe = ProductInfo.create!(name: "cantaloupe", category: "fruit", month: 8, co2_saved: 0)
+tomato = ProductInfo.create!(name: "tomato", category: "vegetable", month: 8, co2_saved: 0)
+bean = ProductInfo.create!(name: "bean", category: "vegetable", month: 8, co2_saved: 0)
+leek = ProductInfo.create!(name: "leek", category: "vegetable", month: 8, co2_saved: 0)
+eggplant = ProductInfo.create!(name: "eggplant", category: "vegetable", month: 8, co2_saved: 0)
+
+# september
+apple = ProductInfo.create!(name: "apple", category: "fruit", month: 9, co2_saved: 0)
+pepper = ProductInfo.create!(name: "pepper", category: "vegetable", month: 9, co2_saved: 0)
+
+# october
+sweet_potato = ProductInfo.create!(name: "sweet_potato", category: "vegetable", month: 10, co2_saved: 0)
+squash = ProductInfo.create!(name: "squash", category: "vegetable", month: 10, co2_saved: 0)
+turnip = ProductInfo.create!(name: "turnip", category: "vegetable", month: 10, co2_saved: 0)
+
+# meat
+chicken_breast = ProductInfo.create!(name: "chicken_breast", category: "meat", month: 12, co2_saved: 0)
+ground_turkey = ProductInfo.create!(name: "ground_turkey", category: "meat", month: 12, co2_saved: 0)
+ground_pork = ProductInfo.create!(name: "ground_pork", category: "meat", co2_saved: 0)
+ground_beef = ProductInfo.create!(name: "ground_beef", category: "meat", month: 12, co2_saved: 0)
+
+# old seed
 tomato_photo = URI.open("https://th.bing.com/th/id/OIG._o3h2oVb035wj82ZFwSr?pid=ImgGn")
 tomato = Product.new(name: "tomato", category: "vegetable", unit: "kg", stock: 20, farm: ferme_bibeau, price: 5.51, co2_saved: 0.997891042)
 tomato.photo.attach(io: tomato_photo, filename: 'tomato.jpg', content_type: 'image/jpeg')
@@ -128,7 +143,7 @@ trip_nine = Trip.new(date: DateTime.new(2023,9,30,16,0,0), seat: 3, user: users[
 trip_nine.save!
 trips << trip_nine
 
-seb_order = Order.new(trip: trip_one, user: seb)
+seb_order = Order.new(trip: trip_nine, user: seb)
 seb_order.save!
 
 # therese_order = Order.new(trip: trip_one, user: therese)
