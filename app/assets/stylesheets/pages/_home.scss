@@ -8,25 +8,63 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background-image: url('https://res.cloudinary.com/dpfoq3knh/image/upload/v1693921042/farmland_ldo8vq.jpg');
+  background-image: url("https://res.cloudinary.com/dpfoq3knh/image/upload/v1693921042/farmland_ldo8vq.jpg");
   background-size: 100vw 150vh;
   background-position: center;
 }
 
 .farmland-title {
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   margin-bottom: 60px;
-  margin-top: -90px;
+  margin-top: -10px;
   & h1 {
     font-family: "Eiko";
     font-size: 40px;
     font-weight: bold;
     color: $green-main;
   }
+  p {
+    width: 70%;
+    font-family: 20px;
+  }
 }
 
-.farmland-description{
-  padding: 0 40px 20px 40px;
+.farmland-seasonal {
+  max-width: 100%;
+  text-align: center;
+  .seasonal {
+    color: $green-main;
+  }
+}
+
+.seasonal-products {
+  max-width: 100%;
+  display: flex;
+  align-items: center;
+  flex-wrap: nowrap;
+  white-space: nowrap;
+  overflow-x: auto;
+  margin-right: 20px;
+  margin-top: 20px;
+  margin-bottom: 100px;
+  .product-div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-right: 20px;
+    img {
+      width: 70px;
+      height: 70px;
+      border-radius: 100%;
+      margin-bottom: 10px;
+    }
+    p {
+      font-size: 13px;
+    }
+  }
 }
 
 .button-center {
@@ -42,6 +80,6 @@
   width: 80%;
   transition: background-color 0.4s ease;
   cursor: pointer;
-    font-family: "OS-Bold";
-    color: $beige-background !important;
+  font-family: "OS-Bold";
+  color: $beige-background !important;
 }

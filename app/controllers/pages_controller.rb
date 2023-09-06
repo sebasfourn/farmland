@@ -9,6 +9,8 @@ class PagesController < ApplicationController
       "10" => %w[sweet_potatoes squash turnips]
     }
 
+    @products = Product.all
+
     all_year = %w[meat cranberries mushrooms potatoes cabbage]
 
     current_month = Date.today.strftime("%m")
