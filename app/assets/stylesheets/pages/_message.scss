@@ -39,6 +39,7 @@ color: white;
 .message-input:focus {
   background-color: $green-dark;
   color: $white;
+  outline: 0;
 }
 
 .message-input ::placeholder {
