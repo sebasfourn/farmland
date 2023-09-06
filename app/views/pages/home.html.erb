@@ -6,5 +6,7 @@
     <h2>Welcome!</h2>
     <p>Get your farm-fresh products directly from local farms, even if you don't have a car. Carpool, reduce your CO2 emissions and enjoy the best local produce!</p>
   </div>
-  <button class="landing-button"><%= link_to "Let's go", farms_path%></button>
+  <%= link_to farms_path, class:"landing-button" do %>
+    Let's go
+  <% end %>
 </div>
