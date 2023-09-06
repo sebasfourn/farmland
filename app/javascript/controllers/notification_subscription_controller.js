@@ -12,11 +12,12 @@ export default class extends Controller {
       { channel: "NotificationChannel", id: this.userIdValue },
       {
         received: (data) => {
+          console.log('Received notification', data)
           this.navbarTarget.querySelector('.notification-container').outerHTML = data
           document.querySelector("#notificationAudio").play()
         }
       }
     )
-    console.log(`Notification for ${this.userIdValue}.`)
+    // console.log(`Notification for ${this.userIdValue}.`)
   }
 }
