@@ -1,7 +1,7 @@
-<div class="notification-container <%= current_user.number_of_notifications > 0 ? "" : "d-none" %>">
+<div class="notification-container <%= Message.unseen_messages_count_for(current_user) > 0 ? "" : "d-none" %>">
     <div class="notification-dot">
       <div class="notification-count">
-        <%= current_user.number_of_notifications %>
+        <%= Message.unseen_messages_count_for(current_user) %>
       </div>
     </div>
   <%= audio_tag asset_path("cowbell.mp3"), id: "notificationAudio", control: true%>
