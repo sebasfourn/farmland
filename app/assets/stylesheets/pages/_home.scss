@@ -41,20 +41,22 @@
 }
 
 .seasonal-products {
-  max-width: 100%;
+  max-width: 100vw;
   display: flex;
   align-items: center;
   flex-wrap: nowrap;
   white-space: nowrap;
   overflow-x: auto;
-  margin-right: 20px;
+  margin-left: -20px;
+  margin-right: -20px;
   margin-top: 20px;
   margin-bottom: 100px;
+  gap: 20px;
+  padding: 0 20px;
   .product-div {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-right: 20px;
     img {
       width: 70px;
       height: 70px;
