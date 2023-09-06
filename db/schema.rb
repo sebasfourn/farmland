@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_09_05_134124) do
+ActiveRecord::Schema[7.0].define(version: 2023_09_06_182331) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -59,6 +59,8 @@ ActiveRecord::Schema[7.0].define(version: 2023_09_05_134124) do
     t.float "longitude"
     t.boolean "grass_fed", default: false
     t.boolean "organic", default: true
+    t.integer "opening_time"
+    t.integer "closing_time"
   end
 
   create_table "favorites", force: :cascade do |t|

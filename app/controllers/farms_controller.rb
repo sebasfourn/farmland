@@ -3,6 +3,7 @@ class FarmsController < ApplicationController
 
   def index
     @farms = Farm.all
+    @time = (Time.now.hour.to_f + (Time.now.min.to_f / 60))
     @farms = @farms.search_farm_by_query(params[:query]) if params[:query].present?
     @farms = @farms.search_farm_by_meat("meat") if params[:meat].present?
     @farms = @farms.search_farm_by_vegetable("vegetable") if params[:vegetable].present?
