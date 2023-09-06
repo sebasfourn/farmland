@@ -1,8 +1,9 @@
 <div class="notification-container <%= current_user.number_of_notifications > 0 ? "" : "d-none"%>">
   <div class="notification-dot">
     <div class="notification-count">
-      <%# PU added: the above is just a trial icon %>
       <%= current_user.number_of_notifications %>
     </div>
   </div>
 </div>
+
+<%# <audio id= "notificationAudio" src="assets/audios/cowbell.mp3" type= "audio/mpeg" controls></audio> %>
