@@ -77,6 +77,7 @@
     <% @order_products.each do |order_product|%>
       <% carbon_total += (order_product.quantity * order_product.product.co2_saved) %>
     <% end %>
+    <% carbon_total += @driver.electric_car ? ((@driver.distance_to([current_user.latitude, current_user.longitude])*0.192)) : ((@driver.distance_to([current_user.latitude, current_user.longitude])*0.192)/@order.trip.seat)%>
     <p> You saved <span class="emph total-carbon"><%= carbon_total.round %></span> kg of Carbon Dioxide by shopping with Farmland! <p>
   </div>
 </div>
