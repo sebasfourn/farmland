@@ -10,7 +10,7 @@
       <div class="top-banner-extended-container">
         <% if current_user %>
           <%= inline_svg_tag "minimalist_tree.svg", class: "banner-tree" %>
-          <p id="top-banner-extended text">That's as much as an oak tree can remove from the atmosphere in <span class = "emph"> <%= (current_user.total_co2_saved/0.362).round %> weeks! </span></p>
+          <p id="top-banner-extended text">That's as much as an oak tree can remove from the atmosphere in <span class = "emph" id = "co2-equivalent-trees"> <%= (current_user.total_co2_saved/0.362).round %> weeks! </span></p>
         <% end %>
       </div>
     </div>
