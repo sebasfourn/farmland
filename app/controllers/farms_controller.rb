@@ -9,17 +9,21 @@ class FarmsController < ApplicationController
     @farms = @farms.search_farm_by_fruit("fruit") if params[:fruit].present?
     @farms = @farms.search_farm_by_egg("egg") if params[:egg].present?
 
+    @farms = @farms.sort_by do |farm|
+      farm.distance_to([current_user.latitude, current_user.longitude]).round
+    end
+
     case params[:sort]
+    when "distance"
+      @farms = @farms.sort_by do |farm|
+        farm.distance_to([current_user.latitude, current_user.longitude]).round
+      end
     when "open"
       @farms = @farms.sort_by { |farm| farm.open ? 0 : 1 }
     when "carpool"
       @farms = @farms.select { |farm| farm.trips.any? }
     when "rating"
       @farms = @farms.sort_by(&:rating).reverse
-    else
-      @farms = @farms.sort_by do |farm|
-        farm.distance_to([current_user.latitude, current_user.longitude]).round
-      end
     end
   end
 
