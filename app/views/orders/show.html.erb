@@ -45,7 +45,7 @@
       <% end %>
     </h3>
     <div class="carpool-info">
-      <p><span class="black-text"><%= @order.trip.user.electric_car ? "Electric" : "Gas" %></span> car, <%= @order.trip.seat %> seats available</p>
+      <p><span class="black-text"><%= @order.trip.user.electric_car ? "Electric" : "Gas" %></span> car, <%= @order.trip.seat %> seats left</p>
       <p><span class="black-text"><%= @order.trip.user.distance_to([current_user.latitude, current_user.longitude]).round %></span> km away from you</p>
       <p>Driver : <span class="black-text"><%= @order.trip.user.first_name.capitalize %></span></p>
     </div>
