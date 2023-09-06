@@ -27,46 +27,46 @@ users << nicole
 farms = []
 
 ferme_bibeau = Farm.create!(name: "Ferme Bibeau", address: "3336 Chemin Bibeau
-  Sherbrooke, QC", open: true, rating: 4.5, description: "Ferme Bibeau covers 95 hectares, of which 65 are cultivated and 30 are wooded. There is also an elderberry orchard with an area of one hectare. Within the 65 cultivated hectares, measures to protect biodiversity have been put in place, particularly with regard to the protection of rural birds. The 30 hectares of forest are intended for the integral conservation of the natural environment.")
+  Sherbrooke, QC", open: true, rating: 4.5, opening_time: 10, closing_time: 24, description: "Ferme Bibeau covers 95 hectares, of which 65 are cultivated and 30 are wooded. There is also an elderberry orchard with an area of one hectare. Within the 65 cultivated hectares, measures to protect biodiversity have been put in place, particularly with regard to the protection of rural birds. The 30 hectares of forest are intended for the integral conservation of the natural environment.")
 ferme_d_oree = Farm.create!(name: "Ferme d'Orée", address: "273, Chemin Beaver ridge
-  Newport, QC", open: false, rating: 3.5, description: "We produce grass-fed beef, pastured pork, lamb, eggs, and unpasteurized honey and sell directly to the consumer and through specialized butchers.")
+  Newport, QC", open: false, rating: 3.5, opening_time: 9, closing_time: 14, description: "We produce grass-fed beef, pastured pork, lamb, eggs, and unpasteurized honey and sell directly to the consumer and through specialized butchers.")
 sanders_farm = Farm.create!(name: "Sanders Farm", address: "475 Hyatt's Mills
-  Compton, QC", open: true, rating: 4.5, grass_fed: true, description: "Sanders farm is a family-run, organic fruit and vegetable farm, nestled in the beautiful rolling hills of Compton, in Quebec’s Eastern Townships since 1974.")
+  Compton, QC", open: true, rating: 4.5, opening_time: 9, closing_time: 15, grass_fed: true, description: "Sanders farm is a family-run, organic fruit and vegetable farm, nestled in the beautiful rolling hills of Compton, in Quebec’s Eastern Townships since 1974.")
 
 farms << ferme_bibeau
 farms << ferme_d_oree
 farms << sanders_farm
 
-asparagus = URI.open("")
-radishes = URI.open("")
-spinach = URI.open("")
-strawberries = URI.open("")
-lettuce = URI.open("")
-green_onions = URI.open("")
-herbs = URI.open("")
-rhubarb = URI.open("")
-raspberries = URI.open("")
-broccoli = URI.open("")
-zucchini = URI.open("")
-beets = URI.open("")
-kale = URI.open("")
-carrots = URI.open("")
-blueberries = URI.open("")
-cantaloupes = URI.open("")
-tomatoes = URI.open("")
-beans = URI.open("")
-leeks = URI.open("")
-eggplant = URI.open("")
-apples = URI.open("")
-pepper = URI.open("")
-sweet_potatoes = URI.open("")
-squash = URI.open("")
-turnips = URI.open("")
+# asparagus = URI.open("")
+# radishes = URI.open("")
+# spinach = URI.open("")
+# strawberries = URI.open("")
+# lettuce = URI.open("")
+# green_onions = URI.open("")
+# herbs = URI.open("")
+# rhubarb = URI.open("")
+# raspberries = URI.open("")
+# broccoli = URI.open("")
+# zucchini = URI.open("")
+# beets = URI.open("")
+# kale = URI.open("")
+# carrots = URI.open("")
+# blueberries = URI.open("")
+# cantaloupes = URI.open("")
+# tomatoes = URI.open("")
+# beans = URI.open("")
+# leeks = URI.open("")
+# eggplant = URI.open("")
+# apples = URI.open("")
+# pepper = URI.open("")
+# sweet_potatoes = URI.open("")
+# squash = URI.open("")
+# turnips = URI.open("")
 
-chicken_breast = URI.open("")
-ground_turkey = URI.open("")
-ground_pork = URI.open("")
-ground_beef = URI.open("")
+# chicken_breast = URI.open("")
+# ground_turkey = URI.open("")
+# ground_pork = URI.open("")
+# ground_beef = URI.open("")
 
 tomato_photo = URI.open("https://th.bing.com/th/id/OIG._o3h2oVb035wj82ZFwSr?pid=ImgGn")
 tomato = Product.new(name: "tomato", category: "vegetable", unit: "kg", stock: 20, farm: ferme_bibeau, price: 5.51, co2_saved: 0.997891042)
@@ -92,9 +92,9 @@ lamb.save!
 
 trips = []
 
-# trip_one = Trip.new(date: DateTime.new(2023,9,15,17,0,0), seat: 3, user: users[2], farm: farms[0], address: "Université De Sherbrooke, Quai D, Sherbrooke, QC J1K 2R1")
-# trip_one.save!
-# trips << trip_one
+trip_one = Trip.new(date: DateTime.new(2023,9,15,17,0,0), seat: 3, user: users[2], farm: farms[0], address: "Université De Sherbrooke, Quai D, Sherbrooke, QC J1K 2R1")
+trip_one.save!
+trips << trip_one
 
 trip_two = Trip.new(date: DateTime.new(2023,8,30,16,0,0), seat: 3, user: users[3], farm: farms[1], address: "Université De Sherbrooke, Quai D, Sherbrooke, QC J1K 2R1")
 trip_two.save!
