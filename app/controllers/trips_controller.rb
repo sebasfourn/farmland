@@ -14,8 +14,8 @@ class TripsController < ApplicationController
     @message = Message.new
     @messages = Message.where(trip: @trip)
     @messages.each do |message|
-    message.seen= true
-    message.save
+      message.seen = true
+      message.save
     end
   end
 end

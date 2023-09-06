@@ -13,7 +13,7 @@ export default class extends Controller {
       {
         received: (data) => {
           this.navbarTarget.querySelector('.notification-container').outerHTML = data
-          console.log(data)
+          document.querySelector("#notificationAudio").play()
         }
       }
     )
