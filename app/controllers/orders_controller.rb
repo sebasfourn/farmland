@@ -19,7 +19,7 @@ class OrdersController < ApplicationController
 
   def create
     @order = Order.new(order_params)
-    @order.user = current_user#
+    @order.user = current_user
     if @order.save
       order_co2_saved = 0
       params["order"]["order_products"].each_value do |order_product_hash|
@@ -32,6 +32,7 @@ class OrdersController < ApplicationController
           order_co2_saved += (new_order_product.quantity * new_order_product.product.co2_saved)
         end
       end
+      order_co2_saved += @order.trip.user.electric_car ? ((@order.trip.user.distance_to([current_user.latitude, current_user.longitude])*0.192)) : ((@order.trip.user.distance_to([current_user.latitude, current_user.longitude])*0.192)/@order.trip.seat)
       current_user.total_co2_saved += order_co2_saved
       current_user.save
       redirect_to order_path(@order, new_order: true)
