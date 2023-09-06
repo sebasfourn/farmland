@@ -59,6 +59,8 @@ ActiveRecord::Schema[7.0].define(version: 2023_09_06_185110) do
     t.float "longitude"
     t.boolean "grass_fed", default: false
     t.boolean "organic", default: true
+    t.integer "opening_time"
+    t.integer "closing_time"
   end
 
   create_table "favorites", force: :cascade do |t|
