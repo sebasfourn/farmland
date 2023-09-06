@@ -3,7 +3,7 @@
   <div class='carpool-info'>
     <p>
     <span class='emph-carpool'><%= trip.user.electric_car ? "Electric" : "Gas" %></span> car,
-    <span class='emph-carpool'><%= trip.seat %> <%= 'seat'.pluralize(trip.seat) %></span> available </br>
+    <span class='emph-carpool'><%= trip.seat %> <%= 'seat'.pluralize(trip.seat) %></span> left </br>
     <span class='black-text'><%= trip.user.distance_to([current_user.latitude, current_user.longitude]).round %></span> km away from you </br>
     Driver : <span class='emph-carpool'><%= trip.user.first_name.capitalize %></span> </br>
     <% if trip.user.electric_car %>
