@@ -11,10 +11,12 @@ require "open-uri"
 Message.destroy_all
 Trip.destroy_all
 Farm.destroy_all
+ProductInfo.destroy_all
 Product.destroy_all
 User.destroy_all
 
 users = []
+
 seb = User.create!(first_name: "seb", last_name: "fournier", email: "seb@email.com", password: "secret", address: "2810 Rue Beaudry, Sherbrooke, QC", driver: true, electric_car: true, verified: true)
 therese = User.create!(first_name: "therese", last_name: "trudeau", email: "therese@email.com", password: "secret", address: "495 Rue Longpre, Sherbrooke, QC", driver: false, verified: true)
 jane = User.create!(first_name: "jane", last_name: "johnson", email: "jane@email.com", password: "secret", address: "2080 Rue Andre, Sherbrooke, QC", driver: true, electric_car: true, verified: true)
@@ -26,6 +28,62 @@ users << nicole
 
 farms = []
 
+ferme_bibeau = Farm.create!(name: "Ferme Bibeau", address: "3336 Chemin Bibeau
+  Sherbrooke, QC", open: true, rating: 4.5, opening_time: 10, closing_time: 24, description: "Ferme Bibeau covers 95 hectares, of which 65 are cultivated and 30 are wooded. There is also an elderberry orchard with an area of one hectare. Within the 65 cultivated hectares, measures to protect biodiversity have been put in place, particularly with regard to the protection of rural birds. The 30 hectares of forest are intended for the integral conservation of the natural environment.")
+ferme_d_oree = Farm.create!(name: "Ferme d'Orée", address: "273, Chemin Beaver ridge
+  Newport, QC", open: false, rating: 3.5, opening_time: 9, closing_time: 14, description: "We produce grass-fed beef, pastured pork, lamb, eggs, and unpasteurized honey and sell directly to the consumer and through specialized butchers.")
+sanders_farm = Farm.create!(name: "Sanders Farm", address: "475 Hyatt's Mills
+  Compton, QC", open: true, rating: 4.5, opening_time: 9, closing_time: 15, grass_fed: true, description: "Sanders farm is a family-run, organic fruit and vegetable farm, nestled in the beautiful rolling hills of Compton, in Quebec’s Eastern Townships since 1974.")
+
+farms << ferme_bibeau
+farms << ferme_d_oree
+farms << sanders_farm
+
+# may
+asparagus = ProductInfo.create!(name: "asparagus", category: "vegetable", month: 5, co2_saved: 0)
+
+# june
+radish = ProductInfo.create!(name: "radish", category: "vegetable", month: 6, co2_saved: 0)
+spinach = ProductInfo.create!(name: "spinach", category: "vegetable", month: 6, co2_saved: 0)
+strawberry = ProductInfo.create!(name: "strawberry", category: "fruit", month: 6, co2_saved: 0)
+lettuce = ProductInfo.create!(name: "lettuce", category: "vegetable", month: 6, co2_saved: 0)
+green_onion = ProductInfo.create!(name: "green_onion", category: "vegetable", month: 6, co2_saved: 0)
+herb = ProductInfo.create!(name: "herb", category: "vegetable", month: 6, co2_saved: 0)
+rhubarb = ProductInfo.create!(name: "rhubarb", category: "fruit", month: 6, co2_saved: 0)
+
+# july
+raspberry = ProductInfo.create!(name: "raspberry", category: "fruit", month: 7, co2_saved: 0)
+broccoli = ProductInfo.create!(name: "broccoli", category: "vegetable", month: 7, co2_saved: 0)
+zucchini = ProductInfo.create!(name: "zucchini", category: "vegetable", month: 7, co2_saved: 0)
+beet = ProductInfo.create!(name: "beet", category: "vegetable", month: 7, co2_saved: 0)
+kale = ProductInfo.create!(name: "kale", category: "vegetable", month: 7, co2_saved: 0)
+
+# august
+carrot = ProductInfo.create!(name: "carrot", category: "vegetable", month: 8, co2_saved: 0)
+blueberry = ProductInfo.create!(name: "blueberry", category: "fruit", month: 8, co2_saved: 0)
+cantaloupe = ProductInfo.create!(name: "cantaloupe", category: "fruit", month: 8, co2_saved: 0)
+cantaloupe = ProductInfo.create!(name: "cantaloupe", category: "fruit", month: 8, co2_saved: 0)
+tomato = ProductInfo.create!(name: "tomato", category: "vegetable", month: 8, co2_saved: 0)
+bean = ProductInfo.create!(name: "bean", category: "vegetable", month: 8, co2_saved: 0)
+leek = ProductInfo.create!(name: "leek", category: "vegetable", month: 8, co2_saved: 0)
+eggplant = ProductInfo.create!(name: "eggplant", category: "vegetable", month: 8, co2_saved: 0)
+
+# september
+apple = ProductInfo.create!(name: "apple", category: "fruit", month: 9, co2_saved: 0)
+pepper = ProductInfo.create!(name: "pepper", category: "vegetable", month: 9, co2_saved: 0)
+
+# october
+sweet_potato = ProductInfo.create!(name: "sweet_potato", category: "vegetable", month: 10, co2_saved: 0)
+squash = ProductInfo.create!(name: "squash", category: "vegetable", month: 10, co2_saved: 0)
+turnip = ProductInfo.create!(name: "turnip", category: "vegetable", month: 10, co2_saved: 0)
+
+# meat
+chicken_breast = ProductInfo.create!(name: "chicken_breast", category: "meat", month: 12, co2_saved: 0)
+ground_turkey = ProductInfo.create!(name: "ground_turkey", category: "meat", month: 12, co2_saved: 0)
+ground_pork = ProductInfo.create!(name: "ground_pork", category: "meat", co2_saved: 0)
+ground_beef = ProductInfo.create!(name: "ground_beef", category: "meat", month: 12, co2_saved: 0)
+
+# old seed
 tomato_photo = URI.open("https://th.bing.com/th/id/OIG._o3h2oVb035wj82ZFwSr?pid=ImgGn")
 tomato = Product.new(name: "tomato", category: "vegetable", unit: "kg", stock: 20, farm: ferme_bibeau, price: 5.51, co2_saved: 0.997891042)
 tomato.photo.attach(io: tomato_photo, filename: 'tomato.jpg', content_type: 'image/jpeg')
@@ -86,7 +144,7 @@ trip_nine = Trip.new(date: DateTime.new(2023,9,30,16,0,0), seat: 3, user: users[
 trip_nine.save!
 trips << trip_nine
 
-seb_order = Order.new(trip: trip_one, user: seb)
+seb_order = Order.new(trip: trip_nine, user: seb)
 seb_order.save!
 
 # therese_order = Order.new(trip: trip_one, user: therese)

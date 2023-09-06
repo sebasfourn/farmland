@@ -15,6 +15,9 @@ class Farm < ApplicationRecord
 
   pg_search_scope :search_farm_by_query,
                   against: %i[name description],
+                  # associated_against: {
+                  #   product_infos: :name
+                  # },
                   using: {
                     tsearch: { prefix: true }
                   }
