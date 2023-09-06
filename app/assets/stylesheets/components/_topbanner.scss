@@ -43,6 +43,12 @@
     margin-bottom: 0px;
   }
   .top-banner-extended-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
     width: 90%;
   }
 }
@@ -52,11 +58,10 @@
 }
 
 .banner-tree {
-  height: 25px;
+  height: 50px;
   width: auto;
   color: $open-green;
   fill: $open-green;
-  margin-right: 10px;
 }
 @keyframes animate {
   0% {
