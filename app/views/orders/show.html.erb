@@ -26,7 +26,7 @@
   <div class="ordered-products">
     <% @order_products.each do |order_product| %>
       <div class="ordered-product">
-        <%= image_tag "#{product.name}.jpg" %>
+        <%= image_tag "#{order_product.name}.jpg" %>
         <%= "#{order_product.quantity} #{order_product.product.category == "meat" ? order_product.product.name : order_product.product.name.pluralize }" %>
       </div>
     <% end %>
