@@ -17,6 +17,8 @@ class User < ApplicationRecord
     number_messages = 0
     Order.where(user: self).pluck(:trip_id).each do |trip_id|
       number_messages += Message.where(trip_id: trip_id, seen: false).count
+
+      # number_messages += Message.where(trip_id: trip_id, seen: false).where.not(user: self).count
     end
     return number_messages
   end

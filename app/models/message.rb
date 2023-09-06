@@ -7,4 +7,10 @@ class Message < ApplicationRecord
     self.user == user
   end
 
+  def self.unseen_messages_count_for(user)
+    joins(trip: { orders: :user })
+    .where(seen: false)
+    .where(orders: { user: user })
+    .count
+  end
 end
