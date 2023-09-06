@@ -1,14 +1,5 @@
 .farm-card {
   margin-bottom: 15px;
-  .farm-card-description {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    .distance-color {
-      color: $gray;
-    }
-  }
 
   .farm-card-img-div {
     position: relative;
@@ -49,35 +40,18 @@
     padding-top: 10px;
     padding-bottom: 10px;
 
-    .leaf {
-      color: $green-light;
-      padding-right: 10px;
-    }
-
     .farm-fav-div {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      margin-bottom: 7px;
 
       .farm-name-div {
         display: flex;
         align-items: center;
 
         h2 {
+          font-size: 20px;
           margin-bottom: 0px;
-        }
-
-        .open-margin {
-          margin-right: 10px;
-        }
-
-        .open {
-          color: $open-green;
-        }
-
-        .close {
-          color: $gray;
         }
       }
 
@@ -86,9 +60,17 @@
       }
     }
 
+    .farm-card-description {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+    }
+
     p {
       font-size: 14px;
       margin-bottom: 0px;
+      color: $gray;
     }
 
     .rating-div {
@@ -102,6 +84,15 @@
 
       .star {
         color: $yellow;
+      }
+    }
+
+    // priscilla
+    .hours-div {
+      display: flex;
+      gap: 4px;
+      .open {
+        color: $green-light
       }
     }
   }

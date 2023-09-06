@@ -3,9 +3,9 @@
     <h2>Hello <%= current_user.first_name.capitalize %> !</h2>
     <p><%= current_user.address.split(",")[0] %><i class="fa-solid fa-chevron-down arrow"></i></p>
   </div>
-  <div class="title-div-description">
+  <%# <div class="title-div-description">
     <p>Share a ride, shop local, save the planet !</p>
-  </div>
+  </div> %>
 </div>
 
 <%= form_with url: farms_path, method: :get do %>
@@ -39,10 +39,12 @@
         <div class="subtitle-div">
           <strong><p>Sort</p></strong>
           <div class="checkbox-div">
+            <input type="radio" id="distance" name="sort" value="distance" class="btn-check" <% if !params[:sort].present? || params[:sort] == "distance" %> checked <% end %>>
+            <label for="distance" class="btn btn-primary filter-checkbox">Distance</label>
             <input type="radio" id="open" name="sort" value="open" class="btn-check" <% if params[:sort] == "open" %> checked <% end %>>
             <label for="open" class="btn btn-primary filter-checkbox">Open</label>
             <input type="radio" id="carpool" name="sort" value="carpool" class="btn-check" <% if params[:sort] == "carpool" %> checked <% end %>>
-            <label for="carpool" class="btn btn-primary filter-checkbox">Carpool</label>
+            <label for="carpool" class="btn btn-primary filter-checkbox">Ride</label>
             <input type="radio" id="rating" name="sort" value="rating" class="btn-check" <% if params[:sort] == "rating" %> checked <% end %>>
             <label for="rating" class="btn btn-primary filter-checkbox">Rating</label>
           </div>
@@ -72,31 +74,37 @@
       <% end %>
 
       <div class="farm-card-body">
+
         <div class="farm-fav-div">
           <div class="farm-name-div">
-            <% if farm.open %>
-              <i class="fa-solid fa-circle fa-sm open-margin open"></i>
-            <% else %>
-              <i class="fa-solid fa-circle fa-sm open-margin close"></i>
-            <% end %>
             <h2><%= farm.name %></h2>
           </div>
           <%= render "heart", farm: farm %>
         </div>
 
         <div class="farm-card-description">
-          <p>
-            <span class="distance-color"><%= farm.distance_to([current_user.latitude, current_user.longitude]).round %> km ●
-            <% time = (farm.distance_to([current_user.latitude, current_user.longitude]).round * 60) / 50 %>
-            <% hours, minutes = time.divmod(60)  %>
-            <%= hours > 0 ? "#{hours} hours" : "" %>
-            <%= minutes %> min</span>
-          </p>
+
+          <div>
+            <p>
+              <span class="distance-color"><%= farm.distance_to([current_user.latitude, current_user.longitude]).round %> km •
+              <% time = (farm.distance_to([current_user.latitude, current_user.longitude]).round * 60) / 50 %>
+              <% hours, minutes = time.divmod(60)  %>
+              <%= hours > 0 ? "#{hours} hours" : "" %>
+              <%= minutes %> min</span>
+            </p>
+            <%# priscilla %>
+            <div class="hours-div">
+              <p class="open">Open</p>
+              <p>• Closes 5 p.m.</p>
+            </div>
+          </div>
+
           <div class="rating-div">
             <strong><p class="rating-text"><%= farm.rating %></p></strong>
             <i class="fa-solid fa-star fa-sm star"></i>
           </div>
         </div>
+
       </div>
     </div>
   <% end %>
