@@ -26,48 +26,6 @@ users << nicole
 
 farms = []
 
-ferme_bibeau = Farm.create!(name: "Ferme Bibeau", address: "3336 Chemin Bibeau
-  Sherbrooke, QC", open: true, rating: 4.5, opening_time: 10, closing_time: 24, description: "Ferme Bibeau covers 95 hectares, of which 65 are cultivated and 30 are wooded. There is also an elderberry orchard with an area of one hectare. Within the 65 cultivated hectares, measures to protect biodiversity have been put in place, particularly with regard to the protection of rural birds. The 30 hectares of forest are intended for the integral conservation of the natural environment.")
-ferme_d_oree = Farm.create!(name: "Ferme d'Orée", address: "273, Chemin Beaver ridge
-  Newport, QC", open: false, rating: 3.5, opening_time: 9, closing_time: 14, description: "We produce grass-fed beef, pastured pork, lamb, eggs, and unpasteurized honey and sell directly to the consumer and through specialized butchers.")
-sanders_farm = Farm.create!(name: "Sanders Farm", address: "475 Hyatt's Mills
-  Compton, QC", open: true, rating: 4.5, opening_time: 9, closing_time: 15, grass_fed: true, description: "Sanders farm is a family-run, organic fruit and vegetable farm, nestled in the beautiful rolling hills of Compton, in Quebec’s Eastern Townships since 1974.")
-
-farms << ferme_bibeau
-farms << ferme_d_oree
-farms << sanders_farm
-
-asparagus = URI.open("https://th.bing.com/th/id/OIG.YyZkjirNH9OS5mIK1nAR?pid=ImgGn")
-radishes = URI.open("https://th.bing.com/th/id/OIG.k37elAau4xaBUSW1Lx0a?pid=ImgGn")
-spinach = URI.open("https://th.bing.com/th/id/OIG.dkA36qJ8fvrIRox.RuTq?pid=ImgGn")
-strawberries = URI.open("https://th.bing.com/th/id/OIG.VRrm.Ok0BBOUmQKDLrWy?pid=ImgGn")
-lettuce = URI.open("https://th.bing.com/th/id/OIG.STvNF511RgRnHFcd3Lpg?pid=ImgGn")
-green_onions = URI.open("https://th.bing.com/th/id/OIG.ZajCoxiP19lcgikvM.Xi?pid=ImgGn")
-herbs = URI.open("https://th.bing.com/th/id/OIG.nBWFVM_TTWf_.f9oL2tu?pid=ImgGn")
-rhubarb = URI.open("https://th.bing.com/th/id/OIG.E8cfbbPAyoiOX0MlhFBe?pid=ImgGn")
-raspberries = URI.open("https://th.bing.com/th/id/OIG.7kLtrexakrFFuVMHZafB?pid=ImgGn")
-broccoli = URI.open("https://th.bing.com/th/id/OIG.E1B0iooaDKDBOytsBv3c?pid=ImgGn")
-zucchini = URI.open("https://th.bing.com/th/id/OIG.mBHYAohWeTQ8OxF2RrHz?pid=ImgGn")
-beets = URI.open("https://th.bing.com/th/id/OIG.fqfWlD.jJ7O89uKnmp4E?pid=ImgGn")
-kale = URI.open("https://th.bing.com/th/id/OIG.N7zyUBxV2KUpyxJRc6MF?pid=ImgGn")
-carrots = URI.open("https://th.bing.com/th/id/OIG.ihOel5NdmDtrdoQyU.5f?pid=ImgGn")
-blueberries = URI.open("https://th.bing.com/th/id/OIG.O15Hwnm2HK9i5QV.BUDg?pid=ImgGn")
-cantaloupes = URI.open("https://th.bing.com/th/id/OIG.sjpS47SLg5zjRnrkVrjH?pid=ImgGn")
-tomatoes = URI.open("https://th.bing.com/th/id/OIG.k4s6yCy0vCTFdQiYgydQ?pid=ImgGn")
-beans = URI.open("https://th.bing.com/th/id/OIG.1nT1cGOVtUGFG5utS3xF?pid=ImgGn")
-leeks = URI.open("https://th.bing.com/th/id/OIG.7uGfhNrwi1nmpZ1WmEqM?pid=ImgGn")
-eggplant = URI.open("https://th.bing.com/th/id/OIG.4jTT7RUaNUkT8GvSyLi0?pid=ImgGn")
-apples = URI.open("https://th.bing.com/th/id/OIG.DJolDewCurXMStLZ4BFl?pid=ImgGn")
-pepper = URI.open("https://th.bing.com/th/id/OIG.p1vJ1IqOvXZk5l0EAJhy?pid=ImgGn")
-sweet_potatoes = URI.open("https://th.bing.com/th/id/OIG.obDn7ihhDkw4di7s9wsG?pid=ImgGn")
-squash = URI.open("https://th.bing.com/th/id/OIG.Moqp_4JtOxc_kgetpfs.?pid=ImgGn")
-turnips = URI.open("https://th.bing.com/th/id/OIG.BZMs5MhZUShm491B81ZM?pid=ImgGn")
-
-chicken_breast = URI.open("https://th.bing.com/th/id/OIG.sSvdjAavgxOrtjCdxz6M?pid=ImgGn")
-ground_turkey = URI.open("https://th.bing.com/th/id/OIG.yXk4Hd0XZSKNlmJ4Pi10?pid=ImgGn")
-ground_pork = URI.open("https://th.bing.com/th/id/OIG.S2.MmPdNoQU8k78lYhee?pid=ImgGn")
-ground_beef = URI.open("https://th.bing.com/th/id/OIG.Xp0EdxHI2mYGYm7Eax04?pid=ImgGn")
-
 tomato_photo = URI.open("https://th.bing.com/th/id/OIG._o3h2oVb035wj82ZFwSr?pid=ImgGn")
 tomato = Product.new(name: "tomato", category: "vegetable", unit: "kg", stock: 20, farm: ferme_bibeau, price: 5.51, co2_saved: 0.997891042)
 tomato.photo.attach(io: tomato_photo, filename: 'tomato.jpg', content_type: 'image/jpeg')
