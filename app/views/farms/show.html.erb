@@ -2,7 +2,7 @@
   data-controller="favorite"
   data-favorite-page-value="index">
   <div class="farm-card-img-div">
-    <%= image_tag "farm.png", class: "farm-card-img", alt: @farm.name %>
+    <%= image_tag "#{@farm.name}.jpeg", class: "farm-card-img", alt: @farm.name %>
     <div class="farm-tag-div">
       <p class="farm-tag"><i class="fa-solid fa-tag"></i> organic</p>
       <% if @farm.grass_fed %>
