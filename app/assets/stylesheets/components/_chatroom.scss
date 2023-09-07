@@ -27,6 +27,11 @@
     flex: 1;
     overflow: scroll;
     padding: 1rem;
+
+    .sender-style {
+      background-color: $gray;
+      color: $white
+    }
   }
 
   #new_message {
