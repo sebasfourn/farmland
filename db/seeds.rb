@@ -147,6 +147,9 @@ trips << trip_nine
 seb_order = Order.new(trip: trip_nine, user: seb)
 seb_order.save!
 
+nicole_order = Order.new(trip: trip_nine, user: nicole)
+nicole_order.save!
+
 # therese_order = Order.new(trip: trip_one, user: therese)
 # therese_order.save!
 
