@@ -120,7 +120,7 @@ Product.create!(farm: ferme_d_oree, product_info: pepper, unit: "kg", stock: 40,
 Product.create!(farm: sanders_farm, product_info: ground_turkey, unit: "kg", stock: 40, price: 7.25)
 Product.create!(farm: sanders_farm, product_info: ground_beef, unit: "kg", stock: 40, price: 7.25)
 
-
+# add trips to farms
 trip_one = Trip.create!(date: DateTime.new(2023,9,15,17,0,0), seat: 3, user: users[2], farm: farms[0], address: "Université De Sherbrooke, Quai D, Sherbrooke, QC J1K 2R1")
 trip_two = Trip.create!(date: DateTime.new(2023,8,30,16,0,0), seat: 3, user: users[3], farm: farms[1], address: "Université De Sherbrooke, Quai D, Sherbrooke, QC J1K 2R1")
 trip_three = Trip.create!(date: DateTime.new(2023,9,15,12,0,0), seat: 5, user: users[2], farm: farms[2], address: "3050 Boulevard De Portland, Sherbrooke, Quebec J1L 1K1")
