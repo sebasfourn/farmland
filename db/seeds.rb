@@ -40,6 +40,7 @@ manon = User.create!(first_name: "manon", last_name: "thomson", email: "manon@em
 ines = User.create!(first_name: "ines", last_name: "robbie", email: "ines@email.com", password: "secret", address: "814 Rue Fabien, Sherbrooke, QC", driver: true, verified: true)
 christophe = User.create!(first_name: "christophe", last_name: "reinhardt", email: "christophe@email.com", password: "secret", address: "814 Rue Fabien, Sherbrooke, QC", driver: true, verified: true)
 
+users << nicole
 users << seb
 users << therese
 users << jane
