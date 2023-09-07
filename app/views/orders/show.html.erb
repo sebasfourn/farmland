@@ -65,7 +65,7 @@
       data-map-markers-value="<%= @markers.to_json %>"
       data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
     </div>
-    <button class="gmap-redirection"><%= link_to "Open on google maps", "https://www.google.com/maps/search/?api=1&query=#{@order.trip.user.latitude},#{@order.trip.user.longitude}" %></button>
+    <button class="gmap-redirection"><%= link_to "Open on google maps", "https://www.google.com/maps/search/?api=1&query=#{@order.trip.user.latitude},#{@order.trip.user.longitude}", target: :_blank %></button>
   </div>
 </div>
 
