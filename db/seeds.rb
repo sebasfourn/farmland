@@ -79,10 +79,10 @@ squash = ProductInfo.create!(name: "squash", category: "vegetable", month: 10, c
 turnip = ProductInfo.create!(name: "turnip", category: "vegetable", month: 10, co2_saved: 0)
 
 # meat
-chicken_breast = ProductInfo.create!(name: "chicken_breast", category: "meat", month: 12, co2_saved: 0)
-ground_turkey = ProductInfo.create!(name: "ground_turkey", category: "meat", month: 12, co2_saved: 0)
-ground_pork = ProductInfo.create!(name: "ground_pork", category: "meat", co2_saved: 0)
-ground_beef = ProductInfo.create!(name: "ground_beef", category: "meat", month: 12, co2_saved: 0)
+chicken_breast = ProductInfo.create!(name: "chicken breast", category: "meat", month: 12, co2_saved: 0)
+ground_turkey = ProductInfo.create!(name: "ground turkey", category: "meat", month: 12, co2_saved: 0)
+ground_pork = ProductInfo.create!(name: "ground pork", category: "meat", co2_saved: 0)
+ground_beef = ProductInfo.create!(name: "ground beef", category: "meat", month: 12, co2_saved: 0)
 
 # farm adding a product
 Product.create!(farm: ferme_bibeau, product_info: asparagus, unit: "kg", stock: 20, price: 5.99)
