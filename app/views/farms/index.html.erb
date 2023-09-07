@@ -25,14 +25,12 @@
         <div class="subtitle-div">
           <strong><p>Product</p></strong>
           <div class="checkbox-div">
-            <input type="checkbox" id="meat" name="meat" value="true" class="btn-check" <% if params[:meat] %> checked <% end %>>
-            <label for="meat" class="btn btn-primary filter-checkbox">Meat</label>
             <input type="checkbox" id="vegetable" name="vegetable" value="true" class="btn-check" <% if params[:vegetable] %> checked <% end %>>
             <label for="vegetable" class="btn btn-primary filter-checkbox">Vegetable</label>
             <input type="checkbox" id="fruit" name="fruit" value="true" class="btn-check" <% if params[:fruit] %> checked <% end %>>
             <label for="fruit" class="btn btn-primary filter-checkbox">Fruit</label>
-            <input type="checkbox" id="egg" name="egg" value="true" class="btn-check" <% if params[:egg] %> checked <% end %>>
-            <label for="egg" class="btn btn-primary filter-checkbox">Egg</label>
+            <input type="checkbox" id="meat" name="meat" value="true" class="btn-check" <% if params[:meat] %> checked <% end %>>
+            <label for="meat" class="btn btn-primary filter-checkbox">Meat</label>
           </div>
         </div>
 
@@ -92,17 +90,17 @@
               <%= hours > 0 ? "#{hours} hours" : "" %>
               <%= minutes %> min</span>
             </p>
-            <%# priscilla & daph, if open > between opening and closing. Open soon > 1h before opening (show opening hour). Closing soon > 1h before closing (show closing hour). Closed > outside (show openings hours). %>
+
             <div class="hours-div">
             <% if @time.between?(farm.opening_time, (farm.closing_time - 1)) %>
               <p class="open">Open</p>
-              <p>• Closes at <%= "#{farm.closing_time}:00"  %></p>
+              <p>• Closes at <%= "#{farm.closing_time}:00" %></p>
             <% elsif @time > farm.closing_time %>
               <p class="closed">Closed</p>
-              <p>• Opens at <%= "#{farm.opening_time}:00"  %></p>
+              <p>• Opens at <%= "#{farm.opening_time}:00" %></p>
             <% else %>
               <p class="open">Open</p>
-              <p class = "closed">• Closes soon: <%= "#{farm.closing_time}:00"  %></p>
+              <p class = "closed">• Closing soon: <%= "#{farm.closing_time}:00" %></p>
             <% end %>
             </div>
           </div>

@@ -25,26 +25,38 @@
       <% end %>
 
       <div class="farm-card-body">
+
         <div class="farm-fav-div">
           <div class="farm-name-div">
-            <% if farm.open %>
-              <i class="fa-solid fa-circle fa-sm open-margin open"></i>
-            <% else %>
-              <i class="fa-solid fa-circle fa-sm open-margin close"></i>
-            <% end %>
             <h2><%= farm.name %></h2>
           </div>
           <%= render "heart", farm: farm %>
         </div>
 
         <div class="farm-card-description">
-          <p>
-            <span class="distance-color"><%= farm.distance_to([current_user.latitude, current_user.longitude]).round %> km ●
-            <% time = (farm.distance_to([current_user.latitude, current_user.longitude]).round * 60) / 50 %>
-            <% hours, minutes = time.divmod(60)  %>
-            <%= hours > 0 ? "#{hours} hours" : "" %>
-            <%= minutes %> min</span>
-          </p>
+
+          <div>
+            <p>
+              <span class="distance-color"><%= farm.distance_to([current_user.latitude, current_user.longitude]).round %> km •
+              <% time = (farm.distance_to([current_user.latitude, current_user.longitude]).round * 60) / 50 %>
+              <% hours, minutes = time.divmod(60)  %>
+              <%= hours > 0 ? "#{hours} hours" : "" %>
+              <%= minutes %> min</span>
+            </p>
+
+            <div class="hours-div">
+            <% if @time.between?(farm.opening_time, (farm.closing_time - 1)) %>
+              <p class="open">Open</p>
+              <p>• Closes at <%= "#{farm.closing_time}:00" %></p>
+            <% elsif @time > farm.closing_time %>
+              <p class="closed">Closed</p>
+              <p>• Opens at <%= "#{farm.opening_time}:00" %></p>
+            <% else %>
+              <p class="open">Open</p>
+              <p class = "closed">• Closing soon: <%= "#{farm.closing_time}:00" %></p>
+            <% end %>
+            </div>
+          </div>
           <div class="rating-div">
             <strong><p class="rating-text"><%= farm.rating %></p></strong>
             <i class="fa-solid fa-star fa-sm star"></i>
