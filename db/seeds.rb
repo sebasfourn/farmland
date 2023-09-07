@@ -48,8 +48,8 @@ radish = ProductInfo.create!(name: "radish", category: "vegetable", month: 6, co
 spinach = ProductInfo.create!(name: "spinach", category: "vegetable", month: 6, co2_saved: 0.738)
 strawberry = ProductInfo.create!(name: "strawberry", category: "fruit", month: 6, co2_saved: 1.170)
 lettuce = ProductInfo.create!(name: "lettuce", category: "vegetable", month: 6, co2_saved: 0.389)
-green_onion = ProductInfo.create!(name: "green_onion", category: "vegetable", month: 6, co2_saved: 0.281)
-herb = ProductInfo.create!(name: "herb", category: "vegetable", month: 6, co2_saved: 0.938)
+green_onion = ProductInfo.create!(name: "green onion", category: "vegetable", month: 6, co2_saved: 0.281)
+herb = ProductInfo.create!(name: "coriander", category: "vegetable", month: 6, co2_saved: 0.938)
 rhubarb = ProductInfo.create!(name: "rhubarb", category: "fruit", month: 6, co2_saved: 0.102)
 
 # july
@@ -73,15 +73,15 @@ apple = ProductInfo.create!(name: "apple", category: "fruit", month: 9, co2_save
 pepper = ProductInfo.create!(name: "pepper", category: "vegetable", month: 9, co2_saved: 1.64)
 
 # october
-sweet_potato = ProductInfo.create!(name: "sweet_potato", category: "vegetable", month: 10, co2_saved: 0.558)
+sweet_potato = ProductInfo.create!(name: "sweet potato", category: "vegetable", month: 10, co2_saved: 0.558)
 squash = ProductInfo.create!(name: "squash", category: "vegetable", month: 10, co2_saved: 0.45)
 turnip = ProductInfo.create!(name: "turnip", category: "vegetable", month: 10, co2_saved: 0.268)
 
 # meat
-chicken_breast = ProductInfo.create!(name: "chicken_breast", category: "meat", month: 12, co2_saved: 2.37)
-ground_turkey = ProductInfo.create!(name: "ground_turkey", category: "meat", month: 12, co2_saved: 0.6)
-ground_pork = ProductInfo.create!(name: "ground_pork", category: "meat", co2_saved: 1.21)
-ground_beef = ProductInfo.create!(name: "ground_beef", category: "meat", month: 12, co2_saved: 3.246)
+chicken_breast = ProductInfo.create!(name: "chicken breast", category: "meat", month: 12, co2_saved: 2.37)
+ground_turkey = ProductInfo.create!(name: "ground turkey", category: "meat", month: 12, co2_saved: 0.6)
+ground_pork = ProductInfo.create!(name: "ground pork", category: "meat", co2_saved: 1.21)
+ground_beef = ProductInfo.create!(name: "ground beef", category: "meat", month: 12, co2_saved: 3.246)
 
 # farm adding a product
 Product.create!(farm: ferme_bibeau, product_info: asparagus, unit: "kg", stock: 20, price: 5.99)
