@@ -95,7 +95,7 @@
             <% if @time.between?(farm.opening_time, (farm.closing_time - 1)) %>
               <p class="open">Open</p>
               <p>• Closes at <%= "#{farm.closing_time}:00" %></p>
-            <% elsif @time > farm.closing_time %>
+            <% elsif not (@time.between?(farm.opening_time, (farm.closing_time))) %>
               <p class="closed">Closed</p>
               <p>• Opens at <%= "#{farm.opening_time}:00" %></p>
             <% else %>
