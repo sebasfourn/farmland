@@ -126,12 +126,69 @@ Product.create!(farm: ferme_d_oree, product_info: ground_pork, unit: "kg", stock
 Product.create!(farm: ferme_d_oree, product_info: sweet_potato, unit: "kg", stock: 40, price: 4.25)
 Product.create!(farm: ferme_d_oree, product_info: carrot, unit: "kg", stock: 40, price: 2.75)
 
-Product.create!(farm: sanders_farm, product_info: radish, unit: "kg", stock: 40, price: 3.99)
-Product.create!(farm: sanders_farm, product_info: pepper, unit: "kg", stock: 40, price: 4.99)
-Product.create!(farm: sanders_farm, product_info: apple, unit: "kg", stock: 40, price: 4.75)
-Product.create!(farm: sanders_farm, product_info: blueberry, unit: "kg", stock: 40, price: 5.99)
-Product.create!(farm: sanders_farm, product_info: strawberry, unit: "kg", stock: 40, price: 5.99)
-Product.create!(farm: sanders_farm, product_info: cantaloupe, unit: "kg", stock: 40, price: 4.99)
+Product.create!(farm: topher_farm, product_info: radish, unit: "kg", stock: 40, price: 3.99)
+Product.create!(farm: topher_farm, product_info: pepper, unit: "kg", stock: 40, price: 4.99)
+Product.create!(farm: topher_farm, product_info: apple, unit: "kg", stock: 40, price: 4.75)
+Product.create!(farm: topher_farm, product_info: blueberry, unit: "kg", stock: 40, price: 5.99)
+Product.create!(farm: topher_farm, product_info: strawberry, unit: "kg", stock: 40, price: 5.99)
+Product.create!(farm: topher_farm, product_info: cantaloupe, unit: "kg", stock: 40, price: 4.99)
+
+# TOPHER
+Product.create!(farm: topher_farm, product_info: radish, unit: "kg", stock: 40, price: 3.99)
+Product.create!(farm: topher_farm, product_info: turnip, unit: "kg", stock: 40, price: 3.25)
+Product.create!(farm: topher_farm, product_info: apple, unit: "kg", stock: 40, price: 4.75)
+Product.create!(farm: topher_farm, product_info: kale, unit: "kg", stock: 40, price: 2.50)
+Product.create!(farm: topher_farm, product_info: strawberry, unit: "kg", stock: 40, price: 5.99)
+Product.create!(farm: topher_farm, product_info: broccoli, unit: "kg", stock: 40, price: 4.99)
+
+# POUCEVERT
+Product.create!(farm: poucevert_farm, product_info: radish, unit: "kg", stock: 40, price: 3.99)
+Product.create!(farm: poucevert_farm, product_info: pepper, unit: "kg", stock: 40, price: 4.99)
+Product.create!(farm: poucevert_farm, product_info: apple, unit: "kg", stock: 40, price: 4.75)
+Product.create!(farm: poucevert_farm, product_info: blueberry, unit: "kg", stock: 40, price: 5.99)
+Product.create!(farm: poucevert_farm, product_info: strawberry, unit: "kg", stock: 40, price: 5.99)
+Product.create!(farm: poucevert_farm, product_info: cantaloupe, unit: "kg", stock: 40, price: 4.99)
+
+# Sevigny_farm
+Product.create!(farm: sevigny_farm, product_info: ground_beef, unit: "kg", stock: 40, price: 8.99)
+Product.create!(farm: sevigny_farm, product_info: pepper, unit: "kg", stock: 40, price: 4.99)
+Product.create!(farm: sevigny_farm, product_info: zucchini, unit: "kg", stock: 40, price: 2.50)
+Product.create!(farm: sevigny_farm, product_info: chicken_breast, unit: "kg", stock: 40, price: 6.50)
+Product.create!(farm: sevigny_farm, product_info: strawberry, unit: "kg", stock: 40, price: 5.99)
+Product.create!(farm: sevigny_farm, product_info: asparagus, unit: "kg", stock: 40, price: 5.99)
+
+# Grande Maraichere
+Product.create!(farm: grange_maraichere, product_info: radish, unit: "kg", stock: 40, price: 3.99)
+Product.create!(farm: grange_maraichere, product_info: pepper, unit: "kg", stock: 40, price: 4.99)
+Product.create!(farm: grange_maraichere, product_info: chicken_breast, unit: "kg", stock: 40, price: 6.50)
+Product.create!(farm: grange_maraichere, product_info: bean, unit: "kg", stock: 40, price: 2.50)
+Product.create!(farm: grange_maraichere, product_info: eggplant, unit: "kg", stock: 40, price: 2.50)
+Product.create!(farm: grange_maraichere, product_info: zucchini, unit: "kg", stock: 40, price: 2.50)
+
+# la_prucheraie
+
+Product.create!(farm: la_prucheraie, product_info: ground_pork, unit: "kg", stock: 40, price: 7.75)
+Product.create!(farm: la_prucheraie, product_info: sweet_potato, unit: "kg", stock: 40, price: 4.25)
+Product.create!(farm: la_prucheraie, product_info: carrot, unit: "kg", stock: 40, price: 2.75)
+Product.create!(farm: la_prucheraie, product_info: cantaloupe, unit: "kg", stock: 40, price: 4.99)
+
+# la_vallee_des_lacs_farm
+
+Product.create!(farm: la_vallee_des_lacs_farm, product_info: eggplant, unit: "kg", stock: 40, price: 2.50)
+Product.create!(farm: la_vallee_des_lacs_farm, product_info: zucchini, unit: "kg", stock: 40, price: 2.50)
+Product.create!(farm: la_vallee_des_lacs_farm, product_info: kale, unit: "kg", stock: 40, price: 2.50)
+Product.create!(farm: la_vallee_des_lacs_farm, product_info: blueberry, unit: "kg", stock: 40, price: 5.99)
+Product.create!(farm: la_vallee_des_lacs_farm, product_info: strawberry, unit: "kg", stock: 40, price: 5.99)
+Product.create!(farm: la_vallee_des_lacs_farm, product_info: cantaloupe, unit: "kg", stock: 40, price: 4.99)
+
+# croque_saisons
+Product.create!(farm: croque_saisons, product_info: radish, unit: "kg", stock: 40, price: 3.99)
+Product.create!(farm: croque_saisons, product_info: pepper, unit: "kg", stock: 40, price: 4.99)
+Product.create!(farm: croque_saisons, product_info: apple, unit: "kg", stock: 40, price: 4.75)
+Product.create!(farm: croque_saisons, product_info: blueberry, unit: "kg", stock: 40, price: 5.99)
+Product.create!(farm: croque_saisons, product_info: strawberry, unit: "kg", stock: 40, price: 5.99)
+Product.create!(farm: croque_saisons, product_info: cantaloupe, unit: "kg", stock: 40, price: 4.99)
+Product.create!(farm: croque_saisons, product_info: chicken_breast, unit: "kg", stock: 40, price: 6.50)
 
 trip_one = Trip.create!(date: DateTime.new(2023,9,15,17,0,0), seat: 3, user: jane, farm: ferme_bibeau, address: "Université De Sherbrooke, Quai D, Sherbrooke, QC J1K 2R1")
 trip_two = Trip.create!(date: DateTime.new(2023,9,25,16,0,0), seat: 3, user: nicole, farm: ferme_bibeau, address: "3050 Boulevard De Portland, Sherbrooke, Quebec J1L 1K1")
