@@ -17,10 +17,10 @@ User.destroy_all
 
 users = []
 
-seb = User.create!(first_name: "seb", last_name: "fournier", email: "seb@email.com", password: "secret", address: "2810 Rue Beaudry, Sherbrooke, QC", driver: true, electric_car: true, verified: true)
-therese = User.create!(first_name: "therese", last_name: "trudeau", email: "therese@email.com", password: "secret", address: "495 Rue Longpre, Sherbrooke, QC", driver: false, verified: true)
+seb = User.create!(first_name: "seb", last_name: "fournier", email: "seb@email.com", password: "secret", address: "2810 Rue Beaudry, Sherbrooke, QC", driver: false, electric_car: true, verified: true)
+therese = User.create!(first_name: "therese", last_name: "trudeau", email: "therese@email.com", password: "secret", address: "495 Rue Longpre, Sherbrooke, QC", driver: true, verified: true)
 jane = User.create!(first_name: "jane", last_name: "johnson", email: "jane@email.com", password: "secret", address: "2080 Rue Andre, Sherbrooke, QC", driver: true, electric_car: true, verified: true)
-nicole = User.create!(first_name: "nicole", last_name: "naudin", email: "nicole@email.com", password: "secret", address: "814 Rue Fabien, Sherbrooke, QC", driver: false, verified: true)
+nicole = User.create!(first_name: "nicole", last_name: "naudin", email: "nicole@email.com", password: "secret", address: "814 Rue Fabien, Sherbrooke, QC", driver: true, verified: true)
 
 users << seb
 users << therese
@@ -113,18 +113,30 @@ ground_beef = ProductInfo.create!(name: "ground beef", category: "meat", month: 
 # farm adding a product
 Product.create!(farm: ferme_bibeau, product_info: asparagus, unit: "kg", stock: 20, price: 5.99)
 Product.create!(farm: ferme_bibeau, product_info: carrot, unit: "kg", stock: 40, price: 2.50)
+Product.create!(farm: ferme_bibeau, product_info: chicken_breast, unit: "kg", stock: 40, price: 6.50)
+Product.create!(farm: ferme_bibeau, product_info: bean, unit: "kg", stock: 40, price: 2.50)
+Product.create!(farm: ferme_bibeau, product_info: eggplant, unit: "kg", stock: 40, price: 2.50)
+Product.create!(farm: ferme_bibeau, product_info: zucchini, unit: "kg", stock: 40, price: 2.50)
+Product.create!(farm: ferme_bibeau, product_info: kale, unit: "kg", stock: 40, price: 2.50)
+Product.create!(farm: ferme_bibeau, product_info: broccoli, unit: "kg", stock: 40, price: 2.50)
 
-Product.create!(farm: ferme_d_oree, product_info: radish, unit: "kg", stock: 40, price: 4.99)
-Product.create!(farm: ferme_d_oree, product_info: pepper, unit: "kg", stock: 40, price: 5.99)
+Product.create!(farm: ferme_d_oree, product_info: ground_turkey, unit: "kg", stock: 40, price: 7.25)
+Product.create!(farm: ferme_d_oree, product_info: ground_beef, unit: "kg", stock: 40, price: 8.99)
+Product.create!(farm: ferme_d_oree, product_info: ground_pork, unit: "kg", stock: 40, price: 7.75)
+Product.create!(farm: ferme_d_oree, product_info: sweet_potato, unit: "kg", stock: 40, price: 4.25)
+Product.create!(farm: ferme_d_oree, product_info: carrot, unit: "kg", stock: 40, price: 2.75)
 
-Product.create!(farm: sanders_farm, product_info: ground_turkey, unit: "kg", stock: 40, price: 7.25)
-Product.create!(farm: sanders_farm, product_info: ground_beef, unit: "kg", stock: 40, price: 7.25)
+Product.create!(farm: sanders_farm, product_info: radish, unit: "kg", stock: 40, price: 3.99)
+Product.create!(farm: sanders_farm, product_info: pepper, unit: "kg", stock: 40, price: 4.99)
+Product.create!(farm: sanders_farm, product_info: apple, unit: "kg", stock: 40, price: 4.75)
+Product.create!(farm: sanders_farm, product_info: blueberry, unit: "kg", stock: 40, price: 5.99)
+Product.create!(farm: sanders_farm, product_info: strawberry, unit: "kg", stock: 40, price: 5.99)
+Product.create!(farm: sanders_farm, product_info: cantaloupe, unit: "kg", stock: 40, price: 4.99)
 
-# add trips to farms
-trip_one = Trip.create!(date: DateTime.new(2023,9,15,17,0,0), seat: 3, user: users[2], farm: farms[0], address: "Université De Sherbrooke, Quai D, Sherbrooke, QC J1K 2R1")
-trip_two = Trip.create!(date: DateTime.new(2023,8,30,16,0,0), seat: 3, user: users[3], farm: farms[1], address: "Université De Sherbrooke, Quai D, Sherbrooke, QC J1K 2R1")
-trip_three = Trip.create!(date: DateTime.new(2023,9,15,12,0,0), seat: 5, user: users[2], farm: farms[2], address: "3050 Boulevard De Portland, Sherbrooke, Quebec J1L 1K1")
-trip_four = Trip.create!(date: DateTime.new(2023,9,20,16,0,0), seat: 3, user: users[3], farm: farms[1], address: "2500, boul. de l'Université Local E1-1043, Pavillon de la vie étudiante, Sherbrooke, QC J1K 2R1")
-trip_five = Trip.create!(date: DateTime.new(2023,10,15,12,0,0), seat: 5, user: users[2], farm: farms[2], address: "3050 Boulevard De Portland, Sherbrooke, Quebec J1L 1K1")
-trip_six = Trip.create!(date: DateTime.new(2023,10,10,12,0,0), seat: 5, user: users[2], farm: farms[2], address: "2500 Bd de l'Université, Sherbrooke, QC J1K 2R1")
-trip_seven = Trip.create!(date: DateTime.new(2023,9,30,16,0,0), seat: 3, user: users[3], farm: farms[1], address: "Université De Sherbrooke, Quai D, Sherbrooke, QC J1K 2R1")
+trip_one = Trip.create!(date: DateTime.new(2023,9,15,17,0,0), seat: 3, user: jane, farm: ferme_bibeau, address: "Université De Sherbrooke, Quai D, Sherbrooke, QC J1K 2R1")
+trip_two = Trip.create!(date: DateTime.new(2023,9,25,16,0,0), seat: 3, user: nicole, farm: ferme_bibeau, address: "3050 Boulevard De Portland, Sherbrooke, Quebec J1L 1K1")
+trip_three = Trip.create!(date: DateTime.new(2023,9,15,12,0,0), seat: 5, user: therese, farm: ferme_d_oree, address: "225 Rue Frontenac, Sherbrooke, QC J1H 1K1")
+trip_four = Trip.create!(date: DateTime.new(2023,9,10,16,0,0), seat: 3, user: nicole, farm: ferme_d_oree, address: "2500, boul. de l'Université Local E1-1043, Pavillon de la vie étudiante, Sherbrooke, QC J1K 2R1")
+trip_five = Trip.create!(date: DateTime.new(2023,9,20,12,0,0), seat: 5, user: jane, farm: sanders_farm, address: "1440 Rue Brébeuf, Sherbrooke, QC J1H 3G2")
+trip_six = Trip.create!(date: DateTime.new(2023,10,2,12,0,0), seat: 5, user: nicole, farm: sanders_farm, address: "2500 Bd de l'Université, Sherbrooke, QC J1K 2R1")
+trip_seven = Trip.create!(date: DateTime.new(2023,9,30,16,0,0), seat: 3, user: therese, farm: sanders_farm, address: "241 Rue Dufferin, Sherbrooke, QC J1H 4M3")
