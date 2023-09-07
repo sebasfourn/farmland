@@ -26,8 +26,8 @@
   <div class="ordered-products">
     <% @order_products.each do |order_product| %>
       <div class="ordered-product">
-        <%= image_tag "#{order_product.product.name}.jpg" %>
-        <%= "#{order_product.quantity} #{order_product.product.category == "meat" ? order_product.product.name : order_product.product.name.pluralize }" %>
+        <%= image_tag "#{order_product.product.product_info.name}.jpg" %>
+        <%= "#{order_product.quantity} #{order_product.product.product_info.category == "meat" ? order_product.product.product_info.name : order_product.product.product_info.name.pluralize }" %>
       </div>
     <% end %>
   </div>
@@ -75,7 +75,7 @@
     <h3>Well done!</h3>
     <% carbon_total = 0%>
     <% @order_products.each do |order_product|%>
-      <% carbon_total += (order_product.quantity * order_product.product.co2_saved) %>
+      <% carbon_total += (order_product.quantity * order_product.product.product_info.co2_saved) %>
     <% end %>
     <% carbon_total += @driver.electric_car ? ((@driver.distance_to([current_user.latitude, current_user.longitude])*0.192)) : ((@driver.distance_to([current_user.latitude, current_user.longitude])*0.192)/@order.trip.seat)%>
     <p> You saved <span class="emph total-carbon"><%= carbon_total.round %></span> kg of Carbon Dioxide by shopping with Farmland! <p>

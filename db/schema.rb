@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_09_06_185110) do
+ActiveRecord::Schema[7.0].define(version: 2023_09_07_112232) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -122,16 +122,15 @@ ActiveRecord::Schema[7.0].define(version: 2023_09_06_185110) do
   end
 
   create_table "products", force: :cascade do |t|
-    t.string "name"
-    t.string "category"
     t.string "unit"
     t.integer "stock"
     t.bigint "farm_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.float "price"
-    t.float "co2_saved"
+    t.bigint "product_info_id"
     t.index ["farm_id"], name: "index_products_on_farm_id"
+    t.index ["product_info_id"], name: "index_products_on_product_info_id"
   end
 
   create_table "trips", force: :cascade do |t|
@@ -176,6 +175,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_09_06_185110) do
   add_foreign_key "orders", "trips"
   add_foreign_key "orders", "users"
   add_foreign_key "products", "farms"
+  add_foreign_key "products", "product_infos"
   add_foreign_key "trips", "farms"
   add_foreign_key "trips", "users"
 end
