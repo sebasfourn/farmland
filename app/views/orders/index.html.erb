@@ -16,7 +16,7 @@
         <div class="order-card-products">
           <% order.order_products.each do |order_product| %>
             <div class="separator">
-              <%= "#{order_product.quantity}"%> <%= order_product.product.product_info.category == "meat" ? order_product.product.product_info.name : order_product.product.product_info.name.pluralize %>
+              <%= "#{order_product.quantity}#{order_product.product.unit}"%> <%= order_product.product.product_info.category == "meat" ? order_product.product.product_info.name : order_product.product.product_info.name.pluralize %>
             </div>
           <% end %>
         </div>
