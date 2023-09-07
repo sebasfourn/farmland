@@ -7,9 +7,9 @@
     <span class='black-text'><%= trip.user.distance_to([current_user.latitude, current_user.longitude]).round %></span> km away from you </br>
     Driver : <span class='emph-carpool'><%= trip.user.first_name.capitalize %></span> </br>
     <% if trip.user.electric_car %>
-      <span style = "font-size: 12px">You save <span id = "trip-co2"><%=((trip.user.distance_to([current_user.latitude, current_user.longitude])*192)).round %></span> g of CO2 in an electric car!</span>
+      <span style = "font-size: 12px">You save <span class = "trip-co2"><%=((trip.user.distance_to([current_user.latitude, current_user.longitude])*192)).round %></span> g of CO2 in an electric car!</span>
     <% else %>
-      <span style = "font-size: 12px">You save <span id = "trip-co2"><%= ((trip.user.distance_to([current_user.latitude, current_user.longitude])*192)/trip.seat).round %></span> g of CO2 by carpooling!</span>
+      <span style = "font-size: 12px">You save <span class = "trip-co2"><%= ((trip.user.distance_to([current_user.latitude, current_user.longitude])*192)/trip.seat).round %></span> g of CO2 by carpooling!</span>
     <% end %>
   </p>
   </div>
