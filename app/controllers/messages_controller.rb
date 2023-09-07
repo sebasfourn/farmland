@@ -8,13 +8,15 @@ class MessagesController < ApplicationController
     if @message.save
       ChatroomChannel.broadcast_to(
         @trip,
-        render_to_string(partial: "message", locals: {message: @message})
+        message: render_to_string(partial: "message", locals: { message: @message }),
+        sender_id: @message.user.id
       )
 
-      Order.where(trip: @trip).pluck(:user_id).reject { |id| @message.user.id == id }.each do |user_id|
+      User.users_to_notify_minus_sender_for_trip(@trip, @message.user).each do |user|
+        unseen_messages = Message.unseen_messages_count_for(user)
         NotificationChannel.broadcast_to(
-          User.find(user_id),
-          render_to_string(partial: "shared/notification")
+          user,
+          render_to_string(partial: "shared/notification", locals: { unseen_messages: unseen_messages })
         )
       end
       head :ok

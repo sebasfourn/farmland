@@ -5,7 +5,6 @@ import { gsap } from "gsap";
 export default class extends Controller {
   static targets = ["display"];
   connect() {
-    console.log(this.displayTarget);
     this.displayTarget.classList.remove("d-none");
     const tl = gsap.timeline({ defaults: { ease: "bounce" } });
     tl.fromTo(".topbanner", { y: -100 }, { opacity: 1, y: 0, duration: 0.8 });

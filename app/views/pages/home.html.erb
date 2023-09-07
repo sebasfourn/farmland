@@ -7,14 +7,21 @@
 
   <div class="farmland-seasonal">
     <p><span class="emph">Seasonal products for <span class="seasonal-month"><%= Date.today.strftime("%B") %></span></span></p>
+
     <div class="seasonal-products">
-      <% @products.each do |product| %>
-        <%= link_to "#{farms_path}?query=#{product.name}&sort=distance" do %>
-          <div class="product-div">
-            <%= image_tag "#{product.name}.jpg" %>
-            <p class="emph"><%= product.name.capitalize %></p>
-          </div>
+      <% if @products.any? %>
+        <% @products.each do |product| %>
+          <%= link_to "#{farms_path}?query=#{product.name}&sort=distance" do %>
+            <div class="product-div">
+              <%= image_tag "#{product.name}.jpg" %>
+              <p class="emph"><%= product.name.capitalize %></p>
+            </div>
+          <% end %>
         <% end %>
+      <% else %>
+        <div class="no-message">
+          <p>No seasonal products</p>
+        </div>
       <% end %>
     </div>
   </div>

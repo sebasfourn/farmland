@@ -8,7 +8,16 @@
     </div>
   </div>
 
-  <div class="chatroom" data-controller="chatroom-subscription" data-chatroom-subscription-chatroom-id-value="<%= @trip.id %>">
+  <div class="chatroom"
+    data-controller="chatroom-subscription"
+    data-chatroom-subscription-chatroom-id-value="<%= @trip.id %>"
+    data-chatroom-subscription-current-user-id-value="<%= current_user.id %>"
+    data-chatroom-subscription-sender-justify-class="justify-content-end"
+    data-chatroom-subscription-receiver-justify-class="justify-content-start"
+    data-chatroom-subscription-sender-style-class="sender-style"
+    data-chatroom-subscription-receiver-style-class="receiver-style"
+  >
+
     <div class="messages" data-chatroom-subscription-target="messages">
       <% @trip.messages.each do |message| %>
         <%= render "messages/message", message: message %>

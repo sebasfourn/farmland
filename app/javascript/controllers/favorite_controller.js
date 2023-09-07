@@ -28,7 +28,6 @@ export default class extends Controller {
         headers: { "Accept": "text/plain" }
       })
         .then((response) => {
-          console.log(response)
           if (response.status === 204) {
             this.element.remove()
           } else if (response.status === 200) {

@@ -20,7 +20,7 @@
       <% end %>
     </li>
     <li data-notification-subscription-target="navbar">
-      <%= render "shared/notification" %>
+      <%= render "shared/notification", unseen_messages: Message.unseen_messages_count_for(current_user) %>
       <%= link_to trips_path, class: "nav-icon img" do %>
         <%= current_page?(trips_path) ? inline_svg_tag("chat-selected.svg") : inline_svg_tag("chat.svg")%>
         <span class="nav-links <%= "current-page" if current_page?(trips_path) %>">Chats</span>
