@@ -38,7 +38,7 @@ class OrdersController < ApplicationController
       redirect_to order_path(@order, new_order: true)
     else
       # redirect_to farm_path(params["farm"])
-      @time = (Time.now.hour.to_f + (Time.now.min.to_f / 60))
+      @time = ((Time.now.hour.to_f - 4) + (Time.now.min.to_f / 60))
       @farm = Farm.find(params["farm"])
       @products = @farm.products
       render "farms/show", status: :unprocessable_entity
