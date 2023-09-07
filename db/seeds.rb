@@ -41,48 +41,47 @@ farms << ferme_d_oree
 farms << sanders_farm
 
 # may
-asparagus = ProductInfo.create!(name: "asparagus", category: "vegetable", month: 5, co2_saved: 0)
+asparagus = ProductInfo.create!(name: "asparagus", category: "vegetable", month: 5, co2_saved: 0.675)
 
 # june
-radish = ProductInfo.create!(name: "radish", category: "vegetable", month: 6, co2_saved: 0)
-spinach = ProductInfo.create!(name: "spinach", category: "vegetable", month: 6, co2_saved: 0)
-strawberry = ProductInfo.create!(name: "strawberry", category: "fruit", month: 6, co2_saved: 0)
-lettuce = ProductInfo.create!(name: "lettuce", category: "vegetable", month: 6, co2_saved: 0)
-green_onion = ProductInfo.create!(name: "green_onion", category: "vegetable", month: 6, co2_saved: 0)
-herb = ProductInfo.create!(name: "herb", category: "vegetable", month: 6, co2_saved: 0)
-rhubarb = ProductInfo.create!(name: "rhubarb", category: "fruit", month: 6, co2_saved: 0)
+radish = ProductInfo.create!(name: "radish", category: "vegetable", month: 6, co2_saved: 0.431)
+spinach = ProductInfo.create!(name: "spinach", category: "vegetable", month: 6, co2_saved: 0.738)
+strawberry = ProductInfo.create!(name: "strawberry", category: "fruit", month: 6, co2_saved: 1.170)
+lettuce = ProductInfo.create!(name: "lettuce", category: "vegetable", month: 6, co2_saved: 0.389)
+green_onion = ProductInfo.create!(name: "green onion", category: "vegetable", month: 6, co2_saved: 0.281)
+herb = ProductInfo.create!(name: "coriander", category: "vegetable", month: 6, co2_saved: 0.938)
+rhubarb = ProductInfo.create!(name: "rhubarb", category: "fruit", month: 6, co2_saved: 0.102)
 
 # july
-raspberry = ProductInfo.create!(name: "raspberry", category: "fruit", month: 7, co2_saved: 0)
-broccoli = ProductInfo.create!(name: "broccoli", category: "vegetable", month: 7, co2_saved: 0)
-zucchini = ProductInfo.create!(name: "zucchini", category: "vegetable", month: 7, co2_saved: 0)
-beet = ProductInfo.create!(name: "beet", category: "vegetable", month: 7, co2_saved: 0)
-kale = ProductInfo.create!(name: "kale", category: "vegetable", month: 7, co2_saved: 0)
+raspberry = ProductInfo.create!(name: "raspberry", category: "fruit", month: 7, co2_saved: 1.470)
+broccoli = ProductInfo.create!(name: "broccoli", category: "vegetable", month: 7, co2_saved: 0.235)
+zucchini = ProductInfo.create!(name: "zucchini", category: "vegetable", month: 7, co2_saved: 0.25)
+beet = ProductInfo.create!(name: "beet", category: "vegetable", month: 7, co2_saved: 0.558)
+kale = ProductInfo.create!(name: "kale", category: "vegetable", month: 7, co2_saved: 0.438)
 
 # august
-carrot = ProductInfo.create!(name: "carrot", category: "vegetable", month: 8, co2_saved: 0)
-blueberry = ProductInfo.create!(name: "blueberry", category: "fruit", month: 8, co2_saved: 0)
-cantaloupe = ProductInfo.create!(name: "cantaloupe", category: "fruit", month: 8, co2_saved: 0)
-cantaloupe = ProductInfo.create!(name: "cantaloupe", category: "fruit", month: 8, co2_saved: 0)
-tomato = ProductInfo.create!(name: "tomato", category: "vegetable", month: 8, co2_saved: 0)
-bean = ProductInfo.create!(name: "bean", category: "vegetable", month: 8, co2_saved: 0)
-leek = ProductInfo.create!(name: "leek", category: "vegetable", month: 8, co2_saved: 0)
-eggplant = ProductInfo.create!(name: "eggplant", category: "vegetable", month: 8, co2_saved: 0)
+carrot = ProductInfo.create!(name: "carrot", category: "vegetable", month: 8, co2_saved: 0.259)
+blueberry = ProductInfo.create!(name: "blueberry", category: "fruit", month: 8, co2_saved: 1.74)
+cantaloupe = ProductInfo.create!(name: "cantaloupe", category: "fruit", month: 8, co2_saved: 0.438)
+tomato = ProductInfo.create!(name: "tomato", category: "vegetable", month: 8, co2_saved: 0.998)
+bean = ProductInfo.create!(name: "bean", category: "vegetable", month: 8, co2_saved: 0.664)
+leek = ProductInfo.create!(name: "leek", category: "vegetable", month: 8, co2_saved: 0.2875)
+eggplant = ProductInfo.create!(name: "eggplant", category: "vegetable", month: 8, co2_saved: 0.294)
 
 # september
-apple = ProductInfo.create!(name: "apple", category: "fruit", month: 9, co2_saved: 0)
-pepper = ProductInfo.create!(name: "pepper", category: "vegetable", month: 9, co2_saved: 0)
+apple = ProductInfo.create!(name: "apple", category: "fruit", month: 9, co2_saved: 0.228)
+pepper = ProductInfo.create!(name: "pepper", category: "vegetable", month: 9, co2_saved: 1.64)
 
 # october
-sweet_potato = ProductInfo.create!(name: "sweet_potato", category: "vegetable", month: 10, co2_saved: 0)
-squash = ProductInfo.create!(name: "squash", category: "vegetable", month: 10, co2_saved: 0)
-turnip = ProductInfo.create!(name: "turnip", category: "vegetable", month: 10, co2_saved: 0)
+sweet_potato = ProductInfo.create!(name: "sweet potato", category: "vegetable", month: 10, co2_saved: 0.558)
+squash = ProductInfo.create!(name: "squash", category: "vegetable", month: 10, co2_saved: 0.45)
+turnip = ProductInfo.create!(name: "turnip", category: "vegetable", month: 10, co2_saved: 0.268)
 
 # meat
-chicken_breast = ProductInfo.create!(name: "chicken breast", category: "meat", month: 12, co2_saved: 0)
-ground_turkey = ProductInfo.create!(name: "ground turkey", category: "meat", month: 12, co2_saved: 0)
-ground_pork = ProductInfo.create!(name: "ground pork", category: "meat", co2_saved: 0)
-ground_beef = ProductInfo.create!(name: "ground beef", category: "meat", month: 12, co2_saved: 0)
+chicken_breast = ProductInfo.create!(name: "chicken breast", category: "meat", month: 12, co2_saved: 2.37)
+ground_turkey = ProductInfo.create!(name: "ground turkey", category: "meat", month: 12, co2_saved: 0.6)
+ground_pork = ProductInfo.create!(name: "ground pork", category: "meat", co2_saved: 1.21)
+ground_beef = ProductInfo.create!(name: "ground beef", category: "meat", month: 12, co2_saved: 3.246)
 
 # farm adding a product
 Product.create!(farm: ferme_bibeau, product_info: asparagus, unit: "kg", stock: 20, price: 5.99)
