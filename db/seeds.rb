@@ -62,7 +62,6 @@ kale = ProductInfo.create!(name: "kale", category: "vegetable", month: 7, co2_sa
 # august
 carrot = ProductInfo.create!(name: "carrot", category: "vegetable", month: 8, co2_saved: 0.259)
 blueberry = ProductInfo.create!(name: "blueberry", category: "fruit", month: 8, co2_saved: 1.74)
-cantaloupe = ProductInfo.create!(name: "cantaloupe", category: "fruit", month: 8, co2_saved: 0.438)
 tomato = ProductInfo.create!(name: "tomato", category: "vegetable", month: 8, co2_saved: 0.998)
 bean = ProductInfo.create!(name: "bean", category: "vegetable", month: 8, co2_saved: 0.664)
 leek = ProductInfo.create!(name: "leek", category: "vegetable", month: 8, co2_saved: 0.2875)
@@ -71,6 +70,7 @@ eggplant = ProductInfo.create!(name: "eggplant", category: "vegetable", month: 8
 # september
 apple = ProductInfo.create!(name: "apple", category: "fruit", month: 9, co2_saved: 0.228)
 pepper = ProductInfo.create!(name: "pepper", category: "vegetable", month: 9, co2_saved: 1.64)
+cantaloupe = ProductInfo.create!(name: "cantaloupe", category: "fruit", month: 8, co2_saved: 0.438)
 
 # october
 sweet_potato = ProductInfo.create!(name: "sweet potato", category: "vegetable", month: 10, co2_saved: 0.558)
