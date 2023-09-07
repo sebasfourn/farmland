@@ -36,26 +36,23 @@ ferme_d_oree = Farm.create!(name: "Ferme d'Orée", address: "273, Chemin Beaver 
 sanders_farm = Farm.create!(name: "Sanders Farm", address: "475 Hyatt's Mills
     Compton, QC", open: true, rating: 4.5, opening_time: 9, closing_time: 15, grass_fed: true, description: "Sanders farm is a family-run, organic fruit and vegetable farm, nestled in the beautiful rolling hills of Compton since 1974.")
 topher_farm = Farm.create!(name: "Topher Farm", address: "6160 rte 143, Waterville, QC", open: true, rating: 4.5, opening_time: 11, closing_time: 17, description: "Topher's Farm in Canada is a thriving agricultural enterprise, known for its diverse range of farm-fresh products that consistently deliver exceptional taste and freshness to customers.")
-poucevert_farm = Farm.create!(name: "Les 3 pouces Verts", address: "525 Chem. Chute, Cookshire-Eaton, QC",
+poucevert_farm = Farm.create!(name: "Les 3 pouces Verts", address: "525 Chemin Chute, Cookshire-Eaton, QC",
                               open: false, rating: 5, opening_time: 7, closing_time: 18,
-                              description: "Nous sommes fiers de produire tous nos fruits de manière 100% naturelle.
-                                            Nous avons commencé il y a plus de 40 ans avec des pommes et nous avons depuis ajouté des bleuets,
-                                            des framboises, des fraises et des groseilles.")
-sevigny_farm = Farm.create!(name: "Sévigny Farm", address: "291 Chem. de la Rivière, Saint-François-Xavier-de-Brompton, QC",
+                              description: "We are a cherished family-owned eco-conscious farm. With a rich agricultural tradition, they offer an array of natural produce, from luscious apples to vibrant vegetables. Visitors can savor fresh, locally grown delights while experiencing the beauty of sustainable farming practices.")
+sevigny_farm = Farm.create!(name: "Sévigny Farm", address: "291 Chemin de la Rivière, Saint-François-Xavier-de-Brompton, QC",
                             open: true, rating: 4.8, opening_time: 8, closing_time: 15,
-                            description: "Nous sommes fiers de produire tous nos fruits de manière 100% naturelle.
-                            Nous avons commencé il y a plus de 40 ans avec des pommes et nous avons depuis ajouté des bleuets, des framboises, des fraises et des groseilles.")
-grange_maraichere = Farm.create!(name: "Ferme la grange Maraîchère", address: "1595 Chem. des Pères, Magog, QC",
+                            description: "We are proud to produce all our fruits in a 100% natural manner. We started over 40 years ago with apples and have since added blueberries, raspberries, strawberries, and currants.")
+grange_maraichere = Farm.create!(name: "Ferme la grange Maraîchère", address: "1595 Chemin des Pères, Magog, QC",
                                 open: true, rating: 4, opening_time: 7, closing_time: 20,
                                 description: "Nestled in Magog, Estrie, along the scenic Chemin des Pères tourist route, Ferme Erb is a diversified vegetable farm.
                                 They provide a wide array of naturally grown vegetables, striving to offer fresh seasonal products while sharing their deep passion for agriculture.")
-la_prucheraie = Farm.create!(name: "La Prucheraie", address: "974 Chem. Arel, Melbourne, QC",
+la_prucheraie = Farm.create!(name: "La Prucheraie", address: "974 Chemin Arel, Melbourne, QC",
                                 open: true, rating: 4.5, opening_time: 10, closing_time: 19,
                                 description: "Founded in 1989 by Robert Beaulieu and Joanne Marcil, the farm has been certified organic since 1990, ensuring the organic quality of all its products.")
-la_vallee_des_lacs_farm = Farm.create!(name: "La Vallée des Lacs", address: "162 Chem. Georges-Vallières, Sherbrooke, QC",
+la_vallee_des_lacs_farm = Farm.create!(name: "La Vallée des Lacs", address: "162 Chemin Georges-Vallières, Sherbrooke, QC",
                                 open: true, rating: 5, opening_time: 9, closing_time: 15,
                                 description: "Ferme La Vallée des Lacs in Quebec is a charming farm nestled amidst scenic lakes and valleys, committed to producing fresh, local delights.")
-croque_saisons = Farm.create!(name: "Croque Saisons", address: "11 QC-108, Lingwick, QC",
+croque_saisons = Farm.create!(name: "Croque Saisons", address: "111 Route 108 Lingwick, QC",
                                 open: true, rating: 4.6, opening_time: 8, closing_time: 17,
                                 description: "Croque-Saisons Farm, founded by two agronomists in the Eastern Townships, encompasses 80 acres of land, featuring 10 acres of organic vegetable cultivation, fruit production,
                                               and pasture-raised cattle, all driven by their passion for sustainable agriculture.")
