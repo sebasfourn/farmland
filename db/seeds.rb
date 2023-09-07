@@ -70,7 +70,7 @@ eggplant = ProductInfo.create!(name: "eggplant", category: "vegetable", month: 8
 # september
 apple = ProductInfo.create!(name: "apple", category: "fruit", month: 9, co2_saved: 0.228)
 pepper = ProductInfo.create!(name: "pepper", category: "vegetable", month: 9, co2_saved: 1.64)
-cantaloupe = ProductInfo.create!(name: "cantaloupe", category: "fruit", month: 8, co2_saved: 0.438)
+cantaloupe = ProductInfo.create!(name: "cantaloupe", category: "fruit", month: 9, co2_saved: 0.438)
 
 # october
 sweet_potato = ProductInfo.create!(name: "sweet potato", category: "vegetable", month: 10, co2_saved: 0.558)
