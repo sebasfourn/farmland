@@ -33,7 +33,7 @@
 
   <body class="background">
     <div>
-      <% unless @_request.fullpath == root_path || @_request.fullpath == user_session_path || @_request.fullpath == farms_path %>
+      <% unless @_request.fullpath == root_path || @_request.fullpath == user_session_path %>
         <%= render "shared/topbanner" %>
       <% end %>
       <div class= "app-container">
