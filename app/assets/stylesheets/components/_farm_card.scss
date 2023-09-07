@@ -40,6 +40,10 @@
     padding-top: 10px;
     padding-bottom: 10px;
 
+    .farm-show-fav-div {
+      margin-bottom: 5px;
+    }
+
     .farm-fav-div {
       display: flex;
       justify-content: space-between;
@@ -48,6 +52,11 @@
       .farm-name-div {
         display: flex;
         align-items: center;
+
+        .arrow-div-show {
+          margin-left:  -10px;
+          margin-right: 10px;
+        }
 
         h2 {
           font-size: 20px;

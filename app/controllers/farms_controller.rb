@@ -29,6 +29,7 @@ class FarmsController < ApplicationController
   end
 
   def show
+    @time = (Time.now.hour.to_f + (Time.now.min.to_f / 60))
     @farm = Farm.find(params[:id])
     @products = @farm.products
     @order = Order.new
