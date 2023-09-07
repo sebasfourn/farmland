@@ -8,7 +8,8 @@ class MessagesController < ApplicationController
     if @message.save
       ChatroomChannel.broadcast_to(
         @trip,
-        render_to_string(partial: "message", locals: { message: @message })
+        message: render_to_string(partial: "message", locals: { message: @message }),
+        sender_id: @message.user.id
       )
 
       User.users_to_notify_minus_sender_for_trip(@trip, @message.user).each do |user|
