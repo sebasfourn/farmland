@@ -126,12 +126,12 @@ Product.create!(farm: ferme_d_oree, product_info: ground_pork, unit: "kg", stock
 Product.create!(farm: ferme_d_oree, product_info: sweet_potato, unit: "kg", stock: 40, price: 4.25)
 Product.create!(farm: ferme_d_oree, product_info: carrot, unit: "kg", stock: 40, price: 2.75)
 
-Product.create!(farm: topher_farm, product_info: radish, unit: "kg", stock: 40, price: 3.99)
-Product.create!(farm: topher_farm, product_info: pepper, unit: "kg", stock: 40, price: 4.99)
-Product.create!(farm: topher_farm, product_info: apple, unit: "kg", stock: 40, price: 4.75)
-Product.create!(farm: topher_farm, product_info: blueberry, unit: "kg", stock: 40, price: 5.99)
-Product.create!(farm: topher_farm, product_info: strawberry, unit: "kg", stock: 40, price: 5.99)
-Product.create!(farm: topher_farm, product_info: cantaloupe, unit: "kg", stock: 40, price: 4.99)
+Product.create!(farm: sanders_farm, product_info: radish, unit: "kg", stock: 40, price: 3.99)
+Product.create!(farm: sanders_farm, product_info: pepper, unit: "kg", stock: 40, price: 4.99)
+Product.create!(farm: sanders_farm, product_info: apple, unit: "kg", stock: 40, price: 4.75)
+Product.create!(farm: sanders_farm, product_info: blueberry, unit: "kg", stock: 40, price: 5.99)
+Product.create!(farm: sanders_farm, product_info: strawberry, unit: "kg", stock: 40, price: 5.99)
+Product.create!(farm: sanders_farm, product_info: cantaloupe, unit: "kg", stock: 40, price: 4.99)
 
 # TOPHER
 Product.create!(farm: topher_farm, product_info: radish, unit: "kg", stock: 40, price: 3.99)
