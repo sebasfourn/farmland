@@ -2,17 +2,19 @@
 
   <div class="farmland-title">
     <h1>Farmland</h1>
-    <p>Share a ride, shop local, save the planet !</p>
+    <p>Shop local, share a ride, save the planet !</p>
   </div>
 
   <div class="farmland-seasonal">
-    <p><span class="emph seasonal">Seasonal products for <%= Date.today.strftime("%B") %></span></p>
+    <p><span class="emph">Seasonal products for <span class="seasonal-month"><%= Date.today.strftime("%B") %></span></span></p>
     <div class="seasonal-products">
       <% @products.each do |product| %>
-        <div class="product-div">
-          <%= image_tag "#{product.name}.jpg" %>
-          <p class="emph"><%= product.name.capitalize %></p>
-        </div>
+        <%= link_to "#{farms_path}?query=#{product.name}&sort=distance" do %>
+          <div class="product-div">
+            <%= image_tag "#{product.name}.jpg" %>
+            <p class="emph"><%= product.name.capitalize %></p>
+          </div>
+        <% end %>
       <% end %>
     </div>
   </div>

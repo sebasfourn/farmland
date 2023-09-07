@@ -1,5 +1,6 @@
 class Farm < ApplicationRecord
   has_many :products, dependent: :destroy
+  has_many :product_infos, through: :products
   has_many :trips, dependent: :destroy
   has_one_attached :photo
 
@@ -15,30 +16,25 @@ class Farm < ApplicationRecord
 
   pg_search_scope :search_farm_by_query,
                   against: %i[name description],
-                  # associated_against: {
-                  #   product_infos: :name
-                  # },
+                  associated_against: {
+                    product_infos: :name
+                  },
                   using: {
                     tsearch: { prefix: true }
                   }
 
-  pg_search_scope :search_farm_by_meat,
-                  associated_against: {
-                    products: :category
-                  }
-
   pg_search_scope :search_farm_by_vegetable,
                   associated_against: {
-                    products: :category
+                    product_infos: :category
                   }
 
   pg_search_scope :search_farm_by_fruit,
                   associated_against: {
-                    products: :category
+                    product_infos: :category
                   }
 
-  pg_search_scope :search_farm_by_egg,
+  pg_search_scope :search_farm_by_meat,
                   associated_against: {
-                    products: :category
+                    product_infos: :category
                   }
 end
