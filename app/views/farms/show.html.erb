@@ -3,21 +3,20 @@
 <br>
 </div>
 <div class="farm-header">
-
-    <%= link_to url_for(:back) do %>
-      <i class="fa-solid fa-chevron-left fa-lg arrow"></i>
+  <%= link_to url_for(:back) do %>
+    <i class="fa-solid fa-chevron-left fa-lg arrow"></i>
+  <% end %>
+  <div class="farm-title">
+    <% if @farm.open %>
+        <i class="fa-solid fa-circle fa-sm open"></i>
+      <% else %>
+        <i class="fa-solid fa-circle fa-sm close"></i>
     <% end %>
-    <div class="farm-title">
-      <% if @farm.open %>
-          <i class="fa-solid fa-circle fa-sm open"></i>
-        <% else %>
-          <i class="fa-solid fa-circle fa-sm close"></i>
-      <% end %>
-      <h2><%= @farm.name %></h2>
-    </div>
-    <div class="farm-rating">
-      <p><%= @farm.rating %><i class="fa-solid fa-star fa-sm star"></i></p>
-    </div>
+    <h2><%= @farm.name %></h2>
+  </div>
+  <div class="farm-rating">
+    <p><%= @farm.rating %><i class="fa-solid fa-star fa-sm star"></i></p>
+  </div>
 </div>
 <p class="farm-description"><%= @farm.description %></p>
 
@@ -36,12 +35,12 @@
                           %>
         <%# if I wanted all the cards from the app to have the same informations, I can make a partial called carpool_card
         and render it where I need to. For example, on order-show page :
-         label_method: lambda { |trip| render "carpool_card", trip: @order.trip, current_user: current_user }
-         OR on order index page
-         label_method: lambda { |trip| render "show_carpool_label", trip: order.trip, current_user: current_user }
-         it would have been useful if I did made a css component for the carpool card, but it's a pain to refactor.
-         At least we know how to do it for another project ;)
-         %>
+        label_method: lambda { |trip| render "carpool_card", trip: @order.trip, current_user: current_user }
+        OR on order index page
+        label_method: lambda { |trip| render "show_carpool_label", trip: order.trip, current_user: current_user }
+        it would have been useful if I did made a css component for the carpool card, but it's a pain to refactor.
+        At least we know how to do it for another project ;)
+        %>
     </div>
     <div>
       <h3> Products </h3>
@@ -75,7 +74,7 @@
                                         as: :hidden %>
               </div>
             </div>
-           <% end %>
+          <% end %>
         <% end %>
     </div>
 

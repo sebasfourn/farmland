@@ -11,7 +11,7 @@ class MessagesController < ApplicationController
         render_to_string(partial: "message", locals: {message: @message})
       )
 
-      Order.where(trip: @trip).pluck(:user_id).reject{|id| @message.user.id == id}.each do |user_id|
+      Order.where(trip: @trip).pluck(:user_id).reject { |id| @message.user.id == id }.each do |user_id|
         NotificationChannel.broadcast_to(
           User.find(user_id),
           render_to_string(partial: "shared/notification")
