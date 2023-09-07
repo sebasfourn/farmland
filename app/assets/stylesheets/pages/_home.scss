@@ -18,7 +18,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-bottom: 60px;
+  margin-bottom: 40px;
   margin-top: -10px;
   & h1 {
     font-family: "Eiko";
@@ -29,20 +29,22 @@
   p {
     width: 70%;
     font-family: 20px;
+    margin-bottom: 0px;
   }
 }
 
 .farmland-seasonal {
   max-width: 100%;
   text-align: center;
-  .seasonal {
-    color: $green-main;
+  .seasonal-month {
+    color: $green-light;
   }
 }
 
 .seasonal-products {
   max-width: 100vw;
   display: flex;
+  justify-content: center;
   align-items: center;
   flex-wrap: nowrap;
   white-space: nowrap;
@@ -50,7 +52,7 @@
   margin-left: -20px;
   margin-right: -20px;
   margin-top: 20px;
-  margin-bottom: 100px;
+  margin-bottom: 40px;
   gap: 20px;
   padding: 0 20px;
   .product-div {

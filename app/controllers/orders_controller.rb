@@ -29,7 +29,7 @@ class OrdersController < ApplicationController
           new_order_product.order = @order
           update_farm_stock(new_order_product, order_product_hash)
           new_order_product.save
-          order_co2_saved += (new_order_product.quantity * new_order_product.product.co2_saved)
+          order_co2_saved += (new_order_product.quantity * new_order_product.product.product_info.co2_saved)
         end
       end
       order_co2_saved += @order.trip.user.electric_car ? ((@order.trip.user.distance_to([current_user.latitude, current_user.longitude])*0.192)) : ((@order.trip.user.distance_to([current_user.latitude, current_user.longitude])*0.192)/@order.trip.seat)
@@ -38,6 +38,7 @@ class OrdersController < ApplicationController
       redirect_to order_path(@order, new_order: true)
     else
       # redirect_to farm_path(params["farm"])
+      @time = ((Time.now.hour.to_f - 4) + (Time.now.min.to_f / 60))
       @farm = Farm.find(params["farm"])
       @products = @farm.products
       render "farms/show", status: :unprocessable_entity

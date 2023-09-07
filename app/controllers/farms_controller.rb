@@ -1,9 +1,13 @@
 class FarmsController < ApplicationController
   skip_before_action :verify_authenticity_token, only: %i[favorite unfavorite]
+  before_action :time, only: %i[index show favorites]
+
+  def time
+    @time = ((Time.now.hour.to_f - 4) + (Time.now.min.to_f / 60))
+  end
+
 
   def index
-    @time = (Time.now.hour.to_f + (Time.now.min.to_f / 60))
-
     @farms = Farm.all
     @farms = @farms.search_farm_by_query(params[:query]) if params[:query].present?
     @farms = @farms.search_farm_by_vegetable("vegetable") if params[:vegetable].present?
@@ -29,7 +33,6 @@ class FarmsController < ApplicationController
   end
 
   def show
-    @time = (Time.now.hour.to_f + (Time.now.min.to_f / 60))
     @farm = Farm.find(params[:id])
     @products = @farm.products
     @order = Order.new
@@ -64,7 +67,6 @@ class FarmsController < ApplicationController
   end
 
   def favorites
-    @time = (Time.now.hour.to_f + (Time.now.min.to_f / 60))
     @farms = current_user.favorited_by_type('Farm')
   end
 

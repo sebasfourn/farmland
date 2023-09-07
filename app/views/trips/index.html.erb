@@ -10,26 +10,24 @@
 <% if @trips.any? %>
   <% @trips.each do |trip| %>
     <% if trip.messages.any? %>
-      <%= link_to trip_path(trip) do %>
 
+      <%= link_to trip_path(trip) do %>
         <div class="chat-box">
           <%= image_tag "driver.png", class: "driver-img" %>
-          <% if trip.messages.any? %>
-            <div class="trip-info-wrapper">
-              <h4 class="trip-info">Trip to <%= trip.farm.name %></h4>
-              <div class="last-message">
-                <% if current_user == trip.messages.last.user %>
-                <p>You: <%= trip.messages.last.content %></p>
-                <% else %>
-                <p><%= trip.messages.last.user.first_name.capitalize %>: <%= trip.messages.last.content %></p>
-                <% end %>
-              </div>
+          <div class="trip-info-wrapper">
+            <h4 class="trip-info">Trip to: <span class="trip-farm"><%= trip.farm.name %></span></h4>
+            <div class="last-message">
+              <% if current_user == trip.messages.last.user %>
+              <p>You: <%= trip.messages.last.content %></p>
+              <% else %>
+              <p><%= trip.messages.last.user.first_name.capitalize %>: <%= trip.messages.last.content %></p>
+              <% end %>
             </div>
-            <span class="timestamp"><%= trip.messages.last.created_at.strftime('%l:%M %p') %></span>
-          <% end %>
+          </div>
+          <span class="timestamp"><%= trip.messages.last.created_at.strftime('%l:%M %p') %></span>
         </div>
-
       <% end %>
+
     <% end %>
   <% end %>
 <% else %>
