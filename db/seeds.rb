@@ -34,11 +34,41 @@ ferme_bibeau = Farm.create!(name: "Ferme Bibeau", address: "3336 Chemin Bibeau
 ferme_d_oree = Farm.create!(name: "Ferme d'Orée", address: "273, Chemin Beaver ridge
   Newport, QC", open: false, rating: 3.5, opening_time: 9, closing_time: 14, description: "We produce grass-fed beef, pastured pork, lamb, eggs, and unpasteurized honey and sell directly to the consumer and through specialized butchers.")
 sanders_farm = Farm.create!(name: "Sanders Farm", address: "475 Hyatt's Mills
-  Compton, QC", open: true, rating: 4.5, opening_time: 9, closing_time: 15, grass_fed: true, description: "Sanders farm is a family-run, organic fruit and vegetable farm, nestled in the beautiful rolling hills of Compton since 1974.")
-
+    Compton, QC", open: true, rating: 4.5, opening_time: 9, closing_time: 15, grass_fed: true, description: "Sanders farm is a family-run, organic fruit and vegetable farm, nestled in the beautiful rolling hills of Compton since 1974.")
+topher_farm = Farm.create!(name: "Topher Farm", address: "6160 rte 143, Waterville, QC", open: true, rating: 4.5, opening_time: 11, closing_time: 17, description: "Topher's Farm in Canada is a thriving agricultural enterprise, known for its diverse range of farm-fresh products that consistently deliver exceptional taste and freshness to customers.")
+poucevert_farm = Farm.create!(name: "Les 3 pouces Verts", address: "525 Chem. Chute, Cookshire-Eaton, QC",
+                              open: false, rating: 5, opening_time: 7, closing_time: 18,
+                              description: "Nous sommes fiers de produire tous nos fruits de manière 100% naturelle.
+                                            Nous avons commencé il y a plus de 40 ans avec des pommes et nous avons depuis ajouté des bleuets,
+                                            des framboises, des fraises et des groseilles.")
+sevigny_farm = Farm.create!(name: "Sévigny Farm", address: "291 Chem. de la Rivière, Saint-François-Xavier-de-Brompton, QC",
+                            open: true, rating: 4.8, opening_time: 8, closing_time: 15,
+                            description: "Nous sommes fiers de produire tous nos fruits de manière 100% naturelle.
+                            Nous avons commencé il y a plus de 40 ans avec des pommes et nous avons depuis ajouté des bleuets, des framboises, des fraises et des groseilles.")
+grange_maraichere = Farm.create!(name: "Ferme la grange Maraîchère" address: "1595 Chem. des Pères, Magog, QC",
+                                open: true, rating: 4, opening_time: 7, closing_time: 20,
+                                description: "Nestled in Magog, Estrie, along the scenic Chemin des Pères tourist route, Ferme Erb is a diversified vegetable farm.
+                                They provide a wide array of naturally grown vegetables, striving to offer fresh seasonal products while sharing their deep passion for agriculture.")
+la_prucheraie = Farm.create!(name: "La Prucheraie" address: "974 Chem. Arel, Melbourne, QC",
+                                open: true, rating: 4.5, opening_time: 10, closing_time: 19,
+                                description: "Founded in 1989 by Robert Beaulieu and Joanne Marcil, the farm has been certified organic since 1990, ensuring the organic quality of all its products.")
+la_vallee_des_lacs_farm = Farm.create!(name: "La Vallée des Lacs" address: "162 Chem. Georges-Vallières, Sherbrooke, QC",
+                                open: true, rating: 5, opening_time: 9, closing_time: 15,
+                                description: "Ferme La Vallée des Lacs in Quebec is a charming farm nestled amidst scenic lakes and valleys, committed to producing fresh, local delights.")
+croque_saisons = Farm.create!(name: "La Vallée des Lacs" address: "11 QC-108, Lingwick, QC",
+                                open: true, rating: 4.6, opening_time: 8, closing_time: 17,
+                                description: "Croque-Saisons Farm, founded by two agronomists in the Eastern Townships, encompasses 80 acres of land, featuring 10 acres of organic vegetable cultivation, fruit production,
+                                              and pasture-raised cattle, all driven by their passion for sustainable agriculture.")
 farms << ferme_bibeau
 farms << ferme_d_oree
 farms << sanders_farm
+farms << topher_farm
+farms << poucevert_farm
+farms << sevigny_farm
+farms << grange_maraichere
+farms << la_prucheraie
+farms << la_vallee_des_lacs_farm
+farms << croque_saisons
 
 # may
 asparagus = ProductInfo.create!(name: "asparagus", category: "vegetable", month: 5, co2_saved: 0.675)
@@ -93,7 +123,6 @@ Product.create!(farm: ferme_d_oree, product_info: pepper, unit: "kg", stock: 40,
 Product.create!(farm: sanders_farm, product_info: ground_turkey, unit: "kg", stock: 40, price: 7.25)
 Product.create!(farm: sanders_farm, product_info: ground_beef, unit: "kg", stock: 40, price: 7.25)
 
-trips = []
 
 trip_one = Trip.create!(date: DateTime.new(2023,9,15,17,0,0), seat: 3, user: users[2], farm: farms[0], address: "Université De Sherbrooke, Quai D, Sherbrooke, QC J1K 2R1")
 trip_two = Trip.create!(date: DateTime.new(2023,8,30,16,0,0), seat: 3, user: users[3], farm: farms[1], address: "Université De Sherbrooke, Quai D, Sherbrooke, QC J1K 2R1")
@@ -102,11 +131,3 @@ trip_four = Trip.create!(date: DateTime.new(2023,9,20,16,0,0), seat: 3, user: us
 trip_five = Trip.create!(date: DateTime.new(2023,10,15,12,0,0), seat: 5, user: users[2], farm: farms[2], address: "3050 Boulevard De Portland, Sherbrooke, Quebec J1L 1K1")
 trip_six = Trip.create!(date: DateTime.new(2023,10,10,12,0,0), seat: 5, user: users[2], farm: farms[2], address: "2500 Bd de l'Université, Sherbrooke, QC J1K 2R1")
 trip_seven = Trip.create!(date: DateTime.new(2023,9,30,16,0,0), seat: 3, user: users[3], farm: farms[1], address: "Université De Sherbrooke, Quai D, Sherbrooke, QC J1K 2R1")
-
-trips << trip_two
-trips << trip_one
-trips << trip_three
-trips << trip_four
-trips << trip_five
-trips << trip_six
-trips << trip_seven
