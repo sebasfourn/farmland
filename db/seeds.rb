@@ -17,6 +17,32 @@ User.destroy_all
 
 users = []
 
+
+seb = User.create!(first_name: "seb", last_name: "fournier", email: "seb@email.com", password: "secret", address: "2810 Rue Beaudry, Sherbrooke, QC", driver: false, electric_car: true, verified: true)
+therese = User.create!(first_name: "therese", last_name: "trudeau", email: "therese@email.com", password: "secret", address: "495 Rue Longpre, Sherbrooke, QC", driver: true, verified: true)
+jane = User.create!(first_name: "jane", last_name: "johnson", email: "jane@email.com", password: "secret", address: "2080 Rue Andre, Sherbrooke, QC", driver: true, electric_car: true, verified: true)
+nicole = User.create!(first_name: "nicole", last_name: "naudin", email: "nicole@email.com", password: "secret", address: "814 Rue Fabien, Sherbrooke, QC", driver: true, verified: true)
+john = User.create!(first_name: "john", last_name: "cartier", email: "john@email.com", password: "secret", address: "814 Rue Fabien, Sherbrooke, QC", driver: true, verified: true)
+jean = User.create!(first_name: "jean", last_name: "richards", email: "jean@email.com", password: "secret", address: "814 Rue Fabien, Sherbrooke, QC", driver: true, verified: true)
+
+grace = User.create!(first_name: "grace", last_name: "jacobs", email: "grace@email.com", password: "secret", address: "1497 Rue Galt O, Sherbrooke, QC", driver: true, verified: true)
+audrey = User.create!(first_name: "audrey", last_name: "jefferson", email: "audrey@email.com", password: "secret", address: "510 Rue de l'Union, Sherbrooke, QC", driver: true, verified: true)
+tom = User.create!(first_name: "tom", last_name: "caulfield", email: "tom@email.com", password: "secret", address: "300 Rue du Conseil, Sherbrooke, QC", driver: true, verified: true)
+sergio = User.create!(first_name: "sergio", last_name: "deveraux", email: "sergio@email.com", password: "secret", address: "2240 Rue King E, Sherbrooke, QC ", driver: true, verified: true)
+priscilla = User.create!(first_name: "priscilla", last_name: "gifford", email: "priscilla@email.com", password: "secret", address: "4400 Boul Bourque, Sherbrooke, QC", driver: true, verified: true)
+joe = User.create!(first_name: "joe", last_name: "hampton", email: "joe@email.com", password: "secret", address: "Rue du Cégep, Sherbrooke, QC", driver: true, verified: true)
+sebastien = User.create!(first_name: "sebastien", last_name: "jackson", email: "sebastien@email.com", password: "secret", address: "Rue du Vermont, Sherbrooke, QC", driver: true, verified: true)
+daphne = User.create!(first_name: "daphne", last_name: "lacey", email: "daphne@email.com", password: "secret", address: "1010 Rue Fairmount, Sherbrooke, QC", driver: true, verified: true)
+frederic = User.create!(first_name: "frederic", last_name: "scott", email: "frederic@email.com", password: "secret", address: "580 Rue Bowen S, Sherbrooke, QC", driver: true, verified: true)
+marcella = User.create!(first_name: "marcella", last_name: "grande", email: "marcella@email.com", password: "secret", address: "810 Rue du Conseil, Sherbrooke, QC ", driver: true, verified: true)
+kitty = User.create!(first_name: "kitty", last_name: "schmitt", email: "kitty@email.com", password: "secret", address: "275 Rue Dufferin, Sherbrooke, QC", driver: true, verified: true)
+justin = User.create!(first_name: "justin", last_name: "cruz", email: "justin@email.com", password: "secret", address: "64 Rue Belvédère S, Sherbrooke, QC", driver: true, verified: true)
+manon = User.create!(first_name: "manon", last_name: "thomson", email: "manon@email.com", password: "secret", address: "3800 Bd de Monseigneur-Fortier, Sherbrooke, QC", driver: true, verified: true)
+ines = User.create!(first_name: "ines", last_name: "robbie", email: "ines@email.com", password: "secret", address: "3175 Rue King O, Sherbrooke, QC", driver: true, verified: true)
+christophe = User.create!(first_name: "christophe", last_name: "reinhardt", email: "christophe@email.com", password: "secret", address: "1010 12 Ave N, Sherbrooke, QC", driver: true, verified: true)
+
+
+
 users << nicole
 users << seb
 users << therese
