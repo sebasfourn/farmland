@@ -1,50 +1,6 @@
-.farm-image {
-  object-fit: cover;
-  border: none;
-  width: 100%;
-  height: 100%;
-}
-
-.farm-header {
-  display: flex;
-  align-items: center;
-  flex-direction: row;
-  gap: 15px;
-  margin-top: -10px;
-  .farm-rating p {
-    margin-bottom: 0;
-  }
-
-  .farm-rating {
-    .star {
-      color: $yellow;
-    }
-    i {
-      margin-left: 5px;
-    }
-  }
-  .farm-title {
-    display: flex;
-    align-items: center;
-    flex-grow: 1;
-    h2 {
-      margin-top: 5px;
-    }
-    i {
-      padding-right: 20px;
-    }
-    .open {
-      color: $open-green;
-    }
-
-    .closed {
-      color: $red;
-    }
-  }
-}
-
 .farm-description {
-  margin-bottom: 40px;
+  font-size: 15px;
+  margin-bottom: 25px;
 }
 
 form {

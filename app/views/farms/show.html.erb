@@ -1,21 +1,60 @@
-<%= image_tag "farm.png", class: "farm-image", alt: "Farm" %>
-<div>
-<br>
-</div>
-<div class="farm-header">
-  <%= link_to url_for(:back) do %>
-    <i class="fa-solid fa-chevron-left fa-lg arrow"></i>
-  <% end %>
-  <div class="farm-title">
-    <% if @farm.open %>
-        <i class="fa-solid fa-circle fa-sm open"></i>
-      <% else %>
-        <i class="fa-solid fa-circle fa-sm close"></i>
-    <% end %>
-    <h2><%= @farm.name %></h2>
+<div class="farm-card"
+  data-controller="favorite"
+  data-favorite-page-value="index">
+  <div class="farm-card-img-div">
+    <%= image_tag "farm.png", class: "farm-card-img", alt: @farm.name %>
+    <div class="farm-tag-div">
+      <p class="farm-tag"><i class="fa-solid fa-tag"></i> organic</p>
+      <% if @farm.grass_fed %>
+        <p class="farm-tag"><i class="fa-solid fa-tag"></i> grass fed</p>
+      <% end %>
+    </div>
   </div>
-  <div class="farm-rating">
-    <p><%= @farm.rating %><i class="fa-solid fa-star fa-sm star"></i></p>
+
+  <div class="farm-card-body">
+
+    <div class="farm-fav-div farm-show-fav-div">
+      <div class="farm-name-div">
+        <div class="arrow-div-show">
+          <%= link_to url_for(:back) do %>
+            <i class="fa-solid fa-chevron-left arrow"></i>
+          <% end %>
+        </div>
+        <h2><%= @farm.name %></h2>
+      </div>
+      <%= render "heart", farm: @farm %>
+    </div>
+
+    <div class="farm-card-description">
+
+      <div>
+        <p>
+          <span class="distance-color"><%= @farm.distance_to([current_user.latitude, current_user.longitude]).round %> km •
+          <% time = (@farm.distance_to([current_user.latitude, current_user.longitude]).round * 60) / 50 %>
+          <% hours, minutes = time.divmod(60)  %>
+          <%= hours > 0 ? "#{hours} hours" : "" %>
+          <%= minutes %> min</span>
+        </p>
+
+        <div class="hours-div">
+        <% if @time.between?(@farm.opening_time, (@farm.closing_time - 1)) %>
+          <p class="open">Open</p>
+          <p>• Closes at <%= "#{@farm.closing_time}:00" %></p>
+        <% elsif @time > @farm.closing_time %>
+          <p class="closed">Closed</p>
+          <p>• Opens at <%= "#{@farm.opening_time}:00" %></p>
+        <% else %>
+          <p class="open">Open</p>
+          <p class = "closed">• Closing soon: <%= "#{@farm.closing_time}:00" %></p>
+        <% end %>
+        </div>
+      </div>
+      <div class="rating-div">
+        <strong><p class="rating-text"><%= @farm.rating %></p></strong>
+        <i class="fa-solid fa-star fa-sm star"></i>
+      </div>
+    </div>
+
   </div>
 </div>
 <p class="farm-description"><%= @farm.description %></p>
