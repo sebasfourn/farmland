@@ -14,7 +14,7 @@
       data-favorite-page-value="favorites">
       <%= link_to farm_path(farm) do %>
         <div class="farm-card-img-div">
-          <%= image_tag "#{farm.name}.jpeg", class: "farm-card-img-fav", alt: farm.name %>
+          <%= image_tag "#{farm.name}.jpg", class: "farm-card-img-fav", alt: farm.name %>
           <div class="farm-tag-div">
             <p class="farm-tag"><i class="fa-solid fa-tag"></i> organic</p>
             <% if farm.grass_fed %>
