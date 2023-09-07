@@ -10,13 +10,9 @@ class TripsController < ApplicationController
   end
 
   def show
-    @trip = Trip.find(params[:id])
+    @trip = Trip.includes(:messages).find(params[:id])
     @message = Message.new
-    @messages = Message.where(trip: @trip)
-    @messages.update_all(seen: true)
-    # @messages.each do |message|
-    #   message.seen = true
-    #   message.save
-    # end
+    @trip.messages.update_all(seen: true)
+
   end
 end

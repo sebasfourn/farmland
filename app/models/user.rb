@@ -13,14 +13,10 @@ class User < ApplicationRecord
 
   acts_as_favoritor
 
-  def number_of_notifications
-    number_messages = 0
-    Order.where(user: self).pluck(:trip_id).each do |trip_id|
-      number_messages += Message.where(trip_id: trip_id, seen: false).count
-
-      # number_messages += Message.where(trip_id: trip_id, seen: false).where.not(user: self).count
-    end
-    return number_messages
+  def self.users_to_notify_minus_sender_for_trip(trip, sender)
+    joins(orders: :trip)
+      .where(trip: { id: trip.id })
+      .where.not(id: sender.id)
   end
 
   # def self.driver_distance(lat1, lng1, lat2, lng2)
