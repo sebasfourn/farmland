@@ -33,7 +33,7 @@
 
   <body class="background">
     <div>
-      <% unless @_request.fullpath == root_path || @_request.fullpath == user_session_path %>
+      <% unless @_request.fullpath == root_path || @_request.fullpath == user_session_path || (params[:controller] == "farms" && params[:action] == "show") || (params[:controller] == "orders" && params[:action] == "create") %>
         <%= render "shared/topbanner" %>
       <% end %>
       <div class= "app-container">
