@@ -14,6 +14,12 @@ class OrdersController < ApplicationController
       [{
         lat: @driver.latitude,
         lng: @driver.longitude
+      },
+      {
+        lat: current_user.latitude,
+        lng: current_user.longitude,
+        image_url: helpers.asset_url("mapbox_custom_pin.png"),
+        marker_html: render_to_string(partial: "custom_marker")
       }]
   end
 
