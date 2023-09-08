@@ -20,7 +20,19 @@ export default class extends Controller {
 
   #addMarkersToMap() {
     this.markersValue.forEach((marker) => {
-      new mapboxgl.Marker().setLngLat([marker.lng, marker.lat]).addTo(this.map);
+      if (marker.custom_marker) {
+        const customMarkerValues = marker.custom_marker;
+        const customMarker = document.createElement("div");
+        customMarker.innerHTML = customMarkerValues.marker_html;
+
+        new mapboxgl.Marker(customMarker)
+          .setLngLat([marker.lng, marker.lat])
+          .addTo(this.map);
+      } else {
+        new mapboxgl.Marker()
+          .setLngLat([marker.lng, marker.lat])
+          .addTo(this.map);
+      }
     });
   }
 
@@ -29,6 +41,6 @@ export default class extends Controller {
     this.markersValue.forEach((marker) =>
       bounds.extend([marker.lng, marker.lat])
     );
-    this.map.fitBounds(bounds, { padding: 70, maxZoom: 12, duration: 0 });
+    this.map.fitBounds(bounds, { padding: 30, maxZoom: 30, duration: 0 });
   }
 }
