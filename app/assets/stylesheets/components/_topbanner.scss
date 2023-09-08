@@ -3,7 +3,7 @@
   position: fixed;
   z-index: 999;
   top: 0;
-  font-size: 14px;
+  font-size: 16px;
   background-color: $green-main;
   width: 100%;
   box-shadow: 0px 5px 0px 0px $black;
@@ -25,6 +25,11 @@
     margin: 0;
     text-align: center;
   }
+
+  #current-user-co2-saved{
+    font-size: 17px;
+  }
+
 }
 
 .topbanner-clicked {
@@ -50,6 +55,11 @@
     align-items: center;
     gap: 5px;
     width: 90%;
+  }
+
+  #co2-equivalent-trees{
+    color: $yellow;
+    font-family: $emph-font;
   }
 }
 

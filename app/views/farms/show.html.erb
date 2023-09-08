@@ -2,7 +2,7 @@
   <div class="topbanner" data-controller="expand-banner" data-action="click->expand-banner#expand">
     <% if current_user %>
       <%# <p id="top-banner-text"> You saved <span id="current-user-co2-saved" class="emph"> <%= current_user.total_co2_saved.round(2) %> <%#kg of CO2! </span>That's equal to planting 18 trees!   <i class="fa-solid fa-tree"></i></p> %>
-      <p id="top-banner-text"> You've saved <span id="current-user-co2-saved" class="emph"> <%= current_user.total_co2_saved.round %> kg of CO2! </span> <i class="fa-solid fa-chevron-down fa-xs topbanner-chevron"  data-expand-banner-target="chevron"></i></p>
+      <p id="top-banner-text"> Lifetime CO2 Savings:<span id="current-user-co2-saved" class="emph"> <%= current_user.total_co2_saved.round %> kg! </span> <i class="fa-solid fa-chevron-down fa-xs topbanner-chevron"  data-expand-banner-target="chevron"></i></p>
     <% else %>
       <p>Place an order to start saving CO2!</p>
     <% end %>
@@ -10,7 +10,7 @@
       <div class="top-banner-extended-container">
         <% if current_user %>
           <%= inline_svg_tag "minimalist_tree.svg", class: "banner-tree" %>
-          <p id="top-banner-extended text">That's as much as an oak tree can remove from the atmosphere in <span class = "emph" id = "co2-equivalent-trees"> <%= (current_user.total_co2_saved/0.362).round %> weeks! </span></p>
+          <p id="top-banner-extended text">That's as much as <span id = "co2-equivalent-trees"> <%= (current_user.total_co2_saved/0.362).round %> oak trees</span> can remove from the atmosphere in a week!</span></p>
         <% end %>
       </div>
     </div>
@@ -110,7 +110,7 @@
               <%= image_tag "#{product.product_info.name}.jpg", alt: "Product" %>
               <div class = "farm-product-label">
                 <h4><%= order_product.label (product.product_info.category == "meat" ? product.product_info.name : product.product_info.name.pluralize) %></h4>
-                <p><span class="light-green"><%= "$#{product.price} / #{product.unit}" %></span></p>
+                <p><span class="light-green"><%= "#{number_to_currency(product.price)} / #{product.unit}" %></span></p>
                 <p>Saving <span class="light-green"><%= product.product_info.co2_saved >= 1 ? "#{product.product_info.co2_saved.round(3)} kg" : "#{(product.product_info.co2_saved * 1000).round(0)}" %> co2 / kg</span></p>
               </div>
               <div class="farm-product-inputs" style="margin-top: 10px;">
