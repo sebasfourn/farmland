@@ -59,13 +59,13 @@
         <div class="hours-div">
           <% if @time.between?(@farm.opening_time, (@farm.closing_time - 1)) %>
             <p class="open">Open</p>
-            <p>• Closes at <%= "#{@farm.closing_time}:00" %></p>
+            <p>• Opening hours: <%= "#{@farm.opening_time}:00 - #{@farm.closing_time}:00"%></p>
           <% elsif not (@time.between?(@farm.opening_time, (@farm.closing_time))) %>
             <p class="closed">Closed</p>
-            <p>• Opens at <%= "#{@farm.opening_time}:00" %></p>
+            <p>• Opening hours: <%= "#{@farm.opening_time}:00 - #{@farm.closing_time}:00"%></p>
           <% else %>
             <p class="closed">Closes soon</p>
-            <p>• <%= "#{@farm.closing_time}:00" %></p>
+            <p>• Opening hours: <%= "#{@farm.opening_time}:00 - #{@farm.closing_time}:00"%></p>
           <% end %>
         </div>
       </div>
