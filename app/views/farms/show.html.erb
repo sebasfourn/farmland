@@ -110,7 +110,7 @@
               <%= image_tag "#{product.product_info.name}.jpg", alt: "Product" %>
               <div class = "farm-product-label">
                 <h4><%= order_product.label (product.product_info.category == "meat" ? product.product_info.name : product.product_info.name.pluralize) %></h4>
-                <p><span class="light-green"><%= "$#{product.price} / #{product.unit}" %></span></p>
+                <p><span class="light-green"><%= "#{number_to_currency(product.price)} / #{product.unit}" %></span></p>
                 <p>Saving <span class="light-green"><%= product.product_info.co2_saved >= 1 ? "#{product.product_info.co2_saved.round(3)} kg" : "#{(product.product_info.co2_saved * 1000).round(0)}" %> co2 / kg</span></p>
               </div>
               <div class="farm-product-inputs" style="margin-top: 10px;">
