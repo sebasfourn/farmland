@@ -262,20 +262,26 @@ trip_eight = Trip.create!(date: DateTime.new(2023,10,2,12,0,0), seat: 5, user: j
 trip_nine = Trip.create!(date: DateTime.new(2023,9,20,11,0,0), seat: 3, user: jean, farm: topher_farm, address: "1020 Rue Wellington S, Sherbrooke, QC J1H 5E7")
 trip_ten = Trip.create!(date: DateTime.new(2023,9,25,16,0,0), seat: 3, user: jean, farm: topher_farm, address: "1214 Rue King O, Sherbrooke, QC J1H 1S2")
 trip_eleven = Trip.create!(date: DateTime.new(2023,9,30,17,0,0), seat: 1, user: grace, farm: topher_farm, address: "2194 Rue Galt O, Sherbrooke, QC J1K 1K4")
+
 trip_thirdteen = Trip.create!(date: DateTime.new(2023,9,15,11,0,0), seat: 2, user: audrey, farm: poucevert_farm, address: "1014 Rue Longpré, Sherbrooke, QC J1G 5B8")
 trip_fourteen = Trip.create!(date: DateTime.new(2023,9,19,15,0,0), seat: 2, user: tom, farm: poucevert_farm, address: "3200 Rue King O, Sherbrooke, QC J1L 1C9")
 trip_fifteen = Trip.create!(date: DateTime.new(2023,10,5,9,0,0), seat: 2, user: sergio, farm: poucevert_farm, address: "6102 Sherbrooke St W, Montreal, Quebec H4A 1Y3")
 trip_sixteen = Trip.create!(date: DateTime.new(2023,9,13,15,0,0), seat: 1, user: tom, farm: poucevert_farm, address: "1509 Sherbrooke St W, Montreal, Quebec H3G 1M1")
+
 trip_seventeen = Trip.create!(date: DateTime.new(2023,9,21,13,0,0), seat: 2, user: sergio, farm: sevigny_farm, address: "1290 Sherbrooke St W, Montreal, Quebec H3G 1H5")
 trip_eighteen = Trip.create!(date: DateTime.new(2023,9,24,13,0,0), seat: 3, user: priscilla, farm: sevigny_farm, address: "1509 Sherbrooke St W, Montreal, Quebec H3G 1M1")
 trip_nineteen = Trip.create!(date: DateTime.new(2023,9,21,11,0,0), seat: 2, user: joe, farm: sevigny_farm, address: "1455 Sherbrooke St W, Montreal, Quebec H3G 1L2")
+
 trip_twenty = Trip.create!(date: DateTime.new(2023,9,9,14,0,0), seat: 3, user: sebastien, farm: grange_maraichere, address: "1227 Sherbrooke St W, Montreal, Quebec H3G 1G1")
 trip_twentyone = Trip.create!(date: DateTime.new(2023,9,12,16,0,0), seat: 1, user: daphne, farm: grange_maraichere, address: "4350 Sherbrooke St W, Westmount, Quebec H3Z 1E3")
 trip_twentytwo = Trip.create!(date: DateTime.new(2023,9,19,16,0,0), seat: 2, user: daphne, farm: grange_maraichere, address: "1485 Sherbrooke St W, Montreal, Quebec H3G 0A3")
+
 trip_twentythree = Trip.create!(date: DateTime.new(2023,9,19,16,0,0), seat: 3, user: frederic, farm: la_prucheraie, address: "4160 Sherbrooke St W, Westmount, Quebec H3Z 1C2")
 trip_twentyfour = Trip.create!(date: DateTime.new(2023,9,19,16,0,0), seat: 1, user: marcella, farm: la_prucheraie, address: "65 Sherbrooke St E, Montreal, Quebec H2X 1C4")
 trip_twentyfive = Trip.create!(date: DateTime.new(2023,9,10,10,0,0), seat: 3, user: kitty, farm: la_prucheraie,address: "333 Sherbrooke St E, Montreal, Quebec H2X 4E3")
+
 trip_twentysix = Trip.create!(date: DateTime.new(2023,9,11,8,0,0), seat: 2, user: justin, farm: la_vallee_des_lacs_farm, address: "175 Sherbrooke St W, Montreal, Quebec H2X 1X5")
 trip_twentyseven = Trip.create!(date: DateTime.new(2023,9,11,8,0,0), seat: 3, user: manon, farm: la_vallee_des_lacs_farm, address: "1025 Sherbrooke St E, Montreal, Quebec H2L 1L4")
+
 trip_twentyeight = Trip.create!(date: DateTime.new(2023,9,21,9,0,0), seat: 2, user: ines, farm: croque_saisons, address: "6550 Sherbrooke St W, Montreal, Quebec H4B 1N6")
 trip_twentynine = Trip.create!(date: DateTime.new(2023,9,16,11,0,0), seat: 2, user: christophe, farm: croque_saisons, address: "4200 Sherbrooke St W, Westmount, Quebec H3Z 1C4")
