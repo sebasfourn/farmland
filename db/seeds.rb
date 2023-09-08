@@ -272,9 +272,10 @@ trip_six = Trip.create!(date: DateTime.new(2023,9,18,12,0,0), seat: 5, user: nic
 trip_seven = Trip.create!(date: DateTime.new(2023,9,23,16,0,0), seat: 3, user: therese, farm: sanders_farm, address: therese.address)
 
 # Topher trips
-Trip.create!(date: DateTime.new(2023,9,20,11,0,0), seat: 3, user: jean, farm: topher_farm, address: jean.address)
-Trip.create!(date: DateTime.new(2023,9,23,17,0,0), seat: 1, user: grace, farm: topher_farm, address: grace.address)
-Trip.create!(date: DateTime.new(2023,10,2,12,0,0), seat: 5, user: john, farm: topher_farm, address: john.address)
+
+jean_trip = Trip.create!(date: DateTime.new(2023,9,20,11,0,0), seat: 3, user: jean, farm: topher_farm, address: jean.address)
+demo_trip = Trip.create!(date: DateTime.new(2023,9,23,17,0,0), seat: 1, user: grace, farm: topher_farm, address: grace.address)
+john_trip = Trip.create!(date: DateTime.new(2023,10,2,12,0,0), seat: 5, user: john, farm: topher_farm, address: john.address)
 
 # Poucevert trips
 trip_thirteen = Trip.create!(date: DateTime.new(2023,9,13,11,0,0), seat: 2, user: audrey, farm: poucevert_farm, address: audrey.address)
@@ -304,3 +305,31 @@ trip_twentyseven = Trip.create!(date: DateTime.new(2023,9,12,8,0,0), seat: 3, us
 # Saisons Trips
 trip_twentyeight = Trip.create!(date: DateTime.new(2023,9,9,9,0,0), seat: 2, user: ines, farm: croque_saisons, address: ines.address)
 trip_twentynine = Trip.create!(date: DateTime.new(2023,9,10,11,0,0), seat: 2, user: daphne, farm: croque_saisons, address: daphne.address)
+
+Order.create!(user: jane, trip: trip_one)
+Order.create!(user: nicole, trip: trip_two)
+Order.create!(user: therese, trip: trip_three)
+Order.create!(user: nicole, trip: trip_four)
+Order.create!(user: jane, trip: trip_five)
+Order.create!(user: nicole, trip: trip_six)
+Order.create!(user: therese, trip: trip_seven)
+Order.create!(user: jean, trip: jean_trip)
+Order.create!(user: grace, trip: demo_trip)
+Order.create!(user: john, trip: john_trip)
+Order.create!(user: audrey, trip: trip_thirteen)
+Order.create!(user: tom, trip: trip_fourteen)
+Order.create!(user: sergio, trip: trip_fifteen)
+Order.create!(user: tom, trip: trip_sixteen)
+Order.create!(user: sergio, trip: trip_seventeen)
+Order.create!(user: priscilla, trip: trip_eighteen)
+Order.create!(user: joe, trip: trip_nineteen)
+Order.create!(user: sebastien, trip: trip_twenty)
+Order.create!(user: daphne, trip: trip_twentyone)
+Order.create!(user: daphne, trip: trip_twentytwo)
+Order.create!(user: frederic, trip: trip_twentythree)
+Order.create!(user: marcella, trip: trip_twentyfour)
+Order.create!(user: kitty, trip: trip_twentyfive)
+Order.create!(user: justin, trip: trip_twentysix)
+Order.create!(user: manon, trip: trip_twentyseven)
+Order.create!(user: ines, trip: trip_twentyeight)
+Order.create!(user: daphne, trip: trip_twentynine)
