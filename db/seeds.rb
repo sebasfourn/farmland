@@ -87,7 +87,7 @@ ferme_bibeau = Farm.create!(name: "Ferme Bibeau", address: "3336 Chemin Bibeau
 ferme_d_oree = Farm.create!(name: "Ferme d'Oree", address: "273, Chemin Beaver ridge
   Newport, QC", open: false, rating: 3.5, opening_time: 9, closing_time: 14, grass_fed: true, description: "We produce grass-fed beef, pastured pork, lamb, eggs, and unpasteurized honey and sell directly to the consumer and through specialized butchers.")
 sanders_farm = Farm.create!(name: "Sanders Farm", address: "475 Hyatt's Mills
-    Compton, QC", open: true, rating: 4.5, opening_time: 9, closing_time: 15, grass_fed: true, description: "Sanders farm is a family-run, organic fruit and vegetable farm, nestled in the beautiful rolling hills of Compton since 1974.")
+    Compton, QC", open: true, rating: 4.5, opening_time: 9, closing_time: 15, grass_fed: true, description: "Sanders farm is a family-run, organic fruit and vegetable farm, that also specializes in grass-fed meat, and it is nestled in the beautiful rolling hills of Compton since 1974.")
 topher_farm = Farm.create!(name: "Topher Farm", address: "6160 rte 143, Waterville, QC", open: true, rating: 4.5, opening_time: 11, closing_time: 17, description: "Topher's Farm in Canada is a thriving agricultural enterprise, known for its diverse range of farm-fresh products that consistently deliver exceptional taste and freshness to customers.")
 poucevert_farm = Farm.create!(name: "Les 3 pouces Verts", address: "525 Chemin Chute, Cookshire-Eaton, QC",
                               open: false, rating: 5, opening_time: 7, closing_time: 18,
@@ -100,7 +100,7 @@ grange_maraichere = Farm.create!(name: "Ferme la grange Maraichere", address: "1
                                 description: "Nestled in Magog, Estrie, along the scenic Chemin des Pères tourist route, Ferme Erb is a diversified vegetable farm.
                                 They provide a wide array of naturally grown vegetables, striving to offer fresh seasonal products while sharing their deep passion for agriculture.")
 la_prucheraie = Farm.create!(name: "La Prucheraie", address: "974 Chemin Arel, Melbourne, QC",
-                                open: true, rating: 4.5, opening_time: 10, closing_time: 19,
+                                open: true, rating: 3, opening_time: 10, closing_time: 19,
                                 description: "Founded in 1989 by Robert Beaulieu and Joanne Marcil, the farm has been certified organic since 1990, ensuring the organic quality of all its products.")
 la_vallee_des_lacs_farm = Farm.create!(name: "La Vallee des Lacs", address: "162 Chemin Georges-Vallières, Sherbrooke, QC",
                                 open: true, rating: 5, opening_time: 9, closing_time: 15,
@@ -194,6 +194,7 @@ Product.create!(farm: sanders_farm, product_info: apple, unit: "kg", stock: 40, 
 Product.create!(farm: sanders_farm, product_info: blueberry, unit: "kg", stock: 40, price: 5.99)
 Product.create!(farm: sanders_farm, product_info: strawberry, unit: "kg", stock: 40, price: 5.99)
 Product.create!(farm: sanders_farm, product_info: cantaloupe, unit: "kg", stock: 40, price: 4.99)
+Product.create!(farm: sanders_farm, product_info: ground_beef, unit: "kg", stock: 40, price: 8.50)
 
 # TOPHER
 Product.create!(farm: topher_farm, product_info: radish, unit: "kg", stock: 40, price: 3.99)
