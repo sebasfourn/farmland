@@ -145,6 +145,8 @@ ground_pork = ProductInfo.create!(name: "ground pork", category: "meat", co2_sav
 ground_beef = ProductInfo.create!(name: "ground beef", category: "meat", month: 12, co2_saved: 3.246)
 
 # farm adding a product
+
+# Ferme Bibeau
 Product.create!(farm: ferme_bibeau, product_info: asparagus, unit: "kg", stock: 20, price: 5.99)
 Product.create!(farm: ferme_bibeau, product_info: carrot, unit: "kg", stock: 40, price: 2.50)
 Product.create!(farm: ferme_bibeau, product_info: chicken_breast, unit: "kg", stock: 40, price: 6.50)
@@ -154,12 +156,14 @@ Product.create!(farm: ferme_bibeau, product_info: zucchini, unit: "kg", stock: 4
 Product.create!(farm: ferme_bibeau, product_info: kale, unit: "kg", stock: 40, price: 2.50)
 Product.create!(farm: ferme_bibeau, product_info: broccoli, unit: "kg", stock: 40, price: 2.50)
 
+# Ferme D'Oree
 Product.create!(farm: ferme_d_oree, product_info: ground_turkey, unit: "kg", stock: 40, price: 7.25)
 Product.create!(farm: ferme_d_oree, product_info: ground_beef, unit: "kg", stock: 40, price: 8.99)
 Product.create!(farm: ferme_d_oree, product_info: ground_pork, unit: "kg", stock: 40, price: 7.75)
 Product.create!(farm: ferme_d_oree, product_info: sweet_potato, unit: "kg", stock: 40, price: 4.25)
 Product.create!(farm: ferme_d_oree, product_info: carrot, unit: "kg", stock: 40, price: 2.75)
 
+# Sanders Farm
 Product.create!(farm: sanders_farm, product_info: radish, unit: "kg", stock: 40, price: 3.99)
 Product.create!(farm: sanders_farm, product_info: pepper, unit: "kg", stock: 40, price: 4.99)
 Product.create!(farm: sanders_farm, product_info: apple, unit: "kg", stock: 40, price: 4.75)
@@ -184,17 +188,16 @@ Product.create!(farm: poucevert_farm, product_info: strawberry, unit: "kg", stoc
 Product.create!(farm: poucevert_farm, product_info: cantaloupe, unit: "kg", stock: 40, price: 4.99)
 
 # Sevigny_farm
-Product.create!(farm: sevigny_farm, product_info: ground_beef, unit: "kg", stock: 40, price: 8.99)
+Product.create!(farm: sevigny_farm, product_info: strawberry, unit: "kg", stock: 40, price: 5.99)
+Product.create!(farm: sevigny_farm, product_info: raspberry, unit: "kg", stock: 40, price: 5.99)
+Product.create!(farm: sevigny_farm, product_info: blueberry, unit: "kg", stock: 40, price: 5.50)
 Product.create!(farm: sevigny_farm, product_info: pepper, unit: "kg", stock: 40, price: 4.99)
 Product.create!(farm: sevigny_farm, product_info: zucchini, unit: "kg", stock: 40, price: 2.50)
-Product.create!(farm: sevigny_farm, product_info: chicken_breast, unit: "kg", stock: 40, price: 6.50)
-Product.create!(farm: sevigny_farm, product_info: strawberry, unit: "kg", stock: 40, price: 5.99)
 Product.create!(farm: sevigny_farm, product_info: asparagus, unit: "kg", stock: 40, price: 5.99)
 
 # Grande Maraichere
 Product.create!(farm: grange_maraichere, product_info: radish, unit: "kg", stock: 40, price: 3.99)
 Product.create!(farm: grange_maraichere, product_info: pepper, unit: "kg", stock: 40, price: 4.99)
-Product.create!(farm: grange_maraichere, product_info: chicken_breast, unit: "kg", stock: 40, price: 6.50)
 Product.create!(farm: grange_maraichere, product_info: bean, unit: "kg", stock: 40, price: 2.50)
 Product.create!(farm: grange_maraichere, product_info: eggplant, unit: "kg", stock: 40, price: 2.50)
 Product.create!(farm: grange_maraichere, product_info: zucchini, unit: "kg", stock: 40, price: 2.50)
@@ -202,6 +205,8 @@ Product.create!(farm: grange_maraichere, product_info: zucchini, unit: "kg", sto
 # la_prucheraie
 
 Product.create!(farm: la_prucheraie, product_info: ground_pork, unit: "kg", stock: 40, price: 7.75)
+Product.create!(farm: la_prucheraie, product_info: ground_beef, unit: "kg", stock: 40, price: 8.50)
+Product.create!(farm: la_prucheraie, product_info: ground_turkey, unit: "kg", stock: 40, price: 6.75)
 Product.create!(farm: la_prucheraie, product_info: sweet_potato, unit: "kg", stock: 40, price: 4.25)
 Product.create!(farm: la_prucheraie, product_info: carrot, unit: "kg", stock: 40, price: 2.75)
 Product.create!(farm: la_prucheraie, product_info: cantaloupe, unit: "kg", stock: 40, price: 4.99)
@@ -216,13 +221,14 @@ Product.create!(farm: la_vallee_des_lacs_farm, product_info: strawberry, unit: "
 Product.create!(farm: la_vallee_des_lacs_farm, product_info: cantaloupe, unit: "kg", stock: 40, price: 4.99)
 
 # croque_saisons
+Product.create!(farm: croque_saisons, product_info: ground_beef, unit: "kg", stock: 40, price: 8.50)
+Product.create!(farm: croque_saisons, product_info: chicken_breast, unit: "kg", stock: 40, price: 6.50)
 Product.create!(farm: croque_saisons, product_info: radish, unit: "kg", stock: 40, price: 3.99)
 Product.create!(farm: croque_saisons, product_info: pepper, unit: "kg", stock: 40, price: 4.99)
 Product.create!(farm: croque_saisons, product_info: apple, unit: "kg", stock: 40, price: 4.75)
 Product.create!(farm: croque_saisons, product_info: blueberry, unit: "kg", stock: 40, price: 5.99)
 Product.create!(farm: croque_saisons, product_info: strawberry, unit: "kg", stock: 40, price: 5.99)
 Product.create!(farm: croque_saisons, product_info: cantaloupe, unit: "kg", stock: 40, price: 4.99)
-Product.create!(farm: croque_saisons, product_info: chicken_breast, unit: "kg", stock: 40, price: 6.50)
 
 trip_one = Trip.create!(date: DateTime.new(2023,9,15,17,0,0), seat: 3, user: jane, farm: ferme_bibeau, address: "Université De Sherbrooke, Quai D, Sherbrooke, QC J1K 2R1")
 trip_two = Trip.create!(date: DateTime.new(2023,9,25,16,0,0), seat: 3, user: nicole, farm: ferme_bibeau, address: "3050 Boulevard De Portland, Sherbrooke, Quebec J1L 1K1")
