@@ -18,7 +18,7 @@ export default class extends Controller {
       total += s.value * s.dataset.co2Saved))
     total += (parseFloat(tripCo2)/1000)
     topBannerCarbonValue.innerHTML = `${(total + this.currentValue ).toFixed(2) } kg of CO2!`;
-    topBannerCo2Equivalent.innerText = `${(total + this.currentValue/0.362).toFixed(0)} weeks`
+    topBannerCo2Equivalent.innerText = `${(total + this.currentValue/0.362).toFixed(0)} oak trees`
     topBannerText.classList.add("add-carbon-saving");
     setTimeout(function() {
       topBannerText.classList.remove("add-carbon-saving");
