@@ -83,11 +83,11 @@ users << christophe
 farms = []
 puts "creating farms"
 ferme_bibeau = Farm.create!(name: "Ferme Bibeau", address: "3336 Chemin Bibeau
-  Sherbrooke, QC", open: true, grass_fed: true, rating: 4.5, opening_time: 10, closing_time: 24, description: "Ferme Bibeau covers 95 hectares, of which 65 are cultivated and 30 are wooded. There is also an elderberry orchard with an area of one hectare.")
+  Sherbrooke, QC", open: true, grass_fed: true, rating: 3.0, opening_time: 10, closing_time: 24, description: "Ferme Bibeau covers 95 hectares, of which 65 are cultivated and 30 are wooded. There is also an elderberry orchard with an area of one hectare.")
 ferme_d_oree = Farm.create!(name: "Ferme d'Oree", address: "273, Chemin Beaver ridge
   Newport, QC", open: false, rating: 3.5, opening_time: 9, closing_time: 14, grass_fed: true, description: "We produce grass-fed beef, pastured pork, lamb, eggs, and unpasteurized honey and sell directly to the consumer and through specialized butchers.")
 sanders_farm = Farm.create!(name: "Sanders Farm", address: "475 Hyatt's Mills
-    Compton, QC", open: true, rating: 4.5, opening_time: 9, closing_time: 15, grass_fed: true, description: "Sanders farm is a family-run, organic fruit and vegetable farm, that also specializes in grass-fed meat, and it is nestled in the beautiful rolling hills of Compton since 1974.")
+    Compton, QC", open: true, rating: 3.5, opening_time: 9, closing_time: 15, grass_fed: true, description: "Sanders farm is a family-run, organic fruit and vegetable farm, that also specializes in grass-fed meat, and it is nestled in the beautiful rolling hills of Compton since 1974.")
 topher_farm = Farm.create!(name: "Topher Farm", address: "6160 rte 143, Waterville, QC", open: true, rating: 4.5, opening_time: 11, closing_time: 17, description: "Topher's Farm in Canada is a thriving agricultural enterprise, known for its diverse range of farm-fresh products that consistently deliver exceptional taste and freshness to customers.")
 poucevert_farm = Farm.create!(name: "Les 3 pouces Verts", address: "525 Chemin Chute, Cookshire-Eaton, QC",
                               open: false, rating: 5, opening_time: 7, closing_time: 18,
@@ -100,7 +100,7 @@ grange_maraichere = Farm.create!(name: "Ferme la grange Maraichere", address: "1
                                 description: "Nestled in Magog, Estrie, along the scenic Chemin des Pères tourist route, Ferme Erb is a diversified vegetable farm.
                                 They provide a wide array of naturally grown vegetables, striving to offer fresh seasonal products while sharing their deep passion for agriculture.")
 la_prucheraie = Farm.create!(name: "La Prucheraie", address: "974 Chemin Arel, Melbourne, QC",
-                                open: true, rating: 3, opening_time: 10, closing_time: 19,
+                                open: true, rating: 4, opening_time: 10, closing_time: 19,
                                 description: "Founded in 1989 by Robert Beaulieu and Joanne Marcil, the farm has been certified organic since 1990, ensuring the organic quality of all its products.")
 la_vallee_des_lacs_farm = Farm.create!(name: "La Vallee des Lacs", address: "162 Chemin Georges-Vallières, Sherbrooke, QC",
                                 open: true, rating: 5, opening_time: 9, closing_time: 15,
@@ -259,48 +259,77 @@ Product.create!(farm: croque_saisons, product_info: cantaloupe, unit: "kg", stoc
 puts "creating trips"
 
 # Bibeau Trips
-trip_one = Trip.create!(date: DateTime.new(2023,9,15,17,0,0), seat: 3, user: jane, farm: ferme_bibeau, address: "Université De Sherbrooke, Quai D, Sherbrooke, QC J1K 2R1")
-trip_two = Trip.create!(date: DateTime.new(2023,9,25,16,0,0), seat: 3, user: nicole, farm: ferme_bibeau, address: "3050 Boulevard De Portland, Sherbrooke, Quebec J1L 1K1")
+trip_one = Trip.create!(date: DateTime.new(2023,9,15,17,0,0), seat: 3, user: jane, farm: ferme_bibeau, address: jane.address)
+trip_two = Trip.create!(date: DateTime.new(2023,9,25,16,0,0), seat: 3, user: nicole, farm: ferme_bibeau, address: nicole.address)
 
 # Ferme D'Oree Trips
-trip_three = Trip.create!(date: DateTime.new(2023,9,12,12,0,0), seat: 5, user: therese, farm: ferme_d_oree, address: "225 Rue Frontenac, Sherbrooke, QC J1H 1K1")
-trip_four = Trip.create!(date: DateTime.new(2023,9,14,16,0,0), seat: 3, user: nicole, farm: ferme_d_oree, address: "2500, boul. de l'Université Local E1-1043, Pavillon de la vie étudiante, Sherbrooke, QC J1K 2R1")
+trip_three = Trip.create!(date: DateTime.new(2023,9,12,12,0,0), seat: 5, user: therese, farm: ferme_d_oree, address: therese.address)
+trip_four = Trip.create!(date: DateTime.new(2023,9,14,16,0,0), seat: 3, user: nicole, farm: ferme_d_oree, address: nicole.address)
 
 # Sanders Farm Trips
-trip_five = Trip.create!(date: DateTime.new(2023,9,13,12,0,0), seat: 5, user: jane, farm: sanders_farm, address: "1440 Rue Brébeuf, Sherbrooke, QC J1H 3G2")
-trip_six = Trip.create!(date: DateTime.new(2023,9,18,12,0,0), seat: 5, user: nicole, farm: sanders_farm, address: "2500 Bd de l'Université, Sherbrooke, QC J1K 2R1")
-trip_seven = Trip.create!(date: DateTime.new(2023,9,23,16,0,0), seat: 3, user: therese, farm: sanders_farm, address: "241 Rue Dufferin, Sherbrooke, QC J1H 4M3")
+trip_five = Trip.create!(date: DateTime.new(2023,9,13,12,0,0), seat: 5, user: jane, farm: sanders_farm, address: jane.address)
+trip_six = Trip.create!(date: DateTime.new(2023,9,18,12,0,0), seat: 5, user: nicole, farm: sanders_farm, address: nicole.address)
+trip_seven = Trip.create!(date: DateTime.new(2023,9,23,16,0,0), seat: 3, user: therese, farm: sanders_farm, address: therese.address)
 
 # Topher trips
-Trip.create!(date: DateTime.new(2023,9,20,11,0,0), seat: 3, user: jean, farm: topher_farm, address: "1020 Rue Wellington S, Sherbrooke, QC J1H 5E7")
-Trip.create!(date: DateTime.new(2023,9,23,17,0,0), seat: 1, user: grace, farm: topher_farm, address: "2194 Rue Galt O, Sherbrooke, QC J1K 1K4")
-Trip.create!(date: DateTime.new(2023,10,2,12,0,0), seat: 5, user: john, farm: topher_farm, address: "2500 Bd de l'Université, Sherbrooke, QC J1K 2R1")
+
+jean_trip = Trip.create!(date: DateTime.new(2023,9,20,11,0,0), seat: 3, user: jean, farm: topher_farm, address: jean.address)
+demo_trip = Trip.create!(date: DateTime.new(2023,9,23,17,0,0), seat: 1, user: grace, farm: topher_farm, address: grace.address)
+john_trip = Trip.create!(date: DateTime.new(2023,10,2,12,0,0), seat: 5, user: john, farm: topher_farm, address: john.address)
 
 # Poucevert trips
-trip_thirteen = Trip.create!(date: DateTime.new(2023,9,13,11,0,0), seat: 2, user: audrey, farm: poucevert_farm, address: "1014 Rue Longpré, Sherbrooke, QC J1G 5B8")
-trip_fourteen = Trip.create!(date: DateTime.new(2023,9,15,15,0,0), seat: 2, user: tom, farm: poucevert_farm, address: "3200 Rue King O, Sherbrooke, QC J1L 1C9")
-trip_fifteen = Trip.create!(date: DateTime.new(2023,9,19,9,0,0), seat: 2, user: sergio, farm: poucevert_farm, address: "6102 Sherbrooke St W, Montreal, Quebec H4A 1Y3")
-trip_sixteen = Trip.create!(date: DateTime.new(2023,9,30,15,0,0), seat: 1, user: tom, farm: poucevert_farm, address: "1509 Sherbrooke St W, Montreal, Quebec H3G 1M1")
+trip_thirteen = Trip.create!(date: DateTime.new(2023,9,13,11,0,0), seat: 2, user: audrey, farm: poucevert_farm, address: audrey.address)
+trip_fourteen = Trip.create!(date: DateTime.new(2023,9,15,15,0,0), seat: 2, user: tom, farm: poucevert_farm, address: tom.address)
+trip_fifteen = Trip.create!(date: DateTime.new(2023,9,19,9,0,0), seat: 2, user: sergio, farm: poucevert_farm, address: sergio.address)
+trip_sixteen = Trip.create!(date: DateTime.new(2023,9,30,15,0,0), seat: 1, user: tom, farm: poucevert_farm, address: tom.address)
 
 # Sevigny Trips
-trip_seventeen = Trip.create!(date: DateTime.new(2023,9,15,13,0,0), seat: 2, user: sergio, farm: sevigny_farm, address: "1290 Sherbrooke St W, Montreal, Quebec H3G 1H5")
-trip_eighteen = Trip.create!(date: DateTime.new(2023,9,21,13,0,0), seat: 3, user: priscilla, farm: sevigny_farm, address: "1509 Sherbrooke St W, Montreal, Quebec H3G 1M1")
-trip_nineteen = Trip.create!(date: DateTime.new(2023,9,24,11,0,0), seat: 2, user: joe, farm: sevigny_farm, address: "1455 Sherbrooke St W, Montreal, Quebec H3G 1L2")
+trip_seventeen = Trip.create!(date: DateTime.new(2023,9,15,13,0,0), seat: 2, user: sergio, farm: sevigny_farm, address: sergio.address)
+trip_eighteen = Trip.create!(date: DateTime.new(2023,9,21,13,0,0), seat: 3, user: priscilla, farm: sevigny_farm, address: priscilla.address)
+trip_nineteen = Trip.create!(date: DateTime.new(2023,9,24,11,0,0), seat: 2, user: joe, farm: sevigny_farm, address: joe.address)
 
 # Maraichere Trips
-trip_twenty = Trip.create!(date: DateTime.new(2023,9,9,12,0,0), seat: 3, user: sebastien, farm: grange_maraichere, address: "1227 Sherbrooke St W, Montreal, Quebec H3G 1G1")
-trip_twentyone = Trip.create!(date: DateTime.new(2023,9,14,16,0,0), seat: 1, user: daphne, farm: grange_maraichere, address: "4350 Sherbrooke St W, Westmount, Quebec H3Z 1E3")
-trip_twentytwo = Trip.create!(date: DateTime.new(2023,9,19,16,0,0), seat: 2, user: daphne, farm: grange_maraichere, address: "1485 Sherbrooke St W, Montreal, Quebec H3G 0A3")
+trip_twenty = Trip.create!(date: DateTime.new(2023,9,9,12,0,0), seat: 3, user: sebastien, farm: grange_maraichere, address: sebastien.address)
+trip_twentyone = Trip.create!(date: DateTime.new(2023,9,14,16,0,0), seat: 1, user: daphne, farm: grange_maraichere, address: daphne.address)
+trip_twentytwo = Trip.create!(date: DateTime.new(2023,9,19,16,0,0), seat: 2, user: daphne, farm: grange_maraichere, address: tom.address)
 
 # Prucheraie Trips
-trip_twentythree = Trip.create!(date: DateTime.new(2023,9,10,16,0,0), seat: 3, user: frederic, farm: la_prucheraie, address: "4160 Sherbrooke St W, Westmount, Quebec H3Z 1C2")
-trip_twentyfour = Trip.create!(date: DateTime.new(2023,9,19,16,0,0), seat: 1, user: marcella, farm: la_prucheraie, address: "65 Sherbrooke St E, Montreal, Quebec H2X 1C4")
-trip_twentyfive = Trip.create!(date: DateTime.new(2023,9,20,10,0,0), seat: 3, user: kitty, farm: la_prucheraie,address: "333 Sherbrooke St E, Montreal, Quebec H2X 4E3")
+trip_twentythree = Trip.create!(date: DateTime.new(2023,9,10,16,0,0), seat: 3, user: frederic, farm: la_prucheraie, address: frederic.address)
+trip_twentyfour = Trip.create!(date: DateTime.new(2023,9,19,16,0,0), seat: 1, user: marcella, farm: la_prucheraie, address: marcella.address)
+trip_twentyfive = Trip.create!(date: DateTime.new(2023,9,20,10,0,0), seat: 3, user: kitty, farm: la_prucheraie,address: kitty.address)
 
 # Lacs Trips
-trip_twentysix = Trip.create!(date: DateTime.new(2023,9,11,8,0,0), seat: 2, user: justin, farm: la_vallee_des_lacs_farm, address: "175 Sherbrooke St W, Montreal, Quebec H2X 1X5")
-trip_twentyseven = Trip.create!(date: DateTime.new(2023,9,12,8,0,0), seat: 3, user: manon, farm: la_vallee_des_lacs_farm, address: "1025 Sherbrooke St E, Montreal, Quebec H2L 1L4")
+trip_twentysix = Trip.create!(date: DateTime.new(2023,9,11,8,0,0), seat: 2, user: justin, farm: la_vallee_des_lacs_farm, address: justin.address)
+trip_twentyseven = Trip.create!(date: DateTime.new(2023,9,12,8,0,0), seat: 3, user: manon, farm: la_vallee_des_lacs_farm, address: manon.address)
 
 # Saisons Trips
-trip_twentyeight = Trip.create!(date: DateTime.new(2023,9,9,9,0,0), seat: 2, user: ines, farm: croque_saisons, address: "6550 Sherbrooke St W, Montreal, Quebec H4B 1N6")
-trip_twentynine = Trip.create!(date: DateTime.new(2023,9,10,11,0,0), seat: 2, user: christophe, farm: croque_saisons, address: "4200 Sherbrooke St W, Westmount, Quebec H3Z 1C4")
+trip_twentyeight = Trip.create!(date: DateTime.new(2023,9,9,9,0,0), seat: 2, user: ines, farm: croque_saisons, address: ines.address)
+trip_twentynine = Trip.create!(date: DateTime.new(2023,9,10,11,0,0), seat: 2, user: daphne, farm: croque_saisons, address: daphne.address)
+
+Order.create!(user: jane, trip: trip_one)
+Order.create!(user: nicole, trip: trip_two)
+Order.create!(user: therese, trip: trip_three)
+Order.create!(user: nicole, trip: trip_four)
+Order.create!(user: jane, trip: trip_five)
+Order.create!(user: nicole, trip: trip_six)
+Order.create!(user: therese, trip: trip_seven)
+Order.create!(user: jean, trip: jean_trip)
+Order.create!(user: grace, trip: demo_trip)
+Order.create!(user: john, trip: john_trip)
+Order.create!(user: audrey, trip: trip_thirteen)
+Order.create!(user: tom, trip: trip_fourteen)
+Order.create!(user: sergio, trip: trip_fifteen)
+Order.create!(user: tom, trip: trip_sixteen)
+Order.create!(user: sergio, trip: trip_seventeen)
+Order.create!(user: priscilla, trip: trip_eighteen)
+Order.create!(user: joe, trip: trip_nineteen)
+Order.create!(user: sebastien, trip: trip_twenty)
+Order.create!(user: daphne, trip: trip_twentyone)
+Order.create!(user: daphne, trip: trip_twentytwo)
+Order.create!(user: frederic, trip: trip_twentythree)
+Order.create!(user: marcella, trip: trip_twentyfour)
+Order.create!(user: kitty, trip: trip_twentyfive)
+Order.create!(user: justin, trip: trip_twentysix)
+Order.create!(user: manon, trip: trip_twentyseven)
+Order.create!(user: ines, trip: trip_twentyeight)
+Order.create!(user: daphne, trip: trip_twentynine)
