@@ -23,18 +23,14 @@
           </div>
         </div>
       <% end %>
-
       <div class="farm-card-body">
-
         <div class="farm-fav-div">
           <div class="farm-name-div">
             <h2><%= farm.name %></h2>
           </div>
           <%= render "heart", farm: farm %>
         </div>
-
         <div class="farm-card-description">
-
           <div>
             <p>
               <span class="distance-color"><%= farm.distance_to([current_user.latitude, current_user.longitude]).round %> km •
@@ -43,7 +39,6 @@
               <%= hours > 0 ? "#{hours} hours" : "" %>
               <%= minutes %> min</span>
             </p>
-
             <div class="hours-div">
               <% if @time.between?(farm.opening_time, (farm.closing_time - 1)) %>
                 <p class="open">Open</p>

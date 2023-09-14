@@ -5,11 +5,10 @@ class OrdersController < ApplicationController
 
   def show
     @order = Order.find(params[:id])
-
     @order_products = @order.order_products.includes(:product)
     @farm = @order.trip.farm
-
     @driver = @order.trip.user
+
     @markers =
       [{
         lat: @driver.latitude,
@@ -45,7 +44,6 @@ class OrdersController < ApplicationController
       current_user.save
       redirect_to order_path(@order, new_order: true)
     else
-      # redirect_to farm_path(params["farm"])
       @time = ((Time.now.hour.to_f - 4) + (Time.now.min.to_f / 60))
       @farm = Farm.find(params["farm"])
       @products = @farm.products

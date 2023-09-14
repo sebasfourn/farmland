@@ -12,13 +12,16 @@
   border-top: 1px solid white;
   flex-grow: 0;
   padding-top: 12px;
+
   & ul {
     margin: 0 !important;
     padding: 0 !important;
   }
+
   & a {
     color: $gray !important;
   }
+
   & a:active,
   a:visited {
     color: $gray !important;
@@ -31,6 +34,7 @@
   gap: 50px;
   list-style: none;
   text-align: center;
+
   & svg {
     margin-bottom: 8px;
   }
@@ -42,6 +46,7 @@
   font-size: 12px;
   text-align: center;
   text-decoration: none;
+
   &.current-page {
     color: $green-main;
   }

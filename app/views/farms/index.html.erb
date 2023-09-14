@@ -3,9 +3,6 @@
     <h2>Hello <%= current_user.first_name.capitalize %> !</h2>
     <p><%= current_user.address.split(",")[0] %><i class="fa-solid fa-chevron-down arrow"></i></p>
   </div>
-  <%# <div class="title-div-description">
-    <p>Share a ride, shop local, save the planet !</p>
-  </div> %>
 </div>
 
 <%= form_with url: farms_path, method: :get do %>
@@ -70,18 +67,14 @@
           </div>
         </div>
       <% end %>
-
       <div class="farm-card-body">
-
         <div class="farm-fav-div">
           <div class="farm-name-div">
             <h2><%= farm.name %></h2>
           </div>
           <%= render "heart", farm: farm %>
         </div>
-
         <div class="farm-card-description">
-
           <div>
             <p>
               <span class="distance-color"><%= farm.distance_to([current_user.latitude, current_user.longitude]).round %> km •
@@ -90,7 +83,6 @@
               <%= hours > 0 ? "#{hours} hours" : "" %>
               <%= minutes %> min</span>
             </p>
-
             <div class="hours-div">
               <% if @time.between?(farm.opening_time, (farm.closing_time - 1)) %>
                 <p class="open">Open</p>
@@ -109,7 +101,6 @@
             <i class="fa-solid fa-star fa-sm star"></i>
           </div>
         </div>
-
       </div>
     </div>
   <% end %>

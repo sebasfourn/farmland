@@ -1,11 +1,7 @@
 class FarmsController < ApplicationController
   skip_before_action :verify_authenticity_token, only: %i[favorite unfavorite]
+  before_action :find_farm, only: %i[show favorite unfavorite]
   before_action :time, only: %i[index show favorites]
-
-  def time
-    @time = ((Time.now.hour.to_f - 4) + (Time.now.min.to_f / 60))
-  end
-
 
   def index
     @farms = Farm.all
@@ -33,13 +29,11 @@ class FarmsController < ApplicationController
   end
 
   def show
-    @farm = Farm.find(params[:id])
     @products = @farm.products
     @order = Order.new
   end
 
   def favorite
-    @farm = Farm.find(params[:id])
     current_user.favorite(@farm)
     respond_to do |format|
       format.text { render partial: "heart", locals: { farm: @farm }, formats: [:html] }
@@ -48,7 +42,6 @@ class FarmsController < ApplicationController
   end
 
   def unfavorite
-    @farm = Farm.find(params[:id])
     current_user.unfavorite(@farm)
     respond_to do |format|
       if params[:page] == "favorites"
@@ -71,6 +64,14 @@ class FarmsController < ApplicationController
   end
 
   private
+
+  def find_farm
+    @farm = Farm.find(params[:id])
+  end
+
+  def time
+    @time = ((Time.now.hour.to_f - 4) + (Time.now.min.to_f / 60))
+  end
 
   def farm_params
     params.require(:farm).permit(:name, :address, :open, :rating)

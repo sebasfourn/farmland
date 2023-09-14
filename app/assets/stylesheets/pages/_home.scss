@@ -20,12 +20,14 @@
   align-items: center;
   margin-bottom: 40px;
   margin-top: -10px;
+
   & h1 {
     font-family: "Eiko";
     font-size: 40px;
     font-weight: bold;
     color: $green-main;
   }
+
   p {
     width: 70%;
     font-family: 20px;
@@ -36,6 +38,7 @@
 .farmland-seasonal {
   max-width: 100%;
   text-align: center;
+
   .seasonal-month {
     color: $green-light;
   }
@@ -55,16 +58,19 @@
   margin-bottom: 40px;
   gap: 20px;
   padding: 0 20px;
+
   .product-div {
     display: flex;
     flex-direction: column;
     align-items: center;
+
     img {
       width: 70px;
       height: 70px;
       border-radius: 100%;
       margin-bottom: 10px;
     }
+
     p {
       font-size: 13px;
     }

@@ -1,4 +1,3 @@
-
 .message-row {
   margin-bottom: 0px;
   padding: 5px;
@@ -35,8 +34,9 @@
   background-color: $green-dark;
   margin-bottom: 0 !important;
   padding: 8px 15px;
+
   &::placeholder {
-color: white;
+    color: white;
   }
 }
 

@@ -8,12 +8,15 @@
   margin: 15px auto;
   width: 100%;
   padding: 15px 30px;
+
   h2 {
     font-size: 23px;
+
     .farm-name {
       color: $green-light;
     }
   }
+
   h3 {
     margin-top: 15px;
     font-size: 20px;
@@ -46,6 +49,7 @@
   padding: 10px 20px 20px 20px;
   box-shadow: 2px 3px #000000;
   margin-bottom: 15px;
+
   h3 {
     color: $yellow;
     font-family: $subtitles-font;
