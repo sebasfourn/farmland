@@ -86,14 +86,12 @@
             <div class="hours-div">
               <% if @time.between?(farm.opening_time, (farm.closing_time - 1)) %>
                 <p class="open">Open</p>
-                <p>• Opening hours: <%= "#{farm.opening_time}:00 - #{farm.closing_time}:00"%></p>
               <% elsif not (@time.between?(farm.opening_time, (farm.closing_time))) %>
                 <p class="closed">Closed</p>
-                <p>• Opening hours: <%= "#{farm.opening_time}:00 - #{farm.closing_time}:00"%></p>
               <% else %>
                 <p class="closed">Closes soon</p>
-                <p>• Opening hours: <%= "#{farm.opening_time}:00 - #{farm.closing_time}:00"%></p>
               <% end %>
+              <p>• Hours: <%= "#{farm.opening_time}:00 - #{farm.closing_time}:00"%></p>
             </div>
           </div>
           <div class="rating-div">
