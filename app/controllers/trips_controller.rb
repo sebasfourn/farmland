@@ -13,6 +13,5 @@ class TripsController < ApplicationController
     @trip = Trip.includes(:messages).find(params[:id])
     @message = Message.new
     @trip.messages.update_all(seen: true)
-
   end
 end

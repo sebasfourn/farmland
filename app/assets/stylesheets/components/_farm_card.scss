@@ -99,9 +99,11 @@
     .hours-div {
       display: flex;
       gap: 4px;
+
       .open {
         color: $green-light;
       }
+
       .closed {
         color: $red;
       }

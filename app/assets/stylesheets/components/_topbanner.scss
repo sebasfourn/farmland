@@ -42,11 +42,13 @@
   animation: grow 0.3s ease-in;
   animation-iteration-count: 1;
   animation-fill-mode: forwards;
+
   p {
     text-align: center;
     animation: fade-text 0.3s ease-in;
     margin-bottom: 0px;
   }
+
   .top-banner-extended-container {
     display: flex;
     flex-direction: row;
@@ -73,15 +75,18 @@
   color: $open-green;
   fill: $open-green;
 }
+
 @keyframes animate {
   0% {
     letter-spacing: normal;
     scale: 1;
   }
+
   30% {
     letter-spacing: 1.1px;
     scale: 1.1;
   }
+
   100% {
     letter-spacing: normal;
     scale: 1;

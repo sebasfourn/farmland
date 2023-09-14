@@ -10,7 +10,6 @@
 <% if @trips.any? %>
   <% @trips.each do |trip| %>
     <% if trip.messages.any? %>
-
       <%= link_to trip_path(trip) do %>
         <div class="chat-box">
           <%= image_tag "#{trip.user.first_name}.jpg", class: "driver-img" %>
@@ -27,7 +26,6 @@
           <span class="timestamp"><%= trip.messages.last.created_at.strftime('%l:%M %p') %></span>
         </div>
       <% end %>
-
     <% end %>
   <% end %>
 <% else %>

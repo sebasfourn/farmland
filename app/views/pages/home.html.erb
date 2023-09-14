@@ -1,13 +1,10 @@
 <div class="container">
-
   <div class="farmland-title">
     <h1>Farmland</h1>
     <p>Shop local, share a ride, save the planet !</p>
   </div>
-
   <div class="farmland-seasonal">
     <p><span class="emph">Seasonal products for <span class="seasonal-month"><%= Date.today.strftime("%B") %></span></span></p>
-
     <div class="seasonal-products">
       <% if @products.any? %>
         <% @products.each do |product| %>
@@ -25,9 +22,7 @@
       <% end %>
     </div>
   </div>
-
   <%= link_to farms_path, class:"landing-button" do %>
     Browse farms
   <% end %>
-
 </div>
