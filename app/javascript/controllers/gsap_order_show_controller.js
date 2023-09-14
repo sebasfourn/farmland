@@ -3,11 +3,8 @@ import { gsap } from "gsap";
 
 // Connects to data-controller="gsap-order-show"
 export default class extends Controller {
-  static values = {
-    firstLook: Boolean,
-  };
-
-  static targets = ["carbonPopup", "space"];
+  static targets = ["carbonPopup", "space"]
+  static values = { firstLook: Boolean }
 
   connect() {
     if (this.firstLookValue) {

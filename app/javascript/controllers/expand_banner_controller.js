@@ -2,7 +2,6 @@ import { Controller } from "@hotwired/stimulus"
 
 // Connects to data-controller="expand-banner"
 export default class extends Controller {
-
   static targets = ["additionalText", "chevron"]
 
   expand() {

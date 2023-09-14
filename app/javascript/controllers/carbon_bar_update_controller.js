@@ -2,14 +2,11 @@ import { Controller } from "@hotwired/stimulus"
 
 // Connects to data-controller="carbon-bar-update"
 export default class extends Controller {
-
   static values = { current: Number }
 
   addProductCo2() {
     const topBannerText = document.getElementById("top-banner-text");
     const topBannerCarbonValue = document.getElementById("current-user-co2-saved");
-    // const radioButton = document.querySelector('input[name="order[trip_id]"]:checked')
-    // console.log(radioButton)
     const tripCo2 = document.querySelector('.farm-order-radio-buttons input:checked + label .trip-co2')?.innerText ||  0
     const topBannerCo2Equivalent = document.getElementById("co2-equivalent-trees");
     topBannerText.classList.remove("add-carbon-saving");
