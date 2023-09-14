@@ -3,16 +3,10 @@ import { Controller } from "@hotwired/stimulus"
 // Connects to data-controller="favorite"
 export default class extends Controller {
   static targets = ["unfavorite", "favorite", "heart"]
-  static values = {
-    page: String
-  }
-
-  connect() {
-  }
+  static values = { page: String }
 
   unfavorite(event) {
     event.preventDefault()
-
     if ( this.pageValue === "index" ) {
       fetch(this.unfavoriteTarget.href, {
         method: "POST",

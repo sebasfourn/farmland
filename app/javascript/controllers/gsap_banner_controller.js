@@ -3,7 +3,8 @@ import { gsap } from "gsap";
 
 // Connects to data-controller="gsap-banner"
 export default class extends Controller {
-  static targets = ["display"];
+  static targets = ["display"]
+
   connect() {
     this.displayTarget.classList.remove("d-none");
     const tl = gsap.timeline({ defaults: { ease: "bounce" } });

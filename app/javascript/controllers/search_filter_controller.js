@@ -3,8 +3,7 @@ import { gsap } from "gsap";
 
 // Connects to data-controller="search-filter"
 export default class extends Controller {
-  static targets = ["filter"];
-  connect() {}
+  static targets = ["filter"]
 
   openFilter() {
     this.filterTarget.classList.toggle("d-none");
