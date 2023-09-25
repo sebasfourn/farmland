@@ -7,12 +7,14 @@
 .sender-style, .receiver-style {
   width: 80%;
   max-width: 400px;
-  border-radius: 15px;
-  padding-left: 15px;
-  padding-right: 15px;
-  padding-top: 10px;
+  border-radius: 25px;
+  padding: 8px 12px;
   min-height: 44px;
   background-color: $beige-background;
+
+  p {
+    margin-bottom: 0px;
+  }
 }
 
 .send-box {
@@ -28,12 +30,11 @@
 .message-input {
   flex-grow: 1;
   border: none;
-  border-top-left-radius: 20px;
-  border-bottom-left-radius: 20px;
+  border-radius: 20px;
   font-size: 16px;
   background-color: $green-dark;
   margin-bottom: 0 !important;
-  padding: 8px 15px;
+  padding: 8px 12px;
 
   &::placeholder {
     color: white;
@@ -51,20 +52,9 @@
 }
 
 .send-button {
-  background-color: $green-dark;
-  color: $white;
-  border: none;
-  border-top-right-radius: 20px;
-  border-bottom-right-radius: 20px;
-  padding: 10px 20px;
-  font-size: 16px;
   cursor: pointer;
-  transition: background-color 0.3s ease;
   margin-left: -1px;
-}
-
-.send-button:hover {
-  background-color: $green-light;
+  color: $yellow
 }
 
 #new_message {
