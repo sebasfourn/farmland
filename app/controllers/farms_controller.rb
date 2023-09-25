@@ -20,7 +20,7 @@ class FarmsController < ApplicationController
         farm.distance_to([current_user.latitude, current_user.longitude]).round
       end
     when "open"
-      @farms = @farms.sort_by { |farm| farm.open ? 0 : 1 }
+      @farms = @farms.sort_by { |farm| @time.between?(farm.opening_time, farm.closing_time) ? 0 : 1 }
     when "carpool"
       @farms = @farms.select { |farm| farm.trips.any? }
     when "rating"
