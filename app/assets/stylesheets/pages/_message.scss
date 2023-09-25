@@ -54,7 +54,11 @@
 .send-button {
   cursor: pointer;
   margin-left: -1px;
-  color: $yellow
+  color: $yellow;
+}
+
+.send-button:hover {
+  color: $yellow;
 }
 
 #new_message {
