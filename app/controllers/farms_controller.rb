@@ -67,6 +67,8 @@ class FarmsController < ApplicationController
 
   def find_farm
     @farm = Farm.find(params[:id])
+  rescue ActiveRecord::RecordNotFound => e
+    redirect_to farms_path, notice: e.message
   end
 
   def time
