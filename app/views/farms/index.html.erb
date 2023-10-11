@@ -1,7 +1,9 @@
 <div>
   <div class="title-div">
     <h2>Hello <%= current_user.first_name.capitalize %> !</h2>
-    <p><%= current_user.address.split(",")[0] %><i class="fa-solid fa-chevron-down arrow"></i></p>
+    <%= link_to destroy_user_session_path, data: {turbo_method: :delete} do %>
+      <p><%= current_user.address.split(",")[0] %><i class="fa-solid fa-chevron-down arrow"></i></p>
+    <% end %>
   </div>
 </div>
 
